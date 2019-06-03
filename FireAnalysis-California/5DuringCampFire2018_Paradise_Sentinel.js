@@ -403,7 +403,7 @@ Map.setCenter(-121.619, 39.894, 10);
 //filtering Against Paradise at 1-year resolution
 var sentinel_SR = ee.ImageCollection("COPERNICUS/S2") //load Sentinel2 raws for the duration of the fire
 	.filterBounds(Paradise)
-	.filterDate("2018-11-08","2018-11-25")
+	.filterDate("2018-11-08","2018-11-12")
 	// No need to filter for cloudy scenes: smoke is a given in fires.
 	.select(SENTINEL_2_BANDS, STD_NAMES);
 
