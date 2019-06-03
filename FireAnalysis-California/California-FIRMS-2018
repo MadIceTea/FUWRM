@@ -1,5 +1,5 @@
 /**** Start of imports. If edited, may not auto-convert in the playground. ****/
-var paradise = /* color: #d63000 */ee.Geometry.Polygon(
+var Paradise = /* color: #d63000 */ee.Geometry.Polygon(
         [[[-121.873712, 39.883994],
           [-121.856864, 39.840851],
           [-121.860722, 39.831409],
@@ -390,13 +390,8 @@ var paradise = /* color: #d63000 */ee.Geometry.Polygon(
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
 //Butte County and Paradise are import records to save on the ~3000 lines that would otherwise be needed.
 
-//Add an outline of the town of Paradise
-var Paradise = ee.FeatureCollection('TIGER/2016/Counties')
-  .filter(ee.Filter.eq('NAME', 'Paradise'));
-print(Paradise);
-var table1 = Paradise;
-Map.addLayer(table1, {color: "000000"}, "Town of Paradise", 1, 1);
-//Map.addLayer(paradise, {color: "acc235"}, "Paradise", 1, 1);
+//Add an outline of the Town of Paradise
+Map.addLayer(Paradise, {color: "000000"}, "Town of Paradise", 1, 1);
 
 //Add an outline of Butte County (of which Paradise is a part of)
 var Butte_County = ee.FeatureCollection('TIGER/2016/Counties')
