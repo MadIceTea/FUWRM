@@ -393,3 +393,28 @@ var Export_View = /* color: #15d8f8 */ee.Geometry.Polygon(
           [-121.812967, 39.884304],
           [-121.873712, 39.883994]]]);
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
+//Butte County and Paradise are import records to save on the ~3000 lines that would otherwise be needed.
+
+//Add an outline of the Town of Paradise
+Map.addLayer(Paradise, {color: "000000"}, "Town of Paradise", 1, 1);
+
+//Add an outline of Butte County (of which Paradise is a part of)
+var Butte_County = ee.FeatureCollection('TIGER/2016/Counties')
+  .filter(ee.Filter.eq('NAME', 'Butte'));
+print(Butte_County);
+var table = Butte_County;
+Map.addLayer(table, {color: "acc235"}, "Butte County", 1, 1);
+
+//Center Map
+Map.setCenter(-121.616, 39.761, 9);
+
+var dataset = ee.ImageCollection('FIRMS')
+  .filterBounds(Butte_County)
+  .filter(ee.Filter.date('2018-11-08', '2019-11-25'));
+var fires = dataset.select('T21');
+var firesVis = {
+  min: 325.0,
+  max: 400.0,
+  palette: ['red', 'orange', 'yellow'],
+};
+Map.addLayer(fires, firesVis, 'Fires');
