@@ -271,7 +271,7 @@ var paradise = /* color: #d63000 */ee.Geometry.Polygon(
 //Butte County and Paradise are import records to save on the ~3000 lines that would otherwise be needed.
 
 //Add an outline of the town of Paradise
-Map.addLayer(paradise, {color: "acc235"}, "Butte County", 1, 1);
+Map.addLayer(paradise, {color: "acc235"}, "Paradise", 1, 1);
 
 //Add an outline of Butte County (of which Paradise is a part of)
 var Butte_County = ee.FeatureCollection('TIGER/2016/Counties')
