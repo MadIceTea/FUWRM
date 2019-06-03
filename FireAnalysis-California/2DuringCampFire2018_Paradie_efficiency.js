@@ -409,7 +409,7 @@ var LANDSAT_8_BANDS = ["B2", "B3", "B4","B5","B6","B10","B7"];
 var STD_NAMES = ["blue","green","red","nir","swir1","tir","swir2"];
 
 //Center Map
-// Map.setCenter(-122.505, 39.905, 10);
+// Map.setCenter(-121.619, 39.894, 10);
 Map.centerObject(Big_Square,7);
 
 //Black Image background
