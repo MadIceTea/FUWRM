@@ -398,7 +398,7 @@ var Butte_County = ee.FeatureCollection('TIGER/2016/Counties')
   .filter(ee.Filter.eq('NAME', 'Butte'));
 print(Butte_County);
 var table = Butte_County;
-Map.addLayer(table, {color: "000000"}, "Butte County", 1, 1);
+Map.addLayer(table, {color: "acc235"}, "Butte County", 1, 1);
 
 //Center Map
 Map.setCenter(-121.602, 39.7634, 11);
