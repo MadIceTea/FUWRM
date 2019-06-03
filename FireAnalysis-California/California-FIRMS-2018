@@ -456,3 +456,4 @@ Export.image.toDrive({
 //Debug on Region "Butte County"
 var region = Butte_County.geometry().bounds();
 print(region);
+Map.addLayer(region, {color: "ffffff"}, "GEE Export Region", 1, 1);
