@@ -454,4 +454,5 @@ Export.image.toDrive({
 });
 
 //Debug on Region "Butte County"
+var region = Butte_County.geometry().bounds();
 print(region);
