@@ -395,14 +395,14 @@ var LANDSAT_7_BANDS = ["B1", "B2", "B3","B4","B5","B6","B7"];
 var STD_NAMES = ["blue","green","red","nir","swir1","tir","swir2"];
 
 //Add an outline of the Town of Paradise
-Map.addLayer(paradise, {color: "000000"}, "Town of Paradise", 1, 1);
+Map.addLayer(Paradise, {color: "000000"}, "Town of Paradise", 1, 1);
 
 //Center Map
 Map.setCenter(-121.619, 39.894, 10);
 
 //filtering Against Paradise at 1-year resolution
 var landsat_SR = ee.ImageCollection("LANDSAT/LE07/C01/T1_SR") //load LANDSAT7 raws for during the fire period
-	.filterBounds(paradise)
+	.filterBounds(Paradise)
 	.filterDate("2018-11-08","2018-11-25")
 	// No need to filter for cloudy scenes: smoke is a given in fires.
 	.select(LANDSAT_7_BANDS, STD_NAMES);
@@ -460,9 +460,9 @@ single = single.addBands(mask);
 //Landsat True-Color Image Export
 Export.image.toDrive({
   image: single,
-  description: "landsat7_duringLaterFire_paradise",
+  description: "landsat7_duringLaterFire_Paradise",
   folder: "California-Paradise_CampFire2018",
-  region:paradise,
+  region:Paradise,
   scale:30.0,
   fileFormat: "GeoTIFF",
   crs: "EPSG:3857",
