@@ -391,7 +391,7 @@ var Paradise = /* color: #d63000 */ee.Geometry.Polygon(
 //Paradise City Shapefile was made an import to save on printed lines
 
 //Add an outline of the Town of Paradise
-Map.addLayer(paradise, {color: "000000"}, "Town of Paradise", 1, 1);
+Map.addLayer(Paradise, {color: "000000"}, "Town of Paradise", 1, 1);
 
 //L7SR Bands and Human-Friendly Naming
 var LANDSAT_7_BANDS = ["B1", "B2", "B3","B4","B5","B6","B7"];
@@ -404,7 +404,7 @@ Map.setCenter(-121.619, 39.894, 10);
 var landsat_SR = ee.ImageCollection("LANDSAT/LE07/C01/T1_SR") //load LANDSAT8 raws for a single year
 	//.filter(ee.Filter.eq("WRS_PATH", 45))
 	//.filter(ee.Filter.eq("WRS_ROW", 32))
-	.filterBounds(paradise)
+	.filterBounds(Paradise)
 	.filterDate("2018-11-08","2018-11-25")
 	// Filter cloudy scenes.
   //.filter(ee.Filter.lt('CLOUD_COVER', 0.6))
@@ -458,7 +458,7 @@ Map.addLayer(CARTclassified, {min: 0, max: 3, palette: ['97CAf9','784800', '228B
 //Landsat True-Color Image Export
 Export.image.toDrive({
   image: landsat_SR.first(),
-  description: 'landsat_duringFire_paradise',
-  region:paradise,
+  description: 'landsat_duringFire_Paradise',
+  region:Paradise,
   scale:50.0
 });
