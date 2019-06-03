@@ -395,14 +395,14 @@ var SENTINEL_2_BANDS = ["B2", "B3","B4","B8","B11","B12"];
 var STD_NAMES = ["blue","green","red","nir","swir1","swir2"];
 
 //Add an outline of the city of Paradise
-Map.addLayer(paradise, {color: "000000"}, "City of Paradise", 1, 1);
+Map.addLayer(Paradise, {color: "000000"}, "City of Paradise", 1, 1);
 
 //Center Map
 Map.setCenter(-122.505, 39.905, 10);
 
 //filtering Against Paradise at 1-year resolution
 var sentinel_SR = ee.ImageCollection("COPERNICUS/S2") //load Sentinel2 raws for the duration of the fire
-	.filterBounds(paradise)
+	.filterBounds(Paradise)
 	.filterDate("2018-11-08","2018-11-25")
 	// No need to filter for cloudy scenes: smoke is a given in fires.
 	.select(SENTINEL_2_BANDS, STD_NAMES);
@@ -451,9 +451,9 @@ single = single.addBands(mask);
 //Sentinel True-Color Image Export
 Export.image.toDrive({
   image: single,
-  description: "sentinel_averageDuringFire_paradise",
+  description: "sentinel_averageDuringFire_Paradise",
   folder: "California-Paradise_CampFire2018",
-  region:paradise,
+  region:Paradise,
   scale:30.0,
   fileFormat: "GeoTIFF",
   crs: "EPSG:3857",
