@@ -418,3 +418,31 @@ var firesVis = {
   palette: ['red', 'orange', 'yellow'],
 };
 Map.addLayer(fires, firesVis, 'Fires');
+
+//FIRMS True-Color Image Export
+//Export Image
+var vis = firesVis;
+
+// visualize image using visOpts above
+// turning it into 8-bit RGB image.
+single = single.visualize(vis);
+
+// obtain native scale of RGB bands
+var scale = single.projection().nominalScale().getInfo();
+
+// add an alpha channel as 4th band to mask no data regions
+var mask = single.mask().reduce(ee.Reducer.min())
+    .multiply(255).toByte();
+single = single.addBands(mask);
+
+//Landsat True-Color Image Export
+Export.image.toDrive({
+  image: single,
+  description: "landsat_postFire2019_Paradise",
+  folder: "California-Paradise_CampFire2018",
+  region:Paradise,
+  scale:30.0,
+  fileFormat: "GeoTIFF",
+  crs: "EPSG:3857",
+  formatOptions: {cloudOptimized: true}
+});
