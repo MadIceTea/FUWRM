@@ -421,7 +421,7 @@ Map.addLayer(fires, firesVis, 'Fires');
 
 var single = dataset.median();
 
-//FIRMS True-Color Image Export
+//FIRMS False-Color Image Creation
 //Export Image
 var vis = {
   min: 303.5,
