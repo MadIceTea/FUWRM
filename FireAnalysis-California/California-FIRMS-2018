@@ -426,7 +426,7 @@ var single = dataset.median();
 var vis = {
   min: 315.0, 
   max: 435.0,
-  //gamma: 1.5,
+  gamma: 1.5,
 };
 
 // visualize image using visOpts above
