@@ -398,7 +398,7 @@ var STD_NAMES = ["blue","green","red","nir","swir1","swir2"];
 Map.addLayer(Paradise, {color: "000000"}, "Town of Paradise", 1, 1);
 
 //Center Map
-Map.setCenter(-121.602, 39.7634, 11);
+Map.setCenter(-121.619, 39.894, 10);
 
 //filtering Against Paradise at 1-year resolution
 var sentinel_SR = ee.ImageCollection("COPERNICUS/S2") //load Sentinel2 raws for the duration of the fire
