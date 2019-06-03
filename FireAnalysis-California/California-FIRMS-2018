@@ -2772,6 +2772,11 @@ var Butte_County = /* color: #d63000 */ee.Geometry.Polygon(
           [-121.4426, 40.14796],
           [-121.43635, 40.15178]]]);
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
+//Butte County is an import record to save on the ~3000 lines that would otherwise be needed.
+
+//Center Map
+Map.setCenter(-122.505, 39.905, 10);
+
 var dataset = ee.ImageCollection('FIRMS').filter(
     ee.Filter.date('2018-07-21', '2019-08-31'));
 var fires = dataset.select('T21');
