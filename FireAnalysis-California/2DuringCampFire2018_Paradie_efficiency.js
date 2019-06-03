@@ -400,8 +400,6 @@ var Big_Square =
           [-121.812967, 39.884304],
           [-121.873712, 39.883994]]]);
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
-
-
 //Paradise City Shapefile was made an import to save on printed lines
 var l7 = ee.ImageCollection("LANDSAT/LE07/C01/T1_SR");
 var l8 = ee.ImageCollection("LANDSAT/LC08/C01/T1_SR");
