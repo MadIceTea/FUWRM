@@ -419,6 +419,8 @@ var firesVis = {
 };
 Map.addLayer(fires, firesVis, 'Fires');
 
+var single = dataset.median();
+
 //FIRMS True-Color Image Export
 //Export Image
 var vis = firesVis;
