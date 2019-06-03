@@ -425,7 +425,7 @@ var single = dataset.median();
 //Export Image
 var vis = {
   min: 303.5,
-  max: 463.5
+  max: 463.5,
   gamma: 1.5,
 };
 
