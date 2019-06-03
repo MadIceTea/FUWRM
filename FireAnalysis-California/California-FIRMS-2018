@@ -2775,7 +2775,7 @@ var Butte_County = /* color: #d63000 */ee.Geometry.Polygon(
 //Butte County is an import record to save on the ~3000 lines that would otherwise be needed.
 
 //Add an outline of Butte County (of which Paradise is a part of)
-Map.addLayer(paradise, {color: "000000"}, "Butte County", 1, 1);
+Map.addLayer(Butte_County, {color: "000000"}, "Butte County", 1, 1);
 
 //Center Map
 Map.setCenter(-122.505, 39.905, 10);
