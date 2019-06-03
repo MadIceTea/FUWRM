@@ -410,7 +410,7 @@ Map.setCenter(-121.616, 39.761, 9);
 
 var dataset = ee.ImageCollection('FIRMS')
   .filterBounds(Butte_County)
-  .filter(ee.Filter.date('2018-07-21', '2019-08-31'));
+  .filter(ee.Filter.date('2018-01-01', '2019-12-31'));
 var fires = dataset.select('T21');
 var firesVis = {
   min: 325.0,
