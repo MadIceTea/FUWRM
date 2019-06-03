@@ -446,9 +446,12 @@ Export.image.toDrive({
   image: single,
   description: "FIRMS_2018average_ButteCounty",
   folder: "California-Paradise_CampFire2018",
-  region:ButteCounty,
+  region:Butte_County.geometry().bounds(),
   scale:30.0,
   fileFormat: "GeoTIFF",
   crs: "EPSG:3857",
   formatOptions: {cloudOptimized: true}
 });
+
+//Debug on Region "Butte County"
+print(region);
