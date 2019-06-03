@@ -441,7 +441,7 @@ var mask = single.mask().reduce(ee.Reducer.min())
     .multiply(255).toByte();
 single = single.addBands(mask);
 
-//Landsat True-Color Image Export
+//FIRMS False-Color Image Export
 Export.image.toDrive({
   image: single,
   description: "FIRMS_2018average_ButteCounty",
