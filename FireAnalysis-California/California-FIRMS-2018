@@ -2780,8 +2780,9 @@ Map.addLayer(paradise, {color: "000000"}, "Butte County", 1, 1);
 //Center Map
 Map.setCenter(-122.505, 39.905, 10);
 
-var dataset = ee.ImageCollection('FIRMS').filter(
-    ee.Filter.date('2018-07-21', '2019-08-31'));
+var dataset = ee.ImageCollection('FIRMS')
+  .filterBounds(Butte_County)
+  .filter(ee.Filter.date('2018-07-21', '2019-08-31'));
 var fires = dataset.select('T21');
 var firesVis = {
   min: 325.0,
