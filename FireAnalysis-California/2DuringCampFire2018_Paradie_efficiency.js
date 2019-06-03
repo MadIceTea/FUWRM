@@ -474,8 +474,8 @@ Map.addLayer(CARTclassified, {min: 0, max: 3, palette: ['97CAf9','784800', '228B
 //Landsat True-Color Image Export
 Export.image.toDrive({
   image: landsat_SR.first(),
-  description: 'landsat_duringFire_paradise',
-  region:paradise,
+  description: 'landsat_duringFire_Paradise',
+  region:Paradise,
   scale:50.0
 });
 };
