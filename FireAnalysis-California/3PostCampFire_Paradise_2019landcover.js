@@ -398,7 +398,7 @@ var STD_NAMES = ["blue","green","red","nir","swir1","tir","swir2"];
 Map.addLayer(Paradise, {color: "000000"}, "Town of Paradise", 1, 1);
 
 //Center Map
-Map.setCenter(-122.505, 39.905, 10);
+Map.setCenter(-121.616, 39.761, 10);
 
 //filtering Against Paradise at 1-year resolution
 
