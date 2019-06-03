@@ -394,8 +394,8 @@ var Paradise = /* color: #d63000 */ee.Geometry.Polygon(
 var SENTINEL_2_BANDS = ["B2", "B3","B4","B8","B11","B12"];
 var STD_NAMES = ["blue","green","red","nir","swir1","swir2"];
 
-//Add an outline of the city of Paradise
-Map.addLayer(Paradise, {color: "000000"}, "City of Paradise", 1, 1);
+//Add an outline of the Town of Paradise
+Map.addLayer(Paradise, {color: "000000"}, "Town of Paradise", 1, 1);
 
 //Center Map
 Map.setCenter(-121.602, 39.7634, 11);
