@@ -444,7 +444,7 @@ single = single.addBands(mask);
 //FIRMS False-Color Image Export
 Export.image.toDrive({
   image: single,
-  description: "FIRMS_2018average_ButteCounty",
+  description: "FIRMS_2019average_ButteCounty",
   folder: "California-Paradise_CampFire2018",
   region:Export_View,
   scale:30.0,
