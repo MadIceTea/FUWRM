@@ -1,3 +1,4 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
 var Paradise = /* color: #d63000 */ee.Geometry.Polygon(
         [[[-121.873712, 39.883994],
           [-121.856864, 39.840851],
@@ -386,7 +387,7 @@ var Paradise = /* color: #d63000 */ee.Geometry.Polygon(
           [-121.804041, 39.884344],
           [-121.812967, 39.884304],
           [-121.873712, 39.883994]]]);
-
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
 //Paradise City Shapefile was made an import to save on printed lines
 
 //L7SR Bands and Human-Friendly Naming
