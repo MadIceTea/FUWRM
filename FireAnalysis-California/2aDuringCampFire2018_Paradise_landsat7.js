@@ -390,7 +390,8 @@ var Paradise = /* color: #d63000 */ee.Geometry.Polygon(
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
 //Paradise City Shapefile was made an import to save on printed lines
 
-
+//Add an outline of the Town of Paradise
+Map.addLayer(paradise, {color: "000000"}, "Town of Paradise", 1, 1);
 
 //L7SR Bands and Human-Friendly Naming
 var LANDSAT_7_BANDS = ["B1", "B2", "B3","B4","B5","B6","B7"];
