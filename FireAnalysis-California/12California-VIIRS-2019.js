@@ -391,19 +391,19 @@ var Paradise = /* color: #d63000 */ee.Geometry.Polygon(
 //Import images for 2019, after CampFire died out.
 //VIIRS Lvl.1 product does not filter out light from fires, so seperating this time period is necessary to determine true population density.
 var collection = ee.ImageCollection("NOAA/VIIRS/DNB/MONTHLY_V1/VCMSLCFG")
-  .filterDate("2018-12-01","2019-06-01") // for 2019 (skipping the month after Camp Fire ended)
+  .filterDate("2019-01-01","2019-06-01") // for 2019 (skipping the month after Camp Fire ended)
   .filterBounds(Paradise); //around the Town of Paradise, California, USA
 
-var viirs = collection.first(); //lighting composite, taking median values
+var viirs = collection.last(); //lighting composite, taking median values
 
 //Center Map
 Map.setCenter(-121.619, 39.894, 10);
 
 //Display Layers on the Map with range of values that will eliminate street lighting and still light small towns such as Paradise and Magnolia, significantally.
 Map.addLayer(Paradise, {color: "acc235"}, "Town of Paradise", 1, 1);
-Map.addLayer(viirs,{bands:["avg_rad", "avg_rad", "cf_cvg"],min:1,max:10}, "yearly median nightmap", 0, 1);
+Map.addLayer(viirs,{bands:["avg_rad", "avg_rad", "cf_cvg"],min:1,max:15}, "yearly median nightmap", 0, 1);
 var single = viirs.select("avg_rad");
-Map.addLayer(single,{bands:["avg_rad"],min:1,max:10},"average masked nightmap", 1, 0.9);
+Map.addLayer(single,{bands:["avg_rad"],min:1,max:15},"average masked nightmap", 1, 0.9);
 
 //debug
 print(collection);
