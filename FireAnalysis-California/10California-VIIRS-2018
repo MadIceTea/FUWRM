@@ -396,9 +396,9 @@ var collection = ee.ImageCollection("NOAA/VIIRS/DNB/MONTHLY_V1/VCMSLCFG")
 var viirs = collection.median(); //yearly composite of lighting, taking median values
 
 //Display Layers on the Map
-Map.addLayer(viirs,{bands:[],min:0,max:1}, 'yearly median nightmap', 1, 0.5);
-var average = viirs.select('avg_rad');
-Map.addLayer(average,{bands:['avg_rad'],min:0,max:1},'average masked nightmap', 1, 0.9);
+Map.addLayer(viirs,{bands:["avg_rad", "cf_cvg"],min:0,max:1}, "yearly median nightmap", 1, 0.5);
+var average = viirs.select("avg_rad");
+Map.addLayer(average,{bands:["avg_rad"],min:0,max:1},"average masked nightmap", 1, 0.9);
 
 //debug
 print(collection);
