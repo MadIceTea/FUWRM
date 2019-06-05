@@ -391,7 +391,7 @@ var Paradise = /* color: #d63000 */ee.Geometry.Polygon(
 //Import images for November 2018 - the month of the Camp Fire.
 //VIIRS Lvl.1 product does not filter out light from fires -- so we should see a region in full flame.
 var collection = ee.ImageCollection("NOAA/VIIRS/DNB/MONTHLY_V1/VCMSLCFG")
-  .filterDate("2018-11-01","2018-12-01") // for Nov. 2018 (Camp Fire Time Period)
+  .filterDate("2018-12-01","2019-01-01") // for Nov. 2018 (Camp Fire Time Period)
   .filterBounds(Paradise); //around the Town of Paradise, California, USA
 
 var viirs = collection.median(); //lighting composite, taking median values
