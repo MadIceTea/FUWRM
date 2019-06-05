@@ -413,7 +413,7 @@ var fires = dataset.select('T21');
 var firesVis = {
   min: 303.5,
   max: 463.5,
-  palette: ['red', 'orange', 'yellow'],
+  palette: ["yellow", "orange", "red"],
 };
 Map.addLayer(fires, firesVis, 'Fires');
 
