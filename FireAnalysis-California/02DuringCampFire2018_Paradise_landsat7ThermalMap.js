@@ -460,8 +460,8 @@ Map.addLayer(CARTclassified, {min: 0, max: 3, palette: ['97CAf9','784800', '228B
 
 //Landsat True-Color Image Export
 Export.image.toDrive({
-  image: landsat_SR.first(),
-  description: 'landsat_duringFire_Paradise',
-  region:Paradise,
+  image: landsat_SR.median().select("tir"),
+  description: 'landsat7Temperature_duringFire_Paradise_BigSquare',
+  region:Big_Square,
   scale:30.0
 });
