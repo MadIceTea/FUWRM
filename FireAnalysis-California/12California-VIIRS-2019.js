@@ -391,7 +391,7 @@ var Paradise = /* color: #d63000 */ee.Geometry.Polygon(
 //Import images for 2019, after CampFire died out.
 //VIIRS Lvl.1 product does not filter out light from fires, so seperating this time period is necessary to determine true population density.
 var collection = ee.ImageCollection("NOAA/VIIRS/DNB/MONTHLY_V1/VCMSLCFG")
-  .filterDate("2019-01-01","2019-06-01") // for 2019 (skipping the month after Camp Fire ended)
+  .filterDate("2018-12-01","2019-06-01") // for 2019 (skipping the month after Camp Fire ended)
   .filterBounds(Paradise); //around the Town of Paradise, California, USA
 
 var viirs = collection.first(); //lighting composite, taking median values
