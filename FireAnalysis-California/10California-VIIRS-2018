@@ -391,7 +391,8 @@ var Paradise = /* color: #d63000 */ee.Geometry.Polygon(
 var collection = ee.ImageCollection("NOAA/VIIRS/DNB/MONTHLY_V1/VCMSLCFG");
   .filterDate("2018-01-01","2018-12-31")
   .filterBounds(Paradise);
-// Filter dates
+
+/* Filter dates
     var startyear = 2016,
         endyear = 2017,
         month = 11,
@@ -400,6 +401,7 @@ var collection = ee.ImageCollection("NOAA/VIIRS/DNB/MONTHLY_V1/VCMSLCFG");
         enddate = ee.Date.fromYMD(endyear, month, day);
 
 // var viirs = ee.Image('NOAA/VIIRS/DNB/MONTHLY_V1/VCMCFG/20170901'); //load nightime data
+*/
 
 //Map.addLayer(viirs,{bands:[],min:0,max:1}, 'nightmap', 0);
 var specific = viirs.select('avg_rad');
