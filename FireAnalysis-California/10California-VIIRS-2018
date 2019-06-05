@@ -388,24 +388,20 @@ var Paradise = /* color: #d63000 */ee.Geometry.Polygon(
           [-121.812967, 39.884304],
           [-121.873712, 39.883994]]]);
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
+//Import all images from the NOAA Fire/Natural Events-Corrected Lighting Product
 var collection = ee.ImageCollection("NOAA/VIIRS/DNB/MONTHLY_V1/VCMSLCFG")
-  .filterDate("2018-01-01","2018-12-31")
-  .filterBounds(Paradise);
+  .filterDate("2018-01-01","2018-12-31") // for 2018
+  .filterBounds(Paradise); //around the Town of Paradise, California, USA
 
-/* Filter dates
-    var startyear = 2016,
-        endyear = 2017,
-        month = 11,
-        day = 14,
-        startdate = ee.Date.fromYMD(startyear, month, day),
-        enddate = ee.Date.fromYMD(endyear, month, day);
+var viirs = collection.median(); //yearly composite of lighting, taking median values
 
-// var viirs = ee.Image('NOAA/VIIRS/DNB/MONTHLY_V1/VCMCFG/20170901'); //load nightime data
-*/
+//Display Layers on the Map
+Map.addLayer(viirs,{bands:[],min:0,max:1}, 'yearly median nightmap', 1, 0.5);
+var average = viirs.select('avg_rad');
+Map.addLayer(average,{bands:['avg_rad'],min:0,max:1},'average masked nightmap', 1, 0.9);
 
-//Map.addLayer(viirs,{bands:[],min:0,max:1}, 'nightmap', 0);
-var specific = viirs.select('avg_rad');
-Map.addLayer(specific,{bands:['avg_rad'],min:0,max:1},'masked', 1);
-
+//debug
 print(collection);
-print(specific);
+print(average);
+
+//Export (TBD)
