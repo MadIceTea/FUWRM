@@ -423,7 +423,7 @@ var single = dataset.median();
 var vis = {
   min: 303.5,
   max: 463.5,
-  gamma: 1.5,
+  palette: ["red", "orange", "white"],
 };
 
 // visualize image using visOpts above
