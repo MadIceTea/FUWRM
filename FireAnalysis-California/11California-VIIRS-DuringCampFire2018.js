@@ -1,7 +1,7 @@
-//Import images for 2019, after CampFire died out.
-//VIIRS Lvl.1 product does not filter out light from fires, so seperating this time period is necessary to determine true population density.
+//Import images for November 2018 - the month of the Camp Fire.
+//VIIRS Lvl.1 product does not filter out light from fires -- so we should see a region in full flame.
 var collection = ee.ImageCollection("NOAA/VIIRS/DNB/MONTHLY_V1/VCMSLCFG")
-  .filterDate("2019-01-01","2019-06-01") // for 2019 (skipping the month after Camp Fire ended)
+  .filterDate("2019-01-01","2019-06-01") // for Nov. 2018 (Camp Fire Time Period)
   .filterBounds(Paradise); //around the Town of Paradise, California, USA
 
 var viirs = collection.median(); //lighting composite, taking median values
@@ -42,7 +42,7 @@ single = single.addBands(mask);
 //VIIRS True-Color Image Export
 Export.image.toDrive({
   image: single,
-  description: "VIIRS_afterFire_Paradise",
+  description: "VIIRS_duringFire_Paradise",
   folder: "California-Paradise_CampFire2018",
   region:Paradise,
   scale:30.0,
