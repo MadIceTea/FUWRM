@@ -413,7 +413,7 @@ var fires = dataset.select('T21');
 var firesVis = {
   min: 285.4,
   max: 360.0,
-  palette: ['red', 'orange', 'yellow'],
+  palette: ['red', 'orange', 'white'],
 };
 Map.addLayer(fires, firesVis, 'Fires');
 
@@ -423,7 +423,7 @@ var single = dataset.median().select("T21");
 var vis = {
   min: 285.0, 
   max: 360.0,
-  palette: ['red', 'orange', 'yellow'],
+  palette: ['red', 'orange', 'white'],
 };
 
 // visualize image using visOpts above
