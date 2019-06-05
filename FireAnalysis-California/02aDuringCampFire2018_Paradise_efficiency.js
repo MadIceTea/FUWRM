@@ -1,16 +1,9 @@
 /**** Start of imports. If edited, may not auto-convert in the playground. ****/
-var Big_Square = 
-    /* color: #d63000 */
-    /* displayProperties: [
-      {
-        "type": "rectangle"
-      }
-    ] */
-    ee.Geometry.Polygon(
+var Big_Square = /* color: #acc235 */ee.Geometry.Polygon(
         [[[-122.03757135752642, 40.231519880601745],
           [-122.03757135752642, 39.49365087730002],
           [-121.16965143565142, 39.49365087730002],
-          [-121.16965143565142, 40.231519880601745]]], null, false),
+          [-121.16965143565142, 40.231519880601745]]]),
     Paradise = /* color: #d63000 */ee.Geometry.Polygon(
         [[[-121.873712, 39.883994],
           [-121.856864, 39.840851],
