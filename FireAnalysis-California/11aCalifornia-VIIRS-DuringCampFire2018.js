@@ -391,7 +391,7 @@ var Paradise = /* color: #d63000 */ee.Geometry.Polygon(
 //Import images for November 2018 - the month of the Camp Fire.
 //VIIRS Lvl.1 product does not filter out light from fires -- so we should see a region in full flame.
 var collection = ee.ImageCollection("NOAA/VIIRS/DNB/MONTHLY_V1/VCMSLCFG")
-  .filterDate("2018-12-01","2019-01-01") // for Nov. 2018 (Camp Fire Time Period)
+  .filterDate("2018-11-01","2018-12-01") // for Nov. 2018 (Camp Fire Time Period)
   .filterBounds(Paradise); //around the Town of Paradise, California, USA
 
 var viirs = collection.median(); //lighting composite, taking median values
@@ -403,9 +403,9 @@ Map.setCenter(-121.619, 39.894, 10);
 //Brightest value in Town of Paradise is max.
 //Minimum is set to 1 to eliminate street lighting.
 Map.addLayer(Paradise, {color: "acc235"}, "Town of Paradise", 1, 1);
-Map.addLayer(viirs,{bands:["avg_rad", "avg_rad", "cf_cvg"],min:1,max:97}, "median nightmap", 0, 1);
+Map.addLayer(viirs,{bands:["avg_rad", "avg_rad", "cf_cvg"],min:1,max:10}, "median nightmap", 0, 1);
 var single = viirs.select("avg_rad");
-Map.addLayer(single,{bands:["avg_rad"],min:1,max:97},"average masked nightmap", 1, 0.9);
+Map.addLayer(single,{bands:["avg_rad"],min:1,max:10},"average masked nightmap", 1, 0.9);
 
 //debug
 print(collection);
