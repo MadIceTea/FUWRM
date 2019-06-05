@@ -469,7 +469,7 @@ Export.image.toDrive({
   image: landsat_SR.first(),
   description: 'landsat_duringFire_Paradise',
   region:Paradise,
-  scale:50.0
+  scale:30.0
 });
 };
 
