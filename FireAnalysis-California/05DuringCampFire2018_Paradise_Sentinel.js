@@ -406,18 +406,18 @@ Map.addLayer(Paradise, {color: "000000"}, "Town of Paradise", 1, 1);
 Map.setCenter(-121.619, 39.894, 10);
 
 //filtering Against Paradise at 1-year resolution
-var sentinel_SR = ee.ImageCollection("COPERNICUS/S2") //load Sentinel2 raws for the duration of the fire
+var sentinel_AR = ee.ImageCollection("COPERNICUS/S2") //load Sentinel2 raws for the duration of the fire
 	.filterBounds(Paradise)
 	.filterDate("2018-11-08","2018-11-12")
 	// No need to filter for cloudy scenes: smoke is a given in fires.
 	.select(SENTINEL_2_BANDS, STD_NAMES);
 
-print(sentinel_SR); //date debug
+print(sentinel_AR); //date debug
 
 //Display the Composite ImageCollection
-Map.addLayer(sentinel_SR, {"bands":["red","blue","green"],min:0,max:2000}, "baselayer", 1, 0);
+Map.addLayer(sentinel_AR, {"bands":["red","blue","green"],min:0,max:2000}, "baselayer", 1, 0);
 
-var single = sentinel_SR.median();
+var single = sentinel_AR.median();
 
 function addNDVI(image) {
   return image
