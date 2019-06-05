@@ -393,8 +393,6 @@ var Big_Square = /* color: #acc235 */ee.Geometry.Polygon(
           [-121.812967, 39.884304],
           [-121.873712, 39.883994]]]);
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
-//Paradise City Shapefile was made an import to save on printed lines
-
 //L7SR Bands and Human-Friendly Naming
 var LANDSAT_7_BANDS = ["B1", "B2", "B3","B4","B5","B6","B7"];
 var STD_NAMES = ["blue","green","red","nir","swir1","tir","swir2"];
