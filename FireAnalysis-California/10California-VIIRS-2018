@@ -390,7 +390,7 @@ var Paradise = /* color: #d63000 */ee.Geometry.Polygon(
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
 var collection = ee.ImageCollection("NOAA/VIIRS/DNB/MONTHLY_V1/VCMSLCFG");
   .filterDate("2018-01-01","2018-12-31")
-  .filterBounds(paradise);
+  .filterBounds(Paradise);
 // Filter dates
     var startyear = 2016,
         endyear = 2017,
