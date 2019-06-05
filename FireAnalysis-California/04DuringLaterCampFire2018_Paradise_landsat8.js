@@ -420,14 +420,14 @@ Map.addLayer(ee.Image(0), {color: "000000"}, "Black Background", 1, 1);
 var single = landsat_SR.median();
 
 //Display the Composite
-Map.addLayer(landsat_SR, {'bands':["red","blue","green"],min:0,max:2000}, "baselayer", 1, 0);
-//Map.addLayer(landsat_SR, {'bands':["tir"],min:0,max:2000}, "temperature", 1, 1);
+Map.addLayer(landsat_SR, {"bands":["red","blue","green"],min:0,max:2000}, "baselayer", 1, 0);
+//Map.addLayer(landsat_SR, {"bands":["tir"],min:0,max:2000}, "temperature", 1, 1);
 
 var inputimage = landsat_SR.median();
 
 function addNDVI(image) {
   return image
-    .addBands(image.normalizedDifference(['nir','red']).rename('ndvi'))
+    .addBands(image.normalizedDifference(["nir","red"]).rename("ndvi"))
   ;
 }
 
