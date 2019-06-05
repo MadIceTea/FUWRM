@@ -432,7 +432,7 @@ function addNDVI(image) {
 
 var ndvi = addNDVI(inputimage);
 
-Map.addLayer(ndvi,{bands:['ndvi'],min:0,max:1}, 'ndvilayer', 1, 0);
+Map.addLayer(ndvi,{bands:['ndvi'],min:0,max:1}, 'ndvilayer', 0, 0);
 
 /*
 //predict land-cover bands
