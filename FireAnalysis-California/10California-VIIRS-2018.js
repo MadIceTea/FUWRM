@@ -399,7 +399,7 @@ var viirs = collection.median(); //lighting composite, taking median values
 //Center Map
 Map.setCenter(-121.619, 39.894, 10);
 
-//Display Layers on the Map with range of values that will eliminate street lighting and still light small towns such as Paradise and Magnolia, significantally. [~20% of values]
+//Display Layers on the Map with range of values that will eliminate street lighting and still light small towns such as Paradise and Magnolia, significantally. [~30% of values]
 Map.addLayer(Paradise, {color: "acc235"}, "Town of Paradise", 1, 1);
 Map.addLayer(viirs,{bands:["avg_rad", "avg_rad", "cf_cvg"],min:1,max:15}, "yearly median nightmap", 0, 1);
 var single = viirs.select("avg_rad");
