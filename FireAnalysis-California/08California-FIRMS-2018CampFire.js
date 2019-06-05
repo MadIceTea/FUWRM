@@ -443,7 +443,7 @@ single = single.addBands(mask);
 //FIRMS False-Color Image Export
 Export.image.toDrive({
   image: single,
-  description: "FIRMS_2018_Paradise_BigSquare",
+  description: "FIRMS_2018_Paradise_CampFire_BigSquare",
   folder: "California-Paradise_CampFire2018",
   region:Big_Square,
   scale:30.0,
