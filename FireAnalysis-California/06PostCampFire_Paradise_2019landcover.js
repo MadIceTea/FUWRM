@@ -409,7 +409,7 @@ var landsat_SR = ee.ImageCollection("LANDSAT/LC08/C01/T1_SR") //load LANDSAT8 ra
 	.filterBounds(Paradise)
 	.filterDate("2018-11-26","2019-05-31")
 	// Filter cloudy scenes.
-  .filter(ee.Filter.lt('CLOUD_COVER', 1))
+  .filter(ee.Filter.lt("CLOUD_COVER", 1))
 	.select(LANDSAT_8_BANDS, STD_NAMES);
 
 print(landsat_SR); //date debug
@@ -417,14 +417,14 @@ print(landsat_SR); //date debug
 var single = landsat_SR.median();
 
 //Display the Composite
-Map.addLayer(landsat_SR, {'bands':["red","blue","green"],min:0,max:2000}, "baselayer", 1, 0);
-//Map.addLayer(landsat_SR, {'bands':["tir"],min:0,max:2000}, "temperature", 1, 1);
+Map.addLayer(landsat_SR, {"bands":["red","blue","green"],min:0,max:2000}, "baselayer", 1, 0);
+//Map.addLayer(landsat_SR, {"bands":["tir"],min:0,max:2000}, "temperature", 1, 1);
 
 var inputimage = landsat_SR.median();
 
 function addNDVI(image) {
   return image
-    .addBands(image.normalizedDifference(['nir','red']).rename('ndvi'))
+    .addBands(image.normalizedDifference(["nir","red"]).rename("ndvi"))
   ;
 }
 
@@ -438,26 +438,26 @@ Map.addLayer(ndvi,{bands:["ndvi"],min:0,max:1}, "ndvilayer", 1, 0.15);
 
 /*
 //predict land-cover bands
-var predictionBands = ['blue','green','red','nir','swir1','swir2','ndvi'];
+var predictionBands = ["blue","green","red","nir","swir1","swir2","ndvi"];
 
 var trainingimage = ndvi.select(predictionBands);
 
-var trainingpolygons = ee.FeatureCollection('ft:18GtIidyOfJkJhnsX_-7MWr3b0VH3vZIKrymBsUC5');
+var trainingpolygons = ee.FeatureCollection("ft:18GtIidyOfJkJhnsX_-7MWr3b0VH3vZIKrymBsUC5");
 
 var training = trainingimage.sampleRegions({
     collection: trainingpolygons,
-    properties: ['class'],
+    properties: ["class"],
     scale: 160
 });
 
 //Train the CART classifier (a regular expression, not made up) with default parameters
-var trained = ee.Classifier.cart().train(training,'class', predictionBands);
+var trained = ee.Classifier.cart().train(training,"class", predictionBands);
 
 //Classify image with the same bands used for training.
 var CARTclassified = trainingimage.select(predictionBands).classify(trained);
 
 //Display the result
-Map.addLayer(CARTclassified, {min: 0, max: 3, palette: ['97CAf9','784800', '228B22', 'fff44f']}, 'CARTclassification', 1);
+Map.addLayer(CARTclassified, {min: 0, max: 3, palette: ["97CAf9","784800", "228B22", "fff44f"]}, "CARTclassification", 1);
 */
 
 //Landsat True-Color Image Export
