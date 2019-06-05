@@ -393,7 +393,7 @@ var Big_Square = /* color: #acc235 */ee.Geometry.Polygon(
           [-121.812967, 39.884304],
           [-121.873712, 39.883994]]]);
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
-//Skip this for export process -- this was Truong's Experimental "function program"
+//Skip this for export process -- this was Truong"s Experimental "function program"
 var l7 = ee.ImageCollection("LANDSAT/LE07/C01/T1_SR");
 var l8 = ee.ImageCollection("LANDSAT/LC08/C01/T1_SR");
 //L7SR Bands and Human-Friendly Naming
@@ -416,7 +416,7 @@ var landsat_SR =  collection//load LANDSAT8 raws for a single year
 	.filterBounds(roi)
 	.filterDate(dateStart,dateEnd)
 	// Filter cloudy scenes.
-  //.filter(ee.Filter.lt('CLOUD_COVER', 0.6))
+  //.filter(ee.Filter.lt("CLOUD_COVER", 0.6))
 	.select(bands, STD_NAMES);
 
 print(landsat_SR); //date debug
@@ -425,49 +425,49 @@ print(landsat_SR); //date debug
 // Map.addLayer(ee.Image(0));
 
 //Display the Composite
-Map.addLayer(landsat_SR, {'bands':["red","blue","green"],min:0,max:2000}, "baselayer", 0, 0.7);
-Map.addLayer(landsat_SR, {'bands':["tir"],min:1600,max:3000}, "temperature", 1, 1);
+Map.addLayer(landsat_SR, {"bands":["red","blue","green"],min:0,max:2000}, "baselayer", 0, 0.7);
+Map.addLayer(landsat_SR, {"bands":["tir"],min:1600,max:3000}, "temperature", 1, 1);
 
 var inputimage = landsat_SR.mode();
 
 function addNDVI(image) {
   return image
-    .addBands(image.normalizedDifference(['nir','red']).rename('ndvi'))
+    .addBands(image.normalizedDifference(["nir","red"]).rename("ndvi"))
   ;
 }
 
 var ndvi = addNDVI(inputimage);
 
-Map.addLayer(ndvi,{bands:['ndvi'],min:0,max:1}, 'ndvilayer', 0, 0);
+Map.addLayer(ndvi,{bands:["ndvi"],min:0,max:1}, "ndvilayer", 0, 0);
 
 /*
 //predict land-cover bands
-var predictionBands = ['blue','green','red','nir','swir1','swir2','ndvi'];
+var predictionBands = ["blue","green","red","nir","swir1","swir2","ndvi"];
 
 var trainingimage = ndvi.select(predictionBands);
 
-var trainingpolygons = ee.FeatureCollection('ft:18GtIidyOfJkJhnsX_-7MWr3b0VH3vZIKrymBsUC5');
+var trainingpolygons = ee.FeatureCollection("ft:18GtIidyOfJkJhnsX_-7MWr3b0VH3vZIKrymBsUC5");
 
 var training = trainingimage.sampleRegions({
     collection: trainingpolygons,
-    properties: ['class'],
+    properties: ["class"],
     scale: 160
 });
 
 //Train the CART classifier (a regular expression, not made up) with default parameters
-var trained = ee.Classifier.cart().train(training,'class', predictionBands);
+var trained = ee.Classifier.cart().train(training,"class", predictionBands);
 
 //Classify image with the same bands used for training.
 var CARTclassified = trainingimage.select(predictionBands).classify(trained);
 
 //Display the result
-Map.addLayer(CARTclassified, {min: 0, max: 3, palette: ['97CAf9','784800', '228B22', 'fff44f']}, 'CARTclassification', 1);
+Map.addLayer(CARTclassified, {min: 0, max: 3, palette: ["97CAf9","784800", "228B22", "fff44f"]}, "CARTclassification", 1);
 */
 
 //Landsat True-Color Image Export
 Export.image.toDrive({
   image: landsat_SR.first(),
-  description: 'landsat_duringFire_Paradise',
+  description: "landsat_duringFire_Paradise",
   region:Paradise,
   scale:30.0
 });
