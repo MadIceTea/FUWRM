@@ -397,8 +397,8 @@ var Big_Square = /* color: #acc235 */ee.Geometry.Polygon(
 Map.addLayer(Paradise, {color: "000000"}, "Town of Paradise", 1, 1);
 
 //Add an outline of Butte County (of which Paradise is a part of)
-var Butte_County = ee.FeatureCollection('TIGER/2016/Counties')
-  .filter(ee.Filter.eq('NAME', 'Butte'));
+var Butte_County = ee.FeatureCollection("TIGER/2016/Counties")
+  .filter(ee.Filter.eq("NAME", "Butte"));
 print(Butte_County);
 var table = Butte_County;
 Map.addLayer(table, {color: "acc235"}, "Butte County", 1, 1);
@@ -406,24 +406,24 @@ Map.addLayer(table, {color: "acc235"}, "Butte County", 1, 1);
 //Center Map
 Map.setCenter(-121.616, 39.761, 9);
 
-var dataset = ee.ImageCollection('FIRMS')
+var dataset = ee.ImageCollection("FIRMS")
   .filterBounds(Butte_County)
-  .filter(ee.Filter.date('2018-01-01', '2019-12-31'));
-var fires = dataset.select('T21');
+  .filter(ee.Filter.date("2018-01-01", "2019-12-31"));
+var fires = dataset.select("T21");
 var firesVis = {
   min: 300.1,
   max: 468.9,
-  palette: ['red', 'orange', 'white'],
+  palette: ["red", "orange", "white"],
 };
-Map.addLayer(fires, firesVis, 'Fires');
+Map.addLayer(fires, firesVis, "Fires");
 
-var single = dataset.median().select('T21');
+var single = dataset.median().select("T21");
 
 //FIRMS False-Color Image Creation
 var vis = {
   min: 300.1, 
   max: 468.9,
-  palette: ['red', 'orange', 'white'],
+  palette: ["red", "orange", "white"],
 };
 
 // visualize image using visOpts above
