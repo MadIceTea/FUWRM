@@ -413,17 +413,17 @@ var fires = dataset.select('T21');
 var firesVis = {
   min: 300.1,
   max: 468.9,
-  palette: ['red', 'orange', 'yellow'],
+  palette: ['red', 'orange', 'white'],
 };
 Map.addLayer(fires, firesVis, 'Fires');
 
-var single = dataset.median();
+var single = dataset.median().select('T21');
 
 //FIRMS False-Color Image Creation
 var vis = {
   min: 300.1, 
   max: 468.9,
-  gamma: 1.5,
+  palette: ['red', 'orange', 'white'],
 };
 
 // visualize image using visOpts above
