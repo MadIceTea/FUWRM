@@ -460,6 +460,15 @@ Map.addLayer(CARTclassified, {min: 0, max: 3, palette: ['97CAf9','784800', '228B
 
 var single = landsat_SR.median().select("tir");
 
+var tempVis = {
+  min: 1950.0,
+  max: 3014.0,
+  palette: ["red", "orange", "white"],
+};
+Map.addLayer(single, tempVis, "temperature");
+
+var single = dataset.median().select("T21");
+
 //LANDSAT TIR False-Color Image Creation at 100% of wider-than-roi data used.
 var vis = {
   min: 1950.0,
