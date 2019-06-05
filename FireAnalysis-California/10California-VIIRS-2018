@@ -394,20 +394,21 @@ var collection = ee.ImageCollection("NOAA/VIIRS/DNB/MONTHLY_V1/VCMSLCFG")
   .filterDate("2018-01-01","2018-11-01") // for 2018 (until the week before the fire started)
   .filterBounds(Paradise); //around the Town of Paradise, California, USA
 
-var single = collection.median(); //lighting composite, taking median values
+var viirs = collection.median(); //lighting composite, taking median values
 
 //Center Map
 Map.setCenter(-121.619, 39.894, 10);
 
 //Display Layers on the Map with range of values that will eliminate street lighting and still light small towns such as Paradise and Magnolia, significantally.
 Map.addLayer(Paradise, {color: "acc235"}, "Town of Paradise", 1, 1);
-Map.addLayer(single,{bands:["avg_rad", "avg_rad", "cf_cvg"],min:1,max:10}, "yearly median nightmap", 1, 0.45);
-var average = single.select("avg_rad");
-Map.addLayer(average,{bands:["avg_rad"],min:1,max:10},"average masked nightmap", 1, 0.5);
+Map.addLayer(viirs,{bands:["avg_rad", "avg_rad", "cf_cvg"],min:1,max:10}, "yearly median nightmap", 1, 0.45);
+var single = viirs.select("avg_rad");
+Map.addLayer(single,{bands:["avg_rad"],min:1,max:10},"average masked nightmap", 1, 0.5);
 
 //debug
 print(collection);
-print(average);
+print(viirs);
+print(single);
 
 //Export Process
 var vis = {
