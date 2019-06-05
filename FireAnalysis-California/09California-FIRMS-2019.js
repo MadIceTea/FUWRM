@@ -1,5 +1,10 @@
 /**** Start of imports. If edited, may not auto-convert in the playground. ****/
-var Paradise = /* color: #d63000 */ee.Geometry.Polygon(
+var Big_Square = /* color: #acc235 */ee.Geometry.Polygon(
+        [[[-122.03757135752642, 40.231519880601745],
+          [-122.03757135752642, 39.49365087730002],
+          [-121.16965143565142, 39.49365087730002],
+          [-121.16965143565142, 40.231519880601745]]]),
+    Paradise = /* color: #d63000 */ee.Geometry.Polygon(
         [[[-121.873712, 39.883994],
           [-121.856864, 39.840851],
           [-121.860722, 39.831409],
@@ -386,12 +391,7 @@ var Paradise = /* color: #d63000 */ee.Geometry.Polygon(
           [-121.806104, 39.888217],
           [-121.804041, 39.884344],
           [-121.812967, 39.884304],
-          [-121.873712, 39.883994]]]),
-    Export_View = /* color: #15d8f8 */ee.Geometry.Polygon(
-        [[[-122.93161279296874, 40.75033168574092],
-          [-122.93161279296874, 38.712256323859954],
-          [-120.45419580078124, 38.712256323859954],
-          [-120.45419580078124, 40.75033168574092]]]);
+          [-121.873712, 39.883994]]]);
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
 //Butte County and Paradise are import records to save on the ~3000 lines that would otherwise be needed.
 
@@ -443,9 +443,9 @@ single = single.addBands(mask);
 //FIRMS False-Color Image Export
 Export.image.toDrive({
   image: single,
-  description: "FIRMS_2019average_ButteCounty",
+  description: "FIRMS_2019average_ButteCounty_BigSquare",
   folder: "California-Paradise_CampFire2018",
-  region:Export_View,
+  region:Big_Square,
   scale:30.0,
   fileFormat: "GeoTIFF",
   crs: "EPSG:3857",
