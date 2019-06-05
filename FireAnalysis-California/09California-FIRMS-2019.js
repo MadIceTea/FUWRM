@@ -413,7 +413,7 @@ var fires = dataset.select("T21");
 // 100% of data points in the wider-than-viewport region.
 var firesVis = {
   min: 301.0,
-  max: 398.8,
+  max: 379.8,
   palette: ["red", "orange", "white"],
 };
 Map.addLayer(fires, firesVis, "Fires");
@@ -422,8 +422,8 @@ var single = dataset.median().select("T21");
 
 //FIRMS False-Color Image Creation
 var vis = {
-  min: 285.0, 
-  max: 360.0,
+  min: 301.0, 
+  max: 379.8,
   palette: ["red", "orange", "white"],
 };
 
