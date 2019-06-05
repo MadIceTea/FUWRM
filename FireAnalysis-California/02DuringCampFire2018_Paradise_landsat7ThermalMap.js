@@ -465,9 +465,8 @@ var tempVis = {
   max: 3014.0,
   palette: ["red", "orange", "white"],
 };
-Map.addLayer(single, tempVis, "temperature");
 
-var single = dataset.median().select("T21");
+Map.addLayer(single, tempVis, "temperature");
 
 //LANDSAT TIR False-Color Image Creation at 100% of wider-than-roi data used.
 var vis = {
