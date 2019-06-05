@@ -1,5 +1,10 @@
 /**** Start of imports. If edited, may not auto-convert in the playground. ****/
-var Paradise = /* color: #d63000 */ee.Geometry.Polygon(
+var Big_Square = /* color: #acc235 */ee.Geometry.Polygon(
+        [[[-122.03757135752642, 40.231519880601745],
+          [-122.03757135752642, 39.49365087730002],
+          [-121.16965143565142, 39.49365087730002],
+          [-121.16965143565142, 40.231519880601745]]]),
+    Paradise = /* color: #d63000 */ee.Geometry.Polygon(
         [[[-121.873712, 39.883994],
           [-121.856864, 39.840851],
           [-121.860722, 39.831409],
@@ -388,6 +393,8 @@ var Paradise = /* color: #d63000 */ee.Geometry.Polygon(
           [-121.812967, 39.884304],
           [-121.873712, 39.883994]]]);
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
+
+
 //Paradise City Shapefile was made an import to save on printed lines
 
 //Sentinel-2 Bands and Human-Friendly Naming
