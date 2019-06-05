@@ -409,7 +409,7 @@ Map.addLayer(average,{bands:["avg_rad"],min:1,max:10},"average masked nightmap",
 print(collection);
 print(average);
 
-//Export (TBD)
+//Export Process
 var vis = {
   min: 1, 
   max: 10,
@@ -428,7 +428,7 @@ var mask = single.mask().reduce(ee.Reducer.min())
     .multiply(255).toByte();
 single = single.addBands(mask);
 
-//Landsat True-Color Image Export
+//VIIRS True-Color Image Export
 Export.image.toDrive({
   image: single,
   description: "VIIRS_beforeFire_Paradise",
