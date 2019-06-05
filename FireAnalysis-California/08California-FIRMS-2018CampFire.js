@@ -411,8 +411,8 @@ var dataset = ee.ImageCollection('FIRMS')
   .filter(ee.Filter.date('2018-11-08', '2019-11-25'));
 var fires = dataset.select('T21');
 var firesVis = {
-  min: 303.5,
-  max: 463.5,
+  min: 300.1,
+  max: 466.7,
   palette: ["red", "orange", "white"],
 };
 Map.addLayer(fires, firesVis, 'Fires');
@@ -421,8 +421,8 @@ var single = dataset.median().select("T21");
 
 //FIRMS False-Color Image Creation
 var vis = {
-  min: 303.5,
-  max: 463.5,
+  min: 300.1,
+  max: 466.7,
   palette: ["red", "orange", "white"],
 };
 
