@@ -486,9 +486,9 @@ single = single.addBands(mask);
 //Landsat True-Color Image Export
 Export.image.toDrive({
   image: single,
-  description: "landsat_postFire2019_Paradise",
+  description: "landsat_postFire2019_Paradise_BigSquare",
   folder: "California-Paradise_CampFire2018",
-  region:Paradise,
+  region:Big_Square,
   scale:30.0,
   fileFormat: "GeoTIFF",
   crs: "EPSG:3857",
