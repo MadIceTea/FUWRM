@@ -407,7 +407,5 @@ var collection = ee.ImageCollection("NOAA/VIIRS/DNB/MONTHLY_V1/VCMSLCFG")
 var specific = viirs.select('avg_rad');
 Map.addLayer(specific,{bands:['avg_rad'],min:0,max:1},'masked', 1);
 
+print(collection);
 print(specific);
-print(viirs); //debug steps
-
-var single = specific.median();
