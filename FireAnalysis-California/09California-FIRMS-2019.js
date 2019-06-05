@@ -417,7 +417,7 @@ var firesVis = {
 };
 Map.addLayer(fires, firesVis, 'Fires');
 
-var single = dataset.median();
+var single = dataset.median().select("T21");
 
 //FIRMS False-Color Image Creation
 var vis = {
