@@ -436,7 +436,7 @@ var mask = single.mask().reduce(ee.Reducer.min())
     .multiply(255).toByte();
 single = single.addBands(mask);
 
-//VIIRS True-Color Image Export
+//VIIRS Image Export
 Export.image.toDrive({
   image: single,
   description: "VIIRS_aftermathFire_Paradise_BigSquare",
