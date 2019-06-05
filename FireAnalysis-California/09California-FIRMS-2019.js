@@ -393,8 +393,6 @@ var Big_Square = /* color: #acc235 */ee.Geometry.Polygon(
           [-121.812967, 39.884304],
           [-121.873712, 39.883994]]]);
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
-//Butte County and Paradise are import records to save on the ~3000 lines that would otherwise be needed.
-
 //Add an outline of the Town of Paradise
 Map.addLayer(Paradise, {color: "000000"}, "Town of Paradise", 1, 1);
 
