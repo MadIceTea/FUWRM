@@ -406,7 +406,7 @@ Map.setCenter(-121.619, 39.894, 10);
 //filtering Against Paradise at 1-year resolution
 var landsat_SR = ee.ImageCollection("LANDSAT/LC08/C01/T1_SR") //load LANDSAT8 raws for during the fire period
 	.filterBounds(Paradise)
-	.filterDate("2018-11-08","2018-11-25")
+	.filterDate("2018-11-08","2018-11-10")
 	// No need to filter for cloudy scenes: smoke is a given in fires.
 	.select(LANDSAT_8_BANDS, STD_NAMES);
 
