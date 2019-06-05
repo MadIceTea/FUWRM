@@ -413,7 +413,7 @@ print(single);
 //Export Process
 var vis = {
   min: 1, 
-  max: 10,
+  max: 15,
   gamma: 1.5,
 };
 
