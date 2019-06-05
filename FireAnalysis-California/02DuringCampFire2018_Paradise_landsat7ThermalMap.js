@@ -458,10 +458,35 @@ var CARTclassified = trainingimage.select(predictionBands).classify(trained);
 Map.addLayer(CARTclassified, {min: 0, max: 3, palette: ['97CAf9','784800', '228B22', 'fff44f']}, 'CARTclassification', 1);
 */
 
-//Landsat True-Color Image Export
+var single = landsat_SR.median().select("tir");
+
+//LANDSAT TIR False-Color Image Creation
+var vis = {
+  min: 300.1,
+  max: 466.7,
+  palette: ["red", "orange", "white"],
+};
+
+// visualize image using visOpts above
+// turning it into 8-bit RGB image.
+single = single.visualize(vis);
+
+// obtain native scale of RGB bands
+var scale = single.projection().nominalScale().getInfo();
+
+// add an alpha channel as 4th band to mask no data regions
+var mask = single.mask().reduce(ee.Reducer.min())
+    .multiply(255).toByte();
+single = single.addBands(mask);
+
+//LANDSAT TIR False-Color Image Export
 Export.image.toDrive({
-  image: landsat_SR.median().select("tir"),
-  description: 'landsat7Temperature_duringFire_Paradise_BigSquare',
+  image: single,
+  description: "landsat7Temperature_duringFire_Paradise_BigSquare",
+  folder: "California-Paradise_CampFire2018",
   region:Big_Square,
-  scale:30.0
+  scale:30.0,
+  fileFormat: "GeoTIFF",
+  crs: "EPSG:3857",
+  formatOptions: {cloudOptimized: true}
 });
