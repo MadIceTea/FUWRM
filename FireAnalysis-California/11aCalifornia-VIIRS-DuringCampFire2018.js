@@ -400,7 +400,7 @@ var viirs = collection.median(); //lighting composite, taking median values
 Map.setCenter(-121.619, 39.894, 10);
 
 //Display Layers on the Map with limited range of values.
-//Brightest value in Town of Paradise is max.
+//Brightest value in Town of Paradise during Camp Fire (~10) is max.
 //Minimum is set to 1 to eliminate street lighting.
 Map.addLayer(Paradise, {color: "acc235"}, "Town of Paradise", 1, 1);
 Map.addLayer(viirs,{bands:["avg_rad", "avg_rad", "cf_cvg"],min:1,max:10}, "median nightmap", 0, 1);
