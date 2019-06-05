@@ -410,9 +410,10 @@ var dataset = ee.ImageCollection('FIRMS')
   .filterBounds(Butte_County)
   .filter(ee.Filter.date('2019-01-01', '2019-06-01'));
 var fires = dataset.select('T21');
+// 100% of data points in the wider-than-viewport region.
 var firesVis = {
-  min: 285.4,
-  max: 360.0,
+  min: 301.0,
+  max: 398.8,
   palette: ['red', 'orange', 'white'],
 };
 Map.addLayer(fires, firesVis, 'Fires');
