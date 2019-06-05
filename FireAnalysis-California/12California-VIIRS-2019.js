@@ -394,7 +394,7 @@ var collection = ee.ImageCollection("NOAA/VIIRS/DNB/MONTHLY_V1/VCMSLCFG")
   .filterDate("2019-01-01","2019-06-01") // for 2019 (skipping the month after Camp Fire ended)
   .filterBounds(Paradise); //around the Town of Paradise, California, USA
 
-var viirs = collection.median(); //lighting composite, taking median values
+var viirs = collection.first(); //lighting composite, taking median values
 
 //Center Map
 Map.setCenter(-121.619, 39.894, 10);
