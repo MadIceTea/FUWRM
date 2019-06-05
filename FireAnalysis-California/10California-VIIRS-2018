@@ -394,15 +394,15 @@ var collection = ee.ImageCollection("NOAA/VIIRS/DNB/MONTHLY_V1/VCMSLCFG")
   .filterDate("2018-01-01","2018-11-01") // for 2018 (until the week before the fire started)
   .filterBounds(Paradise); //around the Town of Paradise, California, USA
 
-var viirs = collection.median(); //lighting composite, taking median values
+var single = collection.median(); //lighting composite, taking median values
 
 //Center Map
 Map.setCenter(-121.619, 39.894, 10);
 
 //Display Layers on the Map with range of values that will eliminate street lighting and still light small towns such as Paradise and Magnolia, significantally.
 Map.addLayer(Paradise, {color: "acc235"}, "Town of Paradise", 1, 1);
-Map.addLayer(viirs,{bands:["avg_rad", "avg_rad", "cf_cvg"],min:1,max:10}, "yearly median nightmap", 1, 0.45);
-var average = viirs.select("avg_rad");
+Map.addLayer(single,{bands:["avg_rad", "avg_rad", "cf_cvg"],min:1,max:10}, "yearly median nightmap", 1, 0.45);
+var average = single.select("avg_rad");
 Map.addLayer(average,{bands:["avg_rad"],min:1,max:10},"average masked nightmap", 1, 0.5);
 
 //debug
@@ -410,3 +410,32 @@ print(collection);
 print(average);
 
 //Export (TBD)
+var vis = {
+  min: 1, 
+  max: 10,
+  gamma: 1.5,
+};
+
+// visualize image using visOpts above
+// turning it into 8-bit visible image.
+single = single.visualize(vis);
+
+// obtain native scale of avg_rad band
+var scale = single.projection().nominalScale().getInfo();
+
+// add an alpha channel as 4th band to mask no data regions
+var mask = single.mask().reduce(ee.Reducer.min())
+    .multiply(255).toByte();
+single = single.addBands(mask);
+
+//Landsat True-Color Image Export
+Export.image.toDrive({
+  image: single,
+  description: "VIIRS_beforeFire_Paradise",
+  folder: "California-Paradise_CampFire2018",
+  region:Paradise,
+  scale:30.0,
+  fileFormat: "GeoTIFF",
+  crs: "EPSG:3857",
+  formatOptions: {cloudOptimized: true}
+});
