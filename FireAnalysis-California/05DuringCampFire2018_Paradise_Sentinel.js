@@ -459,7 +459,7 @@ Export.image.toDrive({
   description: "sentinel_averageDuringFire_Paradise_BigSquare",
   folder: "California-Paradise_CampFire2018",
   region:Big_Square,
-  scale:10.0,
+  scale:20.0,
   fileFormat: "GeoTIFF",
   crs: "EPSG:3857",
   formatOptions: {cloudOptimized: true}
