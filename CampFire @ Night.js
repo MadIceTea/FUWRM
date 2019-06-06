@@ -417,4 +417,4 @@ var image = ee.Image("LANDSAT/LC08/C01/T2/LC08_141210_20181116");
 // print(Collection);
 print(image);
 
-Map.addLayer(image, {bands:["B4","B3","B2"],min:5010,max:5040,gamma:1.5}, "CampFire@Night",1,1);
+Map.addLayer(image, {bands:["B4","B3","B2"],min:5010,max:5040,gamma:1.5}, "FosterCity@Night",1,1);
