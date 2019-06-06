@@ -403,8 +403,8 @@ var dataset = ee.ImageCollection('NASA/NLDAS/FORA0125_H002')
                   .filter(ee.Filter.date('2018-05-08', '2018-11-08'));
 var temperature = dataset.select('temperature');
 var temperatureVis = {
-  min: -5.0,
-  max: 40.0,
+  min: 10,
+  max: 26,
   palette: ['3d2bd8', '4e86da', '62c7d8', '91ed90', 'e4f178', 'ed6a4c'],
 };
 Map.addLayer(temperature, temperatureVis, 'Temperature');
