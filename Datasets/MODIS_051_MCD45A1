@@ -7,3 +7,5 @@ var burnedAreaVis = {
 };
 Map.setCenter(6.746, 46.529, 2);
 Map.addLayer(burnedArea, burnedAreaVis, 'Burned Area');
+
+print(dataset);
