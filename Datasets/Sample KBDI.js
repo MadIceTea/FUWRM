@@ -9,5 +9,5 @@ var band_viz = {
     "Maroon"
   ]
 };
-Map.addLayer(collection.mean(), band_viz, "ozone");
+Map.addLayer(collection.mean(), band_viz, "KBDI");
 Map.setCenter(-179, 60, 2);
