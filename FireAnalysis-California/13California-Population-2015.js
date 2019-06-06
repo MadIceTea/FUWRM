@@ -405,3 +405,4 @@ Map.setCenter(-121.619, 39.894, 10);
 
 //Display Layers on the Map with limited range of values.
 Map.addLayer(Paradise, {color: "acc235"}, "Town of Paradise", 1, 1);
+Map.addLayer(sentinel_AR, {"bands":["red","blue","green"],min:0,max:2000}, "baselayer", 1, 0);
