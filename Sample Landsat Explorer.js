@@ -219,7 +219,7 @@ app.createConstants = function() {
     'Natural color (B4/B3/B2)': {
       description: 'Ground features appear in colors similar to their ' +
                    'appearance to the human visual system.',
-      visParams: {gamma: 1.3, min: 0, max: 0.3, bands: ['B3', 'B2', 'B1']}
+      visParams: {gamma: 1.3, min: 0, max: 0.3, bands: ['B4', 'B3', 'B2']}
     },
     'Atmospheric (B7/B6/B5)': {
       description: 'Coast lines and shores are well-defined. ' +
