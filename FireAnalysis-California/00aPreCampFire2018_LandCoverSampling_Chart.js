@@ -635,9 +635,9 @@ var options = {
   lineWidth: 1,
   pointSize: 4,
   series: {
-    0: {color: '00FF00'}, // park
-    1: {color: '0000FF'}, // farm
-    2: {color: 'FF0000'}, // urban
+    0: {color: "orange"}, // Community Park
+    1: {color: "purple"}, // Bille Park
+    2: {color: "teal"}, // Aquatic (now Memorial) Park
 }};
 
 // Define a list of Landsat 8 wavelengths for X-axis labels.
