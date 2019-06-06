@@ -392,29 +392,17 @@ var imageCollection = ee.ImageCollection("LANDSAT/LC08/C01/T2"),
           [-121.806104, 39.888217],
           [-121.804041, 39.884344],
           [-121.812967, 39.884304],
-          [-121.873712, 39.883994]]]),
-    FosterCity = 
-    /* color: #98ff00 */
-    /* displayProperties: [
-      {
-        "type": "rectangle"
-      }
-    ] */
-    ee.Geometry.Polygon(
-        [[[-122.28170716379014, 37.56851506879546],
-          [-122.28170716379014, 37.547150104390596],
-          [-122.25355469796983, 37.547150104390596],
-          [-122.25355469796983, 37.56851506879546]]], null, false);
+          [-121.873712, 39.883994]]]);
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
 var Collection = imageCollection
   .filterDate("2018-11-07", "2018-11-25")
-  .filterBounds(FosterCity);
+  .filterBounds(Paradise);
 
-Map.centerObject(FosterCity,11);
+Map.centerObject(Paradise,10);
 
 var image = ee.Image("LANDSAT/LC08/C01/T2/LC08_141210_20181116");
 
 // print(Collection);
 print(image);
 
-Map.addLayer(image, {bands:["B4","B3","B2"],min:5010,max:5040,gamma:1.5}, "FosterCity@Night",1,1);
+Map.addLayer(image, {bands:["B4","B3","B2"],min:5007,max:5040,gamma:1.5}, "FosterCity@Night",1,1);
