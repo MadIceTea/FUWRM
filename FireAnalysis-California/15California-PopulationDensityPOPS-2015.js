@@ -396,7 +396,7 @@ var Big_Square = /* color: #acc235 */ee.Geometry.Polygon(
 //Should be near-redundant to the VIIRS data.
 //Seems like GPWv4, with "Machine learning".
 
-var single = ee.Image("CIESIN/GPWv4/population-density/2015"); //2015 image
+var single = ee.Image(""); //import 2018
 
 //debug
 print(single);
