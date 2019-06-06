@@ -1,3 +1,6 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var geometry = /* color: #d63000 */ee.Geometry.Point([139.6774271102471, 35.66209531371532]);
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
 // A UI to interactively filter a collection, select an individual image
 // from the results, display it with a variety of visualizations, and export it.
 
