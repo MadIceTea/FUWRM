@@ -405,19 +405,19 @@ var burnedArea = dataset.select("BurnDate");
 var burnedAreaVis = {
   min: 312.0, // Nov. 8th, 2018 (CampFire sparked)
   max: 329.0, // Nov. 25th, 2018 (CampFire contained)
-  palette:["Black","Orange","Azure"]
+  palette:["black","grey","white"]
 };
 Map.addLayer(burnedArea, burnedAreaVis, "Burned Area");
 
 print(dataset);
 
-single = dataset.first();
+single = dataset.first().select("BurnDate");
 
 //Export Process
 var vis = {
-  min: 0, 
-  max: 1200,
-  palette: ["black", "orange", "white"],
+  min: 312, 
+  max: 329,
+  palette: ["black","grey","white"],
 };
 
 // visualize image using visOpts above
