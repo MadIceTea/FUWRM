@@ -632,6 +632,8 @@ var image = ee.Image("LANDSAT/LC08/C01/T1_SR/LC08_044032_20180601")
     .select(["B[1-7]"]);
 Map.addLayer(image, {bands: ["B4", "B3", "B2"], min: 0, max: 2000});
 
+print(image);
+
 // Define and display a FeatureCollection of three known locations.
 var points = ee.FeatureCollection([
   Community_Park,
