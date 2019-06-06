@@ -415,7 +415,7 @@ Map.addLayer(Paradise, {color: "acc235"}, "Town of Paradise", 1, 1);
 Map.addLayer(population_density, {"bands":["population-density"],min:0,max:1200,palette: ["black", "orange", "white"]}, "population density", 0, 0.85);
 Map.addLayer(population_count, {"bands":["population-count"],min:0,max:800,palette: ["black", "orange", "white"]}, "population count", 0, 0.85);
 
-var single = population_density;
+var single = population_density.select("population-density");
 
 //Export Process
 var vis = {
