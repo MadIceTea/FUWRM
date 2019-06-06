@@ -422,7 +422,7 @@ var vis = {
 
 // visualize image using visOpts above
 // turning it into 8-bit visible image.
-single = single.visualize(vis);
+var single = single.visualize(vis);
 
 // obtain native scale of avg_rad band
 var scale = single.projection().nominalScale().getInfo();
