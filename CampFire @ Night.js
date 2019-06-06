@@ -401,7 +401,7 @@ var Collection = imageCollection
 //var image = ee.Image("LC08_L1GT_205209_20161228_20170314_01_T2");
 //var image = ee.Image("LANDSAT/LC08/C01/T2/LC08_205209_20161228");
 
-print(collection);
+print(Collection);
 // print(image);
 
 Map.addLayer(image, {bands:["B4","B3","B2"],min:5013,max:5050,gamma:1.5}, "Tokyo@Night",1,1);
