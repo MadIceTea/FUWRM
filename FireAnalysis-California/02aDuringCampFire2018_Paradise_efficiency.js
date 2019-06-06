@@ -416,7 +416,7 @@ var landsat_SR =  collection//load LANDSAT8 raws for a single year
 	.filterBounds(roi)
 	.filterDate(dateStart,dateEnd)
 	// Filter cloudy scenes.
-  //.filter(ee.Filter.lt("CLOUD_COVER", 0.6))
+  //.filter(ee.Filter.lt("CLOUD_COVER", 35))
 	.select(bands, STD_NAMES);
 
 print(landsat_SR); //date debug
