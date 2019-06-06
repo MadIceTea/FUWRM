@@ -420,7 +420,7 @@ print(single);
 //Export Process
 var vis = {
   min: 1, 
-  max: 5,
+  max: 10,
   palette: ["purple", "blue", "red"],
 };
 
