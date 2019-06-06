@@ -164,8 +164,6 @@ var park =
           "system:index": "0"
         });
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
-var park = park3;
-
 // Load and display a Landsat 8 image's reflective bands.
 var image = ee.Image('LANDSAT/LC08/C01/T1_TOA/LC08_026047_20140216')
     .select(['B[1-7]']);
