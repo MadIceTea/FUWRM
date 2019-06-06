@@ -1,5 +1,6 @@
 /**** Start of imports. If edited, may not auto-convert in the playground. ****/
-var Big_Square = /* color: #acc235 */ee.Geometry.Polygon(
+var Bille_Park = /* color: #ffc82d */ee.Geometry.Point([-121.6333, 39.77503]),
+    Big_Square = /* color: #acc235 */ee.Geometry.Polygon(
         [[[-122.03757135752642, 40.231519880601745],
           [-122.03757135752642, 39.49365087730002],
           [-121.16965143565142, 39.49365087730002],
@@ -393,15 +394,13 @@ var Big_Square = /* color: #acc235 */ee.Geometry.Polygon(
           [-121.812967, 39.884304],
           [-121.873712, 39.883994]]]);
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
-
-
 //Center Map
 Map.setCenter(-121.619, 39.894, 10);
 
 // We use a LANDSAT 8 image from six months before the fire (~May 2018).
 var image = ee.Image('LANDSAT/LC08/C01/T1_SR/LC08_044032_20180601')
     .select(['B[1-7]']);
-Map.addLayer(image, {bands: ['B4', 'B3', 'B2'], min: 0, max: 0.5});
+Map.addLayer(image, {bands: ['B4', 'B3', 'B2'], min: 0, max: 2000});
 
 // Define and display a FeatureCollection of three known locations.
 
