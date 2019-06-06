@@ -407,7 +407,7 @@ Map.setCenter(-121.619, 39.894, 10);
 var landsat_SR = ee.ImageCollection("LANDSAT/LE07/C01/T1_SR") //load LANDSAT7 raws for during the fire period
 	.filterBounds(Paradise)
 	.filterDate("2018-11-08","2018-11-25")
-	.filter(ee.Filter.lt("CLOUD_COVER", 1.1))
+	.filter(ee.Filter.lt("CLOUD_COVER", 35))
 	.select(LANDSAT_7_BANDS, STD_NAMES);
 
 print(landsat_SR); //date debug
