@@ -648,6 +648,8 @@ var options = {
   vAxis: {title: "Reflectance"},
   lineWidth: 1,
   pointSize: 4,
+  min: 0,
+  max: 4000,
   series: {
     0: {color: "orange"}, // Community Park
     1: {color: "purple"}, // Bille Park
