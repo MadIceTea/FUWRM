@@ -1,5 +1,5 @@
 var population = ee.ImageCollection("CIESIN/GPWv4/population-count")
-  .filterDate("2014-12-31","2019-01-01") // for Dec. 2018 (Camp Fire Immediate Aftermath)
+  .filterDate("2018-12-31","2020-01-10") // for Dec. 2018 (Camp Fire Immediate Aftermath)
   .filterBounds(Paradise); //around the Town of Paradise, California, USA
   
 //debug
