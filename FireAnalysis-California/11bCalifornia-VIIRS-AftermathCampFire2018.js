@@ -410,7 +410,7 @@ Map.setCenter(-121.619, 39.894, 10);
 Map.addLayer(Paradise, {color: "acc235"}, "Town of Paradise", 1, 1);
 Map.addLayer(viirs,{bands:["avg_rad", "avg_rad", "cf_cvg"],min:1,max:10}, "median nightmap", 0, 1);
 var single = viirs.select("avg_rad");
-Map.addLayer(single,{bands:["avg_rad"],min:1,max:10,palette: ["purple", "blue", "red"]},"average masked nightmap", 1, 0.9);
+Map.addLayer(single,{bands:["avg_rad"],min:1,max:10,palette: ["black", "orange", "white"]},"average masked nightmap", 1, 0.9);
 
 //debug
 print(collection);
@@ -421,7 +421,7 @@ print(single);
 var vis = {
   min: 1, 
   max: 10,
-  palette: ["purple", "blue", "red"],
+  palette: ["black", "orange", "white"],
 };
 
 // visualize image using visOpts above
