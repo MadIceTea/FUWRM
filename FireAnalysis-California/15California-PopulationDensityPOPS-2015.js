@@ -430,7 +430,7 @@ single = single.addBands(mask);
 //GPWv4 Image Export
 Export.image.toDrive({
   image: single,
-  description: "GPWv4-2015_preCampFire_Paradise_BigSquare",
+  description: "WorldPop2018_Paradise_BigSquare",
   folder: "California-Paradise_CampFire2018",
   region:Big_Square,
   scale:30.0,
