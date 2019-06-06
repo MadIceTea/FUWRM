@@ -439,7 +439,7 @@ single = single.addBands(mask);
 //VIIRS Image Export
 Export.image.toDrive({
   image: single,
-  description: "VIIRS_afterFire_Paradise_BigSquare",
+  description: "VIIRSColored_afterFire_Paradise_BigSquare",
   folder: "California-Paradise_CampFire2018",
   region:Big_Square,
   scale:30.0,
