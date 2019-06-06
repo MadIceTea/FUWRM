@@ -202,7 +202,7 @@ app.createHelpers = function() {
 
 /** Creates the app constants. */
 app.createConstants = function() {
-  app.COLLECTION_ID = 'LANDSAT/LE07/C01/T1_RT_TOA';
+  app.COLLECTION_ID = 'LANDSAT/LC08/C01/T1_RT_TOA';
   app.SECTION_STYLE = {margin: '20px 0 0 0'};
   app.HELPER_TEXT_STYLE = {
       margin: '8px 0 -3px 8px',
