@@ -5,7 +5,7 @@ var band_viz = {
   min: 0,
   max: 800,
   palette: [
-    "Navy", "Blue", "SkyBlue", "Green", "YellowGreen", "Peru", "Sienna",
+    "Navy", "SkyBlue", "HoneyDew", "Green", "YellowGreen", "Peru", "Sienna",
     "Maroon"
   ]
 };
