@@ -612,20 +612,19 @@ var Community_Park = /* color: #bf04c2 */ee.Geometry.Polygon(
 //Center Map
 Map.setCenter(-121.619, 39.894, 10);
 
-//Put everything in one feature collection
-var points = ee.feature.Collection([
-  Community_Park,
-  Bille_Park,
-  Aquatic_Memorial_Park,
-]);
-
 // We use a LANDSAT 8 image from six months before the fire (~May 2018).
 var image = ee.Image('LANDSAT/LC08/C01/T1_SR/LC08_044032_20180601')
     .select(['B[1-7]']);
 Map.addLayer(image, {bands: ['B4', 'B3', 'B2'], min: 0, max: 2000});
 
 // Define and display a FeatureCollection of three known locations.
+var points = ee.FeatureCollection([
+  Community_Park,
+  Bille_Park,
+  Aquatic_Memorial_Park,
+]);
 
+Map.addLayer(points);
 
 // Define customization options.
 var options = {
