@@ -412,5 +412,38 @@ Map.setCenter(-121.619, 39.894, 10);
 
 //Display Layers on the Map with limited range of values.
 Map.addLayer(Paradise, {color: "acc235"}, "Town of Paradise", 1, 1);
-Map.addLayer(population_density, {"bands":["population-density"],min:0,max:1200,palette: ["purple", "blue", "red"]}, "population density", 0, 0.85);
-Map.addLayer(population_count, {"bands":["population-count"],min:0,max:800,palette: ["purple", "blue", "red"]}, "population count", 0, 0.85);
+Map.addLayer(population_density, {"bands":["population-density"],min:0,max:1200,palette: ["black", "orange", "white"]}, "population density", 0, 0.85);
+Map.addLayer(population_count, {"bands":["population-count"],min:0,max:800,palette: ["black", "orange", "white"]}, "population count", 0, 0.85);
+
+single = population_density;
+
+//Export Process
+var vis = {
+  min: 0, 
+  max: 1200,
+  palette: ["black", "orange", "white"],
+};
+
+// visualize image using visOpts above
+// turning it into 8-bit visible image.
+single = single.visualize(vis);
+
+// obtain native scale of avg_rad band
+var scale = single.projection().nominalScale().getInfo();
+
+// add an alpha channel as 4th band to mask no data regions
+var mask = single.mask().reduce(ee.Reducer.min())
+    .multiply(255).toByte();
+single = single.addBands(mask);
+
+//GPWv4 Image Export
+Export.image.toDrive({
+  image: single,
+  description: "GPWv4-2015_preCampFire_Paradise_BigSquare",
+  folder: "California-Paradise_CampFire2018",
+  region:Big_Square,
+  scale:30.0,
+  fileFormat: "GeoTIFF",
+  crs: "EPSG:3857",
+  formatOptions: {cloudOptimized: true}
+});
