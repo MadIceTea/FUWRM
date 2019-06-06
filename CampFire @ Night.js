@@ -1,6 +1,5 @@
 /**** Start of imports. If edited, may not auto-convert in the playground. ****/
 var imageCollection = ee.ImageCollection("LANDSAT/LC08/C01/T2"),
-    geometry = /* color: #d63000 */ee.Geometry.Point([139.75074834909196, 35.907117212274045]),
     Big_Square = /* color: #acc235 */ee.Geometry.Polygon(
         [[[-122.03757135752642, 40.231519880601745],
           [-122.03757135752642, 39.49365087730002],
@@ -397,7 +396,7 @@ var imageCollection = ee.ImageCollection("LANDSAT/LC08/C01/T2"),
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
 var Collection = imageCollection
   .filterDate("2016-12-24", "2016-12-31")
-  .filterBounds(geometry);
+  .filterBounds(Paradise);
 
 //var image = ee.Image("LC08_L1GT_205209_20161228_20170314_01_T2");
 var image = ee.Image("LANDSAT/LC08/C01/T2/LC08_205209_20161228");
