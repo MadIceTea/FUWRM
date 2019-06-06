@@ -394,8 +394,9 @@ var Big_Square = /* color: #acc235 */ee.Geometry.Polygon(
           [-121.873712, 39.883994]]]);
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
 //Import images for 2019.
-var collection = ee.ImageCollection("NOAA/VIIRS/DNB/MONTHLY_V1/VCMSLCFG")
-  .filterDate("2019-01-01","2019-06-01") // for Dec. 2018 (Camp Fire Immediate Aftermath)
+//Use non-stray light corrected dataset, so that I gain March and April 2019.
+var collection = ee.ImageCollection("NOAA/VIIRS/DNB/MONTHLY_V1/VCMCFG")
+  .filterDate("2018-12-01","2019-01-01") // 2019 Images
   .filterBounds(Paradise); //around the Town of Paradise, California, USA
 
 var viirs = collection.median(); //lighting composite, taking median values
