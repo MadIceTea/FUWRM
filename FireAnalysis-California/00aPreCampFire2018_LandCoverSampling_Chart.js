@@ -401,14 +401,14 @@ Map.setCenter(-121.619, 39.894, 10);
 // We use a LANDSAT 8 image from six months before the fire (~May 2018).
 var image = ee.Image('LANDSAT/LC08/C01/T1_SR/LC08_044032_20180601')
     .select(['B[1-7]']);
-Map.addLayer(image, {bands: ['B5', 'B4', 'B3'], min: 0, max: 0.5});
+Map.addLayer(image, {bands: ['B4', 'B3', 'B2'], min: 0, max: 0.5});
 
 // Define and display a FeatureCollection of three known locations.
 
 
 // Define customization options.
 var options = {
-  title: 'Landsat 8 TOA spectra at three points near Mexico City',
+  title: 'Landsat 8 SR spectra for polygons in the Town of Paradise, Pre-Fire',
   hAxis: {title: 'Wavelength (micrometers)'},
   vAxis: {title: 'Reflectance'},
   lineWidth: 1,
