@@ -393,3 +393,46 @@ var Big_Square = /* color: #acc235 */ee.Geometry.Polygon(
           [-121.812967, 39.884304],
           [-121.873712, 39.883994]]]);
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
+//Center Map
+Map.setCenter(-121.619, 39.894, 10);
+
+// We use a LANDSAT 8 image from about six months after the fire (May 3, 2019).
+var image = ee.Image("LANDSAT/LC08/C01/T1_SR/LC08_044032_20190503")
+    .select(["B[1-7]"]);
+Map.addLayer(image, {bands: ["B4", "B3", "B2"], min: 0, max: 2000});
+
+// Define and display a FeatureCollection of three known locations.
+var points = ee.FeatureCollection([
+  Community_Park,
+  Bille_Park,
+  Aquatic_Memorial_Park,
+]);
+
+Map.addLayer(points);
+
+// Define customization options.
+var options = {
+  title: "Landsat 8 SR spectra for polygons in the Town of Paradise, Post-Fire",
+  hAxis: {title: "Wavelength (micrometers)"},
+  vAxis: {title: "Reflectance"},
+  lineWidth: 1,
+  pointSize: 4,
+  min: 0,
+  max: 4000,
+  series: {
+    0: {color: "orange"}, // Community Park
+    1: {color: "purple"}, // Bille Park
+    2: {color: "teal"}, // Aquatic (now Memorial) Park
+}};
+
+// Define a list of Landsat 8 wavelengths for X-axis labels.
+var wavelengths = [0.44, 0.48, 0.56, 0.65, 0.86, 1.61, 2.2];
+
+// Create the chart and set options.
+var spectraChart = ui.Chart.image.regions(
+    image, points, ee.Reducer.mean(), 30, "label", wavelengths)
+        .setChartType("ScatterChart")
+        .setOptions(options);
+
+// Display the chart in Console.
+print(spectraChart);
