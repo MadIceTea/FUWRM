@@ -651,4 +651,3 @@ var spectraChart = ui.Chart.image.regions(
 
 // Display the chart.
 print(spectraChart);
-    
