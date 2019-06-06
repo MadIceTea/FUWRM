@@ -1,5 +1,5 @@
 //Center Map
-// Map.setCenter(-121.619, 39.894, 10);
+Map.setCenter(-121.619, 39.894, 10);
 
 var collection = ee.ImageCollection('UTOKYO/WTLAB/KBDI/v1')
   .select("KBDI")
