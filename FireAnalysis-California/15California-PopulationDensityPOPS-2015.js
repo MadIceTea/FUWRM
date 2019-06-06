@@ -396,8 +396,7 @@ var Big_Square = /* color: #acc235 */ee.Geometry.Polygon(
 //Should be near-redundant to the VIIRS data.
 //Seems like GPWv4, with "Machine learning".
 
-var single = ee.Image("users/GEE_Alex/WorldPop_USA_2018")
-  .filterBounds(Paradise); //Import USA 2018 data image
+var single = ee.Image("users/GEE_Alex/WorldPop_USA_2018"); //Import USA 2018 data image
 
 //debug
 print(single);
