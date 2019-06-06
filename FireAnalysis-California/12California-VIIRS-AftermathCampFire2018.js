@@ -393,8 +393,7 @@ var Big_Square = /* color: #acc235 */ee.Geometry.Polygon(
           [-121.812967, 39.884304],
           [-121.873712, 39.883994]]]);
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
-//Import images for 2019.
-//Use non-stray light corrected dataset, so that I gain March and April 2019.
+//Import images for Dec. 2018, the month right after the Camp Fire.
 var collection = ee.ImageCollection("NOAA/VIIRS/DNB/MONTHLY_V1/VCMCFG")
   .filterDate("2018-12-01","2019-01-01") // 2019 Images
   .filterBounds(Paradise); //around the Town of Paradise, California, USA
