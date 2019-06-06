@@ -4,7 +4,7 @@ var burnedArea = dataset.select("BurnDate");
 var burnedAreaVis = {
   min: 0.0,
   max: 1.0,
-  palette:["white","yellow","black"]
+  palette:["black","purple","white"]
 };
 Map.setCenter(-121.619, 39.894, 10);
 Map.addLayer(burnedArea, burnedAreaVis, "Burned Area");
