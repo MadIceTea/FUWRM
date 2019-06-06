@@ -649,5 +649,5 @@ var spectraChart = ui.Chart.image.regions(
         .setChartType('ScatterChart')
         .setOptions(options);
 
-// Display the chart.
+// Display the chart in Console.
 print(spectraChart);
