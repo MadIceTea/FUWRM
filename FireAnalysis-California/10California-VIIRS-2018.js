@@ -394,7 +394,6 @@ var Big_Square = /* color: #acc235 */ee.Geometry.Polygon(
           [-121.873712, 39.883994]]]);
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
 //Import images for 2018, until CampFire started.
-//VIIRS Lvl.1 product does not filter out light from fires, so seperating this time period is necessary to determine true population density.
 var collection = ee.ImageCollection("NOAA/VIIRS/DNB/MONTHLY_V1/VCMSLCFG")
   .filterDate("2018-01-01","2018-11-01") // for 2018 (until the week before the fire started)
   .filterBounds(Paradise); //around the Town of Paradise, California, USA
