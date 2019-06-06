@@ -393,7 +393,7 @@ var Big_Square = /* color: #acc235 */ee.Geometry.Polygon(
           [-121.812967, 39.884304],
           [-121.873712, 39.883994]]]);
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
-var population = ee.ImageCollection("CIESIN/GPWv4/population-count")
+var population = ee.ImageCollection("CIESIN/GPWv4/population-density")
   .filterDate("2014-12-31","2019-01-01") // for Dec. 2018 (Camp Fire Immediate Aftermath)
   .filterBounds(Paradise); //around the Town of Paradise, California, USA
   
@@ -405,4 +405,4 @@ Map.setCenter(-121.619, 39.894, 10);
 
 //Display Layers on the Map with limited range of values.
 Map.addLayer(Paradise, {color: "acc235"}, "Town of Paradise", 1, 1);
-Map.addLayer(population, {"bands":["population-count"],min:0,max:800,palette: ["purple", "blue", "red"]}, "population", 1, 0.9);
+Map.addLayer(population, {"bands":["population-density"],min:0,max:800,palette: ["purple", "blue", "red"]}, "population", 1, 0.9);
