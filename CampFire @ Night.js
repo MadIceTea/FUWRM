@@ -406,4 +406,4 @@ var image = ee.Image("LANDSAT/LC08/C01/T2/LC08_141211_20181116");
 // print(Collection);
 print(image);
 
-// Map.addLayer(image, {bands:["B4","B3","B2"],min:5013,max:5050,gamma:1.5}, "Tokyo@Night",1,1);
+Map.addLayer(image, {bands:["B4","B3","B2"],min:5013,max:5050,gamma:1.5}, "CampFire@Night",1,1);
