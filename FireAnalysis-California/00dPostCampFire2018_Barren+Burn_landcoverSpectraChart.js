@@ -412,7 +412,7 @@ Map.addLayer(points);
 
 // Define customization options.
 var options = {
-  title: "Landsat 8 SR spectra for polygons in the Town of Paradise, Post-Fire",
+  title: "Landsat 8 SR spectra comparison for barren land vs burned area in the Town of Paradise, Post-Fire",
   hAxis: {title: "Wavelength (micrometers)"},
   vAxis: {title: "Reflectance"},
   lineWidth: 1,
