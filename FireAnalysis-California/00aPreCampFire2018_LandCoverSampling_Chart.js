@@ -1,5 +1,6 @@
 /**** Start of imports. If edited, may not auto-convert in the playground. ****/
-var Bille_Park = /* color: #ffc82d */ee.Geometry.Point([-121.6333, 39.77503]),
+var Aquatic_Park = /* color: #00ffff */ee.Geometry.Point([-121.61385, 39.74934]),
+    Bille_Park = /* color: #ffc82d */ee.Geometry.Point([-121.6333, 39.77503]),
     Big_Square = /* color: #acc235 */ee.Geometry.Polygon(
         [[[-122.03757135752642, 40.231519880601745],
           [-122.03757135752642, 39.49365087730002],
