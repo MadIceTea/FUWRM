@@ -137,6 +137,84 @@ var Community_Park = /* color: #bf04c2 */ee.Geometry.Polygon(
       ],
       "coordinates": []
     }),
+    Aquatic_Memorial_Park = 
+    /* color: #07e8ff */
+    /* displayProperties: [
+      {
+        "type": "rectangle"
+      },
+      {
+        "type": "marker"
+      },
+      {
+        "type": "marker"
+      },
+      {
+        "type": "marker"
+      },
+      {
+        "type": "marker"
+      }
+    ] */
+    ee.Geometry({
+      "type": "GeometryCollection",
+      "geometries": [
+        {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -121.61444307919567,
+                39.751852734820844
+              ],
+              [
+                -121.61444307919567,
+                39.75012876501868
+              ],
+              [
+                -121.6136384164912,
+                39.75012876501868
+              ],
+              [
+                -121.6136384164912,
+                39.751852734820844
+              ]
+            ]
+          ],
+          "geodesic": false,
+          "evenOdd": true
+        },
+        {
+          "type": "Point",
+          "coordinates": [
+            -121.61346675511425,
+            39.75019475508752
+          ]
+        },
+        {
+          "type": "Point",
+          "coordinates": [
+            -121.61382080670421,
+            39.74990604806971
+          ]
+        },
+        {
+          "type": "Point",
+          "coordinates": [
+            -121.6145932829005,
+            39.74979881372638
+          ]
+        },
+        {
+          "type": "Point",
+          "coordinates": [
+            -121.61461474057262,
+            39.75053295319813
+          ]
+        }
+      ],
+      "coordinates": []
+    }),
     Big_Square = /* color: #acc235 */ee.Geometry.Polygon(
         [[[-122.03757135752642, 40.231519880601745],
           [-122.03757135752642, 39.49365087730002],
@@ -529,88 +607,17 @@ var Community_Park = /* color: #bf04c2 */ee.Geometry.Polygon(
           [-121.806104, 39.888217],
           [-121.804041, 39.884344],
           [-121.812967, 39.884304],
-          [-121.873712, 39.883994]]]),
-    Aquatic_Memorial_Park = 
-    /* color: #07e8ff */
-    /* displayProperties: [
-      {
-        "type": "rectangle"
-      },
-      {
-        "type": "marker"
-      },
-      {
-        "type": "marker"
-      },
-      {
-        "type": "marker"
-      },
-      {
-        "type": "marker"
-      }
-    ] */
-    ee.Geometry({
-      "type": "GeometryCollection",
-      "geometries": [
-        {
-          "type": "Polygon",
-          "coordinates": [
-            [
-              [
-                -121.61444307919567,
-                39.751852734820844
-              ],
-              [
-                -121.61444307919567,
-                39.75012876501868
-              ],
-              [
-                -121.6136384164912,
-                39.75012876501868
-              ],
-              [
-                -121.6136384164912,
-                39.751852734820844
-              ]
-            ]
-          ],
-          "geodesic": false,
-          "evenOdd": true
-        },
-        {
-          "type": "Point",
-          "coordinates": [
-            -121.61346675511425,
-            39.75019475508752
-          ]
-        },
-        {
-          "type": "Point",
-          "coordinates": [
-            -121.61382080670421,
-            39.74990604806971
-          ]
-        },
-        {
-          "type": "Point",
-          "coordinates": [
-            -121.6145932829005,
-            39.74979881372638
-          ]
-        },
-        {
-          "type": "Point",
-          "coordinates": [
-            -121.61461474057262,
-            39.75053295319813
-          ]
-        }
-      ],
-      "coordinates": []
-    });
+          [-121.873712, 39.883994]]]);
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
 //Center Map
 Map.setCenter(-121.619, 39.894, 10);
+
+//Put everything in one feature collection
+var points = ee.feature.Collection([
+  Community_Park,
+  Bille_Park,
+  Aquatic_Memorial_Park,
+]);
 
 // We use a LANDSAT 8 image from six months before the fire (~May 2018).
 var image = ee.Image('LANDSAT/LC08/C01/T1_SR/LC08_044032_20180601')
