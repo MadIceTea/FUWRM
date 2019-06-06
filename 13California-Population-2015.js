@@ -395,4 +395,4 @@ var Big_Square = /* color: #acc235 */ee.Geometry.Polygon(
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
 var imageCollection = ee.ImageCollection("CIESIN/GPWv4/population-count")
   .filterDate("2014-12-31","2019-01-01") // for Dec. 2018 (Camp Fire Immediate Aftermath)
-  .filterBounds(Paradise); //around the Town of Paradise, California, USA
+  // .filterBounds(Paradise); //around the Town of Paradise, California, USA
