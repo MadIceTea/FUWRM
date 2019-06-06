@@ -410,7 +410,7 @@ Map.addLayer(single, {"bands":["b1"],min:1,max:10,palette: ["black", "orange", "
 
 //Export Process
 var vis = {
-  min: 0, 
+  min: 1, 
   max: 10,
   palette: ["black", "orange", "white"],
 };
