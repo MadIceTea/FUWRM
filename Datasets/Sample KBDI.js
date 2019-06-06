@@ -1,5 +1,5 @@
 //Center Map
-Map.setCenter(120, 10, 3);
+Map.setCenter(120, 0, 3);
 
 //Load KBDI collection
 var collection = ee.ImageCollection("UTOKYO/WTLAB/KBDI/v1")
