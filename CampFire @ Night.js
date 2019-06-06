@@ -395,7 +395,7 @@ var imageCollection = ee.ImageCollection("LANDSAT/LC08/C01/T2"),
           [-121.873712, 39.883994]]]);
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
 var Collection = imageCollection
-  .filterDate("2016-12-24", "2016-12-31")
+  .filterDate("2018-11-07", "2018-11-11")
   .filterBounds(Paradise);
 
 //var image = ee.Image("LC08_L1GT_205209_20161228_20170314_01_T2");
