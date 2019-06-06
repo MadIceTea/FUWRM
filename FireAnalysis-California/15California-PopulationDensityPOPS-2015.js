@@ -396,7 +396,7 @@ var Big_Square = /* color: #acc235 */ee.Geometry.Polygon(
 //Should be near-redundant to the VIIRS data.
 //Seems like GPWv4, with "Machine learning".
 
-var single = ee.Image("users/GEE_Alex/WorldPop_USA_2018"); //Import USA 2018 data image
+var single = ee.Image("users/GEE_Alex/WorldPop_USA_2018").select("b1"); //Import USA 2018 data image
 
 //debug
 print(single);
@@ -406,7 +406,7 @@ Map.setCenter(-121.619, 39.894, 10);
 
 //Display Layers on the Map with limited range of values.
 Map.addLayer(Paradise, {color: "acc235"}, "Town of Paradise", 1, 1);
-Map.addLayer(single, {"bands":["population-density"],min:0,max:1200,palette: ["black", "orange", "white"]}, "population density", 1, 0.85);
+Map.addLayer(single, {"bands":["b1"],min:0,max:1200,palette: ["black", "orange", "white"]}, "population density", 1, 0.85);
 
 //Export Process
 var vis = {
