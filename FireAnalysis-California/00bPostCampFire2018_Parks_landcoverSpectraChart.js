@@ -627,7 +627,7 @@ var Community_Park = /* color: #bf04c2 */ee.Feature(
 //Center Map
 Map.setCenter(-121.619, 39.894, 10);
 
-// We use a LANDSAT 8 image from about six months after the fire (May 1, 2018).
+// We use a LANDSAT 8 image from about six months after the fire (May 3, 2019).
 var image = ee.Image("LANDSAT/LC08/C01/T1_SR/LC08_044032_20190503")
     .select(["B[1-7]"]);
 Map.addLayer(image, {bands: ["B4", "B3", "B2"], min: 0, max: 2000});
