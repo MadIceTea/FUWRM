@@ -404,4 +404,4 @@ var Collection = imageCollection
 print(Collection);
 // print(image);
 
-Map.addLayer(image, {bands:["B4","B3","B2"],min:5013,max:5050,gamma:1.5}, "Tokyo@Night",1,1);
+// Map.addLayer(image, {bands:["B4","B3","B2"],min:5013,max:5050,gamma:1.5}, "Tokyo@Night",1,1);
