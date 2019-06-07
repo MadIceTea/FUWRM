@@ -970,7 +970,7 @@ print(house_spectraChart);
 
 // Define customization options for a small single-sample of one per type chart
 var sample_options = {
-  title: "Landsat 8 SR spectrum comparison for burn trees/buildings and already barren land in the Town of Paradise, Post-Fire",
+  title: "Landsat 8 SR spectrum comparison for trees/buildings and already barren land in the Town of Paradise, Post-Fire",
   hAxis: {title: "Wavelength (micrometers)"},
   vAxis: {title: "Reflectance"},
   lineWidth: 1,
