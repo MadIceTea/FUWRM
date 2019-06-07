@@ -756,3 +756,5 @@ var sample_spectraChart = ui.Chart.image.regions(
 
 // Display the chart in Console.
 print(sample_spectraChart);
+
+Export.chart.toDrive()
