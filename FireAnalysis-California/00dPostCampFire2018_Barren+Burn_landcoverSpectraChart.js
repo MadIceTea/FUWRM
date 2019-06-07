@@ -623,7 +623,7 @@ var house_points = ee.FeatureCollection([
 ]);
 
 // Define customization options.
-var options = {
+var all_options = {
   title: "Landsat 8 SR spectra comparison for barren land vs burned trees and houses in the Town of Paradise, Post-Fire",
   hAxis: {title: "Wavelength (micrometers)"},
   vAxis: {title: "Reflectance"},
