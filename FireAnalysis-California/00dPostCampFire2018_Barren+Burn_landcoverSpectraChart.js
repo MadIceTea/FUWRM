@@ -710,3 +710,26 @@ var tree_spectraChart = ui.Chart.image.regions(
 
 // Display the chart in Console.
 print(tree_spectraChart);
+
+// Define customization options for a burned homes and buildings land chart
+var house_options = {
+  title: "Landsat 8 SR spectra comparison for regions with burnt buildings and structures in the Town of Paradise, Post-Fire",
+  hAxis: {title: "Wavelength (micrometers)"},
+  vAxis: {title: "Reflectance"},
+  lineWidth: 1,
+  pointSize: 4,
+  min: 0,
+  max: 3000,
+};
+
+// Define a list of Landsat 8 wavelengths for X-axis labels.
+var wavelengths = [0.44, 0.48, 0.56, 0.65, 0.86, 1.61, 2.2];
+
+// Create the chart and set options.
+var tree_spectraChart = ui.Chart.image.regions(
+    image, tree_points, ee.Reducer.mean(), 30, "label", wavelengths)
+        .setChartType("ScatterChart")
+        .setOptions(tree_options);
+
+// Display the chart in Console.
+print(tree_spectraChart);
