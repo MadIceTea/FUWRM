@@ -884,7 +884,7 @@ var all_options = {
   lineWidth: 1,
   pointSize: 4,
   min: 0,
-  max: 3000,
+  max: 4000,
 };
 
 // Define a list of Landsat 8 wavelengths for X-axis labels.
@@ -907,7 +907,7 @@ var barren_options = {
   lineWidth: 1,
   pointSize: 4,
   min: 0,
-  max: 3000,
+  max: 4000,
 };
 
 // Define a list of Landsat 8 wavelengths for X-axis labels.
@@ -930,7 +930,7 @@ var tree_options = {
   lineWidth: 1,
   pointSize: 4,
   min: 0,
-  max: 3000,
+  max: 4000,
 };
 
 // Define a list of Landsat 8 wavelengths for X-axis labels.
@@ -953,7 +953,7 @@ var house_options = {
   lineWidth: 1,
   pointSize: 4,
   min: 0,
-  max: 3000,
+  max: 4000,
 };
 
 // Define a list of Landsat 8 wavelengths for X-axis labels.
@@ -976,7 +976,7 @@ var sample_options = {
   lineWidth: 1,
   pointSize: 4,
   min: 0,
-  max: 3000,
+  max: 4000,
 };
 
 // Define a list of Landsat 8 wavelengths for X-axis labels.
