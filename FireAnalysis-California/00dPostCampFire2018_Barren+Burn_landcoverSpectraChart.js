@@ -13,8 +13,8 @@ var Barren1_CitySouth =
               [-121.75446998089069, 39.69828409870127],
               [-121.75446998089069, 39.70158600648374]]], null, false),
         {
-          "name": "Barren1",
-          "system:index": "0"
+          "system:index": "0",
+          "label": "Barren1"
         }),
     Barren2_CityEast = 
     /* color: #98ff00 */
@@ -30,8 +30,8 @@ var Barren1_CitySouth =
               [-121.55407883306759, 39.75501028525689],
               [-121.55407883306759, 39.757022811291996]]], null, false),
         {
-          "name": "Barren2",
-          "system:index": "0"
+          "system:index": "0",
+          "label": "Barren2"
         }),
     Barren3_CityNorth = 
     /* color: #0b4a8b */
@@ -47,14 +47,19 @@ var Barren1_CitySouth =
               [-121.54525972982663, 39.79253133124561],
               [-121.54525972982663, 39.79454276051664]]], null, false),
         {
-          "name": "Barren3",
+          "system:index": "0",
+          "label": "Barren3"
+        }),
+    Barren4_CityWest = /* color: #00ffff */ee.Feature(
+        ee.Geometry.Polygon(
+            [[[-121.63688935419339, 39.7555194909516],
+              [-121.636460200751, 39.75528854328715],
+              [-121.63214720865506, 39.75802687289254],
+              [-121.63270510813015, 39.758307298092035]]]),
+        {
+          "label": "Barren4",
           "system:index": "0"
         }),
-    Barren4_CityWest = /* color: #00ffff */ee.Geometry.Polygon(
-        [[[-121.63688935419339, 39.7555194909516],
-          [-121.636460200751, 39.75528854328715],
-          [-121.63214720865506, 39.75802687289254],
-          [-121.63270510813015, 39.758307298092035]]]),
     BurnedTrees1a_CityNorth = 
     /* color: #ffc82d */
     /* displayProperties: [
@@ -69,8 +74,8 @@ var Barren1_CitySouth =
               [-121.572704092467, 39.793161970113196],
               [-121.572704092467, 39.79432018722106]]], null, false),
         {
-          "name": "BurnedTreesSuspect",
-          "system:index": "0"
+          "system:index": "0",
+          "label": "BurnedTreesSuspect"
         }),
     BurnedTrees1b_CityNorth = 
     /* color: #999900 */
