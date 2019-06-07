@@ -91,23 +91,6 @@ var Barren1_CitySouth =
           "system:index": "0",
           "label": "BurnTree1"
         }),
-    BurnedTrees1b_CityNorth = 
-    /* color: #999900 */
-    /* displayProperties: [
-      {
-        "type": "rectangle"
-      }
-    ] */
-    ee.Feature(
-        ee.Geometry.Polygon(
-            [[[-121.57604188570144, 39.79896818510073],
-              [-121.57604188570144, 39.796445807881],
-              [-121.57175035127761, 39.796445807881],
-              [-121.57175035127761, 39.79896818510073]]], null, false),
-        {
-          "label": "BurnTree1b",
-          "system:index": "0"
-        }),
     BurnedTrees2_CitySouth = 
     /* color: #bf04c2 */
     /* displayProperties: [
@@ -603,7 +586,6 @@ var points = ee.FeatureCollection([
   Barren3_CityNorth,
   Barren4_CityWest,
   BurnedTrees1_CityNorth,
-  BurnedTrees1b_CityNorth,
   BurnedTrees2_CitySouth,
   BurnedTrees3_CityEast,
   BurntTrees4_CityWest,
