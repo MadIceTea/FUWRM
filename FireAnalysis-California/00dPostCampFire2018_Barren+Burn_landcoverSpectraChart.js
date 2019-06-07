@@ -539,9 +539,9 @@ Map.addLayer(image, {bands: ["B4", "B3", "B2"], min: 0, max: 2000});
 
 // Define and display a FeatureCollection of three known locations.
 var points = ee.FeatureCollection([
-  Community_Park,
-  Bille_Park,
-  Aquatic_Memorial_Park,
+  Barren1_CitySouth,
+  Barren2_CityEast,
+  ,
 ]);
 
 Map.addLayer(points);
