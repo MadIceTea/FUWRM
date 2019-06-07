@@ -765,7 +765,7 @@ var visParams = {
   bands: ["red", "green", "blue"]
 };
 
-var single = image.median();
+var single = ee.ImageCollection(image).median();
 
 var mosaic = ee.ImageCollection([
   single.visualise(visParams),
