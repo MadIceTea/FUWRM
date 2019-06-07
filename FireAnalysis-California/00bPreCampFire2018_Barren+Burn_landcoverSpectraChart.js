@@ -822,3 +822,171 @@ var Barren1_CitySouth =
           [-121.16965143565142, 39.49365087730002],
           [-121.16965143565142, 40.231519880601745]]]);
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
+//Center Map
+Map.setCenter(-121.619, 39.894, 10);
+
+// We use a LANDSAT 8 image from about six months after the fire (May 3, 2019).
+var image = ee.Image("LANDSAT/LC08/C01/T1_SR/LC08_044032_20190503")
+    .select(["B[1-7]"]);
+Map.addLayer(image, {bands: ["B4", "B3", "B2"], min: 0, max: 2000}, "Landsat");
+
+// Define and display a FeatureCollection of three known locations.
+var all_points = ee.FeatureCollection([
+  Barren1_CitySouth,
+  Barren2_CityEast,
+  Barren3_CityNorth,
+  Barren4_CityWest,
+  BurnedTrees1_CityNorth,
+  BurnedTrees2_CitySouth,
+  BurnedTrees3_CityEast,
+  BurnedTrees4_CityWest,
+  BurntHouse1_CityWest,
+  BurnedHouse2_CityNorth,
+  BurnedHouse3_CitySouth,
+  BurnedHouse4_CityEast,
+  // Community_Park,
+  // Bille_Park,
+  // Aquatic_Memorial_Park,
+]);
+
+var sample_points = ee.FeatureCollection([
+  Barren1_CitySouth,
+  BurnedTrees3_CityEast,
+  BurnedHouse2_CityNorth,
+]);
+
+var barren_points = ee.FeatureCollection([
+  Barren1_CitySouth,
+  Barren2_CityEast,
+  Barren3_CityNorth,
+  Barren4_CityWest,
+]);
+
+var tree_points = ee.FeatureCollection([
+  BurnedTrees1_CityNorth,
+  BurnedTrees2_CitySouth,
+  BurnedTrees3_CityEast,
+  BurnedTrees4_CityWest,
+]);
+
+var house_points = ee.FeatureCollection([
+  BurntHouse1_CityWest,
+  BurnedHouse2_CityNorth,
+  BurnedHouse3_CitySouth,
+  BurnedHouse4_CityEast,
+]);
+
+// Define customization options for an all chart
+var all_options = {
+  title: "Landsat 8 SR spectra comparison for barren land vs burned trees and houses in the Town of Paradise, Post-Fire",
+  hAxis: {title: "Wavelength (micrometers)"},
+  vAxis: {title: "Reflectance"},
+  lineWidth: 1,
+  pointSize: 4,
+  min: 0,
+  max: 3000,
+};
+
+// Define a list of Landsat 8 wavelengths for X-axis labels.
+var wavelengths = [0.44, 0.48, 0.56, 0.65, 0.86, 1.61, 2.2];
+
+// Create the chart and set options.
+var all_spectraChart = ui.Chart.image.regions(
+    image, all_points, ee.Reducer.mean(), 30, "label", wavelengths)
+        .setChartType("ScatterChart")
+        .setOptions(all_options);
+
+// Display the chart in Console.
+print(all_spectraChart);
+
+// Define customization options for a barren land chart
+var barren_options = {
+  title: "Landsat 8 SR spectra comparison for barren land regions in the Town of Paradise, Post-Fire",
+  hAxis: {title: "Wavelength (micrometers)"},
+  vAxis: {title: "Reflectance"},
+  lineWidth: 1,
+  pointSize: 4,
+  min: 0,
+  max: 3000,
+};
+
+// Define a list of Landsat 8 wavelengths for X-axis labels.
+var wavelengths = [0.44, 0.48, 0.56, 0.65, 0.86, 1.61, 2.2];
+
+// Create the chart and set options.
+var barren_spectraChart = ui.Chart.image.regions(
+    image, barren_points, ee.Reducer.mean(), 30, "label", wavelengths)
+        .setChartType("ScatterChart")
+        .setOptions(barren_options);
+
+// Display the chart in Console.
+print(barren_spectraChart);
+
+// Define customization options for a charred trees land chart
+var tree_options = {
+  title: "Landsat 8 SR spectra comparison for regions with burnt trees in the Town of Paradise, Post-Fire",
+  hAxis: {title: "Wavelength (micrometers)"},
+  vAxis: {title: "Reflectance"},
+  lineWidth: 1,
+  pointSize: 4,
+  min: 0,
+  max: 3000,
+};
+
+// Define a list of Landsat 8 wavelengths for X-axis labels.
+var wavelengths = [0.44, 0.48, 0.56, 0.65, 0.86, 1.61, 2.2];
+
+// Create the chart and set options.
+var tree_spectraChart = ui.Chart.image.regions(
+    image, tree_points, ee.Reducer.mean(), 30, "label", wavelengths)
+        .setChartType("ScatterChart")
+        .setOptions(tree_options);
+
+// Display the chart in Console.
+print(tree_spectraChart);
+
+// Define customization options for a burned homes and buildings land chart
+var house_options = {
+  title: "Landsat 8 SR spectra comparison for regions with burnt buildings and structures in the Town of Paradise, Post-Fire",
+  hAxis: {title: "Wavelength (micrometers)"},
+  vAxis: {title: "Reflectance"},
+  lineWidth: 1,
+  pointSize: 4,
+  min: 0,
+  max: 3000,
+};
+
+// Define a list of Landsat 8 wavelengths for X-axis labels.
+var wavelengths = [0.44, 0.48, 0.56, 0.65, 0.86, 1.61, 2.2];
+
+// Create the chart and set options.
+var house_spectraChart = ui.Chart.image.regions(
+    image, house_points, ee.Reducer.mean(), 30, "label", wavelengths)
+        .setChartType("ScatterChart")
+        .setOptions(house_options);
+
+// Display the chart in Console.
+print(house_spectraChart);
+
+// Define customization options for a small single-sample of one per type chart
+var sample_options = {
+  title: "Landsat 8 SR spectrum comparison for burn trees/buildings and already barren land in the Town of Paradise, Post-Fire",
+  hAxis: {title: "Wavelength (micrometers)"},
+  vAxis: {title: "Reflectance"},
+  lineWidth: 1,
+  pointSize: 4,
+  min: 0,
+  max: 3000,
+};
+
+// Define a list of Landsat 8 wavelengths for X-axis labels.
+var wavelengths = [0.44, 0.48, 0.56, 0.65, 0.86, 1.61, 2.2];
+
+// Create the chart and set options.
+var sample_spectraChart = ui.Chart.image.regions(
+    image, sample_points, ee.Reducer.mean(), 30, "label", wavelengths)
+        .setChartType("ScatterChart")
+        .setOptions(sample_options);
+
+// Display the chart in Console.
+print(sample_spectraChart);
