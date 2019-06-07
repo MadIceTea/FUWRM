@@ -507,7 +507,18 @@ var Big_Square = /* color: #acc235 */ee.Geometry.Polygon(
           [-121.58405364402893, 39.796698788122534],
           [-121.58215195783737, 39.796698788122534],
           [-121.58215195783737, 39.79771063147241]]], null, false),
-    geometry = /* color: #ff00ff */ee.Geometry.MultiPoint();
+    BurnedHouse3_CitySouth = 
+    /* color: #ff00ff */
+    /* displayProperties: [
+      {
+        "type": "rectangle"
+      }
+    ] */
+    ee.Geometry.Polygon(
+        [[[-121.60642058500412, 39.745899971758774],
+          [-121.60642058500412, 39.743689132231154],
+          [-121.60535843023422, 39.743689132231154],
+          [-121.60535843023422, 39.745899971758774]]], null, false);
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
 //Center Map
 Map.setCenter(-121.619, 39.894, 10);
