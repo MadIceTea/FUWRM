@@ -558,18 +558,18 @@ Map.addLayer(points);
 
 // Define customization options.
 var options = {
-  title: "Landsat 8 SR spectra comparison for barren land vs burned area in the Town of Paradise, Post-Fire",
+  title: "Landsat 8 SR spectra comparison for barren land vs burned trees and houses in the Town of Paradise, Post-Fire",
   hAxis: {title: "Wavelength (micrometers)"},
   vAxis: {title: "Reflectance"},
   lineWidth: 1,
   pointSize: 4,
   min: 0,
   max: 4000,
-  series: {
+  /* series: {
     0: {color: "orange"}, // Community Park
     1: {color: "purple"}, // Bille Park
-    2: {color: "teal"}, // Aquatic (now Memorial) Park
-}};
+    2: {color: "teal"}, // Aquatic (now Memorial) Park */
+};
 
 // Define a list of Landsat 8 wavelengths for X-axis labels.
 var wavelengths = [0.44, 0.48, 0.56, 0.65, 0.86, 1.61, 2.2];
