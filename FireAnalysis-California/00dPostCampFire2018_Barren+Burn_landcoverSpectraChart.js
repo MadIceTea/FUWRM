@@ -125,7 +125,7 @@ var Barren1_CitySouth =
           "label": "BurnTree3",
           "system:index": "0"
         }),
-    BurntTrees4_CityWest = /* color: #00ff00 */ee.Feature(
+    BurnedTrees4_CityWest = /* color: #00ff00 */ee.Feature(
         ee.Geometry.Polygon(
             [[[-121.60107466638499, 39.78060739641416],
               [-121.60026463926249, 39.78120104191407],
@@ -135,7 +135,7 @@ var Barren1_CitySouth =
           "label": "BurnTree4",
           "system:index": "0"
         }),
-    BurntHouses1_CityWest = /* color: #0000ff */ee.Geometry.Polygon(
+    BurntHouse1_CityWest = /* color: #0000ff */ee.Geometry.Polygon(
         [[[-121.59363181242111, 39.78358725313203],
           [-121.59344405779007, 39.78359137550936],
           [-121.59342796453598, 39.78325333974795],
@@ -580,7 +580,7 @@ var image = ee.Image("LANDSAT/LC08/C01/T1_SR/LC08_044032_20190503")
 Map.addLayer(image, {bands: ["B4", "B3", "B2"], min: 0, max: 2000}, "Landsat");
 
 // Define and display a FeatureCollection of three known locations.
-var points = ee.FeatureCollection([
+var all_points = ee.FeatureCollection([
   Barren1_CitySouth,
   Barren2_CityEast,
   Barren3_CityNorth,
@@ -588,8 +588,35 @@ var points = ee.FeatureCollection([
   BurnedTrees1_CityNorth,
   BurnedTrees2_CitySouth,
   BurnedTrees3_CityEast,
-  BurntTrees4_CityWest,
-  BurntHouses1_CityWest,
+  BurnedTrees4_CityWest,
+  BurntHouse1_CityWest,
+  BurnedHouse2_CityNorth,
+  BurnedHouse3_CitySouth,
+  BurnedHouse4_CityEast,
+]);
+
+var sample_points = ee.FeatureCollection([
+  Barren1_CitySouth,
+  BurnedTrees3_CityEast,
+  BurnedHouse2_CityNorth,
+]);
+
+var barren_points = ee.FeatureCollection([
+  Barren1_CitySouth,
+  Barren2_CityEast,
+  Barren3_CityNorth,
+  Barren4_CityWest,
+]);
+
+var tree_points = ee.FeatureCollection([
+  BurnedTrees1_CityNorth,
+  BurnedTrees2_CitySouth,
+  BurnedTrees3_CityEast,
+  BurnedTrees4_CityWest,
+]);
+
+var house_points = ee.FeatureCollection([
+  BurntHouse1_CityWest,
   BurnedHouse2_CityNorth,
   BurnedHouse3_CitySouth,
   BurnedHouse4_CityEast,
