@@ -416,7 +416,7 @@ var Big_Square = /* color: #acc235 */ee.Geometry.Polygon(
           [-121.55631043096798, 39.75501028525689],
           [-121.55407883306759, 39.75501028525689],
           [-121.55407883306759, 39.757022811291996]]], null, false),
-    Barren3_CityNorth_ClearedBurning = 
+    Barren3_CityNorth = 
     /* color: #0b4a8b */
     /* displayProperties: [
       {
@@ -433,7 +433,7 @@ var Big_Square = /* color: #acc235 */ee.Geometry.Polygon(
           [-121.636460200751, 39.75528854328715],
           [-121.63214720865506, 39.75802687289254],
           [-121.63270510813015, 39.758307298092035]]]),
-    BurnedTrees1_CityNorth = 
+    BurnedTrees1a_CityNorth = 
     /* color: #ffc82d */
     /* displayProperties: [
       {
@@ -445,6 +445,18 @@ var Big_Square = /* color: #acc235 */ee.Geometry.Polygon(
           [-121.57400228163021, 39.793161970113196],
           [-121.572704092467, 39.793161970113196],
           [-121.572704092467, 39.79432018722106]]], null, false),
+    BurnedTrees1b_CityNorth = 
+    /* color: #999900 */
+    /* displayProperties: [
+      {
+        "type": "rectangle"
+      }
+    ] */
+    ee.Geometry.Polygon(
+        [[[-121.57604188570144, 39.79896818510073],
+          [-121.57604188570144, 39.79598418634945],
+          [-121.57119245180252, 39.79598418634945],
+          [-121.57119245180252, 39.79896818510073]]], null, false),
     BurnedTrees2_CitySouth = 
     /* color: #bf04c2 */
     /* displayProperties: [
@@ -457,7 +469,7 @@ var Big_Square = /* color: #acc235 */ee.Geometry.Polygon(
           [-121.60122218788081, 39.74392749151448],
           [-121.5988618439477, 39.74392749151448],
           [-121.5988618439477, 39.744867928670274]]], null, false),
-    BurnedTrees3_East = 
+    BurnedTrees3_CityEast = 
     /* color: #ff0000 */
     /* displayProperties: [
       {
@@ -469,7 +481,7 @@ var Big_Square = /* color: #acc235 */ee.Geometry.Polygon(
           [-121.5703875130456, 39.7520239049731],
           [-121.56624618232661, 39.7520239049731],
           [-121.56624618232661, 39.7538220622707]]], null, false),
-    BurntTrees4_West = /* color: #00ff00 */ee.Geometry.Polygon(
+    BurntTrees4_CityWest = /* color: #00ff00 */ee.Geometry.Polygon(
         [[[-121.60107466638499, 39.78060739641416],
           [-121.60026463926249, 39.78120104191407],
           [-121.60057041109019, 39.781431902669866],
@@ -483,18 +495,19 @@ var Big_Square = /* color: #acc235 */ee.Geometry.Polygon(
           [-121.59030050882461, 39.782478324660815],
           [-121.59030050882461, 39.78465494060938],
           [-121.59351915964248, 39.78460547282974]]]),
-    BurnedTrees5_CityNorth = 
-    /* color: #999900 */
+    BurnedHouse2_CityNorth = 
+    /* color: #009999 */
     /* displayProperties: [
       {
         "type": "rectangle"
       }
     ] */
     ee.Geometry.Polygon(
-        [[[-121.57604188570144, 39.79896818510073],
-          [-121.57604188570144, 39.79598418634945],
-          [-121.57119245180252, 39.79598418634945],
-          [-121.57119245180252, 39.79896818510073]]], null, false);
+        [[[-121.58405364402893, 39.79771063147241],
+          [-121.58405364402893, 39.796698788122534],
+          [-121.58215195783737, 39.796698788122534],
+          [-121.58215195783737, 39.79771063147241]]], null, false),
+    geometry = /* color: #ff00ff */ee.Geometry.MultiPoint();
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
 //Center Map
 Map.setCenter(-121.619, 39.894, 10);
