@@ -769,6 +769,8 @@ var mosaic = ee.ImageCollection([
   image.visualise(visParams),
   all_points.visualise({palette:["black"]}),]).mosaic();
 
+Map.addLayer(mosaic, {min: 0, max: 2000}, "Mosaic");
+
 // obtain native scale of RGB bands
 var scale = single.projection().nominalScale().getInfo();
 
