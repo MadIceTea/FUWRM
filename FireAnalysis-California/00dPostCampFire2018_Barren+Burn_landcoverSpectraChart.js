@@ -844,6 +844,9 @@ var all_points = ee.FeatureCollection([
   BurnedHouse2_CityNorth,
   BurnedHouse3_CitySouth,
   BurnedHouse4_CityEast,
+  // Community_Park,
+  // Bille_Park,
+  // Aquatic_Memorial_Park,
 ]);
 
 var sample_points = ee.FeatureCollection([
