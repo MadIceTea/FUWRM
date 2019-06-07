@@ -756,38 +756,3 @@ var sample_spectraChart = ui.Chart.image.regions(
 
 // Display the chart in Console.
 print(sample_spectraChart);
-
-//Export Image
-var visParams = {
-  min: 100, 
-  max: 2000,
-  gamma: 1.5,
-  bands: ["red", "green", "blue"]
-};
-
-var mosaic = ee.ImageCollection([
-  ee.ImageCollection(image).median().visualise(visParams),
-  all_points.visualise({palette:["black"]}),]).mosaic();
-
-// Map.addLayer(mosaic, {min: 0, max: 2000}, "Mosaic");
-print(mosaic);
-
-// obtain native scale of RGB bands
-var scale = single.projection().nominalScale().getInfo();
-
-// add an alpha channel as 4th band to mask no data regions
-var mask = single.mask().reduce(ee.Reducer.min())
-    .multiply(255).toByte();
-single = single.addBands(mask);
-
-//Landsat True-Color Image Export
-Export.image.toDrive({
-  image: single,
-  description: "landsat_spectraSamplePolygons_Paradise_BigSquare",
-  folder: "California-Paradise_CampFire2018",
-  region:Big_Square,
-  scale:30.0,
-  fileFormat: "GeoTIFF",
-  crs: "EPSG:3857",
-  formatOptions: {cloudOptimized: true}
-});
