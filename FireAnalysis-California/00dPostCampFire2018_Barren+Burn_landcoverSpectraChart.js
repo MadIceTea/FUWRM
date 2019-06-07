@@ -593,8 +593,6 @@ var points = ee.FeatureCollection([
   BurnedHouse4_CityEast,
 ]);
 
-Map.addLayer(points);
-
 // Define customization options.
 var options = {
   title: "Landsat 8 SR spectra comparison for barren land vs burned trees and houses in the Town of Paradise, Post-Fire",
