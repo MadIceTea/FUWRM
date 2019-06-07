@@ -657,8 +657,8 @@ var all_options = {
 var wavelengths = [0.44, 0.48, 0.56, 0.65, 0.86, 1.61, 2.2];
 
 // Create the chart and set options.
-var spectraChart = ui.Chart.image.regions(
-    image, points, ee.Reducer.mean(), 30, "label", wavelengths)
+var all_spectraChart = ui.Chart.image.regions(
+    image, all_points, ee.Reducer.mean(), 30, "label", wavelengths)
         .setChartType("ScatterChart")
         .setOptions(options);
 
