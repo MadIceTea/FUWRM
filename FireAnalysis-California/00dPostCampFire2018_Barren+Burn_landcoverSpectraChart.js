@@ -765,10 +765,8 @@ var visParams = {
   bands: ["red", "green", "blue"]
 };
 
-var single = ee.ImageCollection(image).median();
-
 var mosaic = ee.ImageCollection([
-  single.visualise(visParams),
+  ee.ImageCollection(image).median().visualise(visParams),
   all_points.visualise({palette:["black"]}),]).mosaic();
 
 // Map.addLayer(mosaic, {min: 0, max: 2000}, "Mosaic");
