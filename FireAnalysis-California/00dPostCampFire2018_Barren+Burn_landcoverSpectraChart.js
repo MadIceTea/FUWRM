@@ -541,7 +541,17 @@ Map.addLayer(image, {bands: ["B4", "B3", "B2"], min: 0, max: 2000});
 var points = ee.FeatureCollection([
   Barren1_CitySouth,
   Barren2_CityEast,
-  ,
+  Barren3_CityNorth,
+  Barren4_CityWest,
+  BurnedTrees1a_CityNorth,
+  BurnedTrees1b_CityNorth,
+  BurnedTrees2_CitySouth,
+  BurnedTrees3_CityEast,
+  BurntTrees4_CityWest,
+  BurntHouses1_CityWest,
+  BurnedHouse2_CityNorth,
+  BurnedHouse3_CitySouth,
+  BurnedHouse4_CityEast,
 ]);
 
 Map.addLayer(points);
