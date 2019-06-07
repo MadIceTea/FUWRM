@@ -642,7 +642,7 @@ var house_points = ee.FeatureCollection([
   BurnedHouse4_CityEast,
 ]);
 
-// Define customization options.
+// Define customization options for an all chart
 var all_options = {
   title: "Landsat 8 SR spectra comparison for barren land vs burned trees and houses in the Town of Paradise, Post-Fire",
   hAxis: {title: "Wavelength (micrometers)"},
@@ -663,4 +663,27 @@ var all_spectraChart = ui.Chart.image.regions(
         .setOptions(all_options);
 
 // Display the chart in Console.
-print(spectraChart);
+print(all_spectraChart);
+
+// Define customization options for a barren land chart
+var barren_options = {
+  title: "Landsat 8 SR spectra comparison for barren land regions in the Town of Paradise, Post-Fire",
+  hAxis: {title: "Wavelength (micrometers)"},
+  vAxis: {title: "Reflectance"},
+  lineWidth: 1,
+  pointSize: 4,
+  min: 0,
+  max: 3000,
+};
+
+// Define a list of Landsat 8 wavelengths for X-axis labels.
+var wavelengths = [0.44, 0.48, 0.56, 0.65, 0.86, 1.61, 2.2];
+
+// Create the chart and set options.
+var barren_spectraChart = ui.Chart.image.regions(
+    image, all_points, ee.Reducer.mean(), 30, "label", wavelengths)
+        .setChartType("ScatterChart")
+        .setOptions(barren_options);
+
+// Display the chart in Console.
+print(barren_spectraChart);
