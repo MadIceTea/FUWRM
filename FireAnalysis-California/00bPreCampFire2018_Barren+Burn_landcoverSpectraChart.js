@@ -878,7 +878,7 @@ var house_points = ee.FeatureCollection([
 
 // Define customization options for an all chart
 var all_options = {
-  title: "Landsat 8 SR spectra comparison for barren land vs burned trees and houses in the Town of Paradise, Post-Fire",
+  title: "Landsat 8 SR spectra comparison for barren land vs trees and houses in the Town of Paradise, Post-Fire",
   hAxis: {title: "Wavelength (micrometers)"},
   vAxis: {title: "Reflectance"},
   lineWidth: 1,
@@ -924,7 +924,7 @@ print(barren_spectraChart);
 
 // Define customization options for a charred trees land chart
 var tree_options = {
-  title: "Landsat 8 SR spectra comparison for regions with burnt trees in the Town of Paradise, Post-Fire",
+  title: "Landsat 8 SR spectra comparison for regions with trees in the Town of Paradise, Post-Fire",
   hAxis: {title: "Wavelength (micrometers)"},
   vAxis: {title: "Reflectance"},
   lineWidth: 1,
@@ -947,7 +947,7 @@ print(tree_spectraChart);
 
 // Define customization options for a burned homes and buildings land chart
 var house_options = {
-  title: "Landsat 8 SR spectra comparison for regions with burnt buildings and structures in the Town of Paradise, Post-Fire",
+  title: "Landsat 8 SR spectra comparison for regions with buildings and structures in the Town of Paradise, Post-Fire",
   hAxis: {title: "Wavelength (micrometers)"},
   vAxis: {title: "Reflectance"},
   lineWidth: 1,
