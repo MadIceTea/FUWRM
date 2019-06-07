@@ -74,7 +74,7 @@ var Barren1_CitySouth =
           "label": "Barren4",
           "system:index": "0"
         }),
-    BurnedTrees1_CityNorth = 
+    Trees1_CityNorth = 
     /* color: #ffc82d */
     /* displayProperties: [
       {
@@ -91,7 +91,7 @@ var Barren1_CitySouth =
           "system:index": "0",
           "label": "BurnTree1"
         }),
-    BurnedTrees2_CitySouth = 
+    Trees2_CitySouth = 
     /* color: #bf04c2 */
     /* displayProperties: [
       {
@@ -108,7 +108,7 @@ var Barren1_CitySouth =
           "label": "BurnTree2",
           "system:index": "0"
         }),
-    BurnedTrees3_CityEast = 
+    Trees3_CityEast = 
     /* color: #ff0000 */
     /* displayProperties: [
       {
@@ -125,7 +125,7 @@ var Barren1_CitySouth =
           "label": "BurnTree3",
           "system:index": "0"
         }),
-    BurnedTrees4_CityWest = /* color: #00ff00 */ee.Feature(
+    Trees4_CityWest = /* color: #00ff00 */ee.Feature(
         ee.Geometry.Polygon(
             [[[-121.60107466638499, 39.78060739641416],
               [-121.60026463926249, 39.78120104191407],
@@ -135,7 +135,7 @@ var Barren1_CitySouth =
           "label": "BurnTree4",
           "system:index": "0"
         }),
-    BurntHouse1_CityWest = /* color: #0000ff */ee.Feature(
+    House1_CityWest = /* color: #0000ff */ee.Feature(
         ee.Geometry.Polygon(
             [[[-121.59363181242111, 39.78358725313203],
               [-121.59344405779007, 39.78359137550936],
@@ -149,7 +149,7 @@ var Barren1_CitySouth =
           "label": "BurntHouse1",
           "system:index": "0"
         }),
-    BurnedHouse2_CityNorth = 
+    House2_CityNorth = 
     /* color: #009999 */
     /* displayProperties: [
       {
@@ -166,7 +166,7 @@ var Barren1_CitySouth =
           "label": "BurntHouse2",
           "system:index": "0"
         }),
-    BurnedHouse3_CitySouth = 
+    House3_CitySouth = 
     /* color: #ff00ff */
     /* displayProperties: [
       {
@@ -183,7 +183,7 @@ var Barren1_CitySouth =
           "label": "BurntHouse3",
           "system:index": "0"
         }),
-    BurnedHouse4_CityEast = /* color: #ff9999 */ee.Feature(
+    House4_CityEast = /* color: #ff9999 */ee.Feature(
         ee.Geometry.Polygon(
             [[[-121.5733328545964, 39.761279016792834],
               [-121.57323629507187, 39.76100685115427],
@@ -836,14 +836,14 @@ var all_points = ee.FeatureCollection([
   Barren2_CityEast,
   Barren3_CityNorth,
   Barren4_CityWest,
-  BurnedTrees1_CityNorth,
-  BurnedTrees2_CitySouth,
-  BurnedTrees3_CityEast,
-  BurnedTrees4_CityWest,
-  BurntHouse1_CityWest,
-  BurnedHouse2_CityNorth,
-  BurnedHouse3_CitySouth,
-  BurnedHouse4_CityEast,
+  Trees1_CityNorth,
+  Trees2_CitySouth,
+  Trees3_CityEast,
+  Trees4_CityWest,
+  House1_CityWest,
+  House2_CityNorth,
+  House3_CitySouth,
+  House4_CityEast,
   // Community_Park,
   // Bille_Park,
   // Aquatic_Memorial_Park,
@@ -851,8 +851,8 @@ var all_points = ee.FeatureCollection([
 
 var sample_points = ee.FeatureCollection([
   Barren1_CitySouth,
-  BurnedTrees3_CityEast,
-  BurnedHouse2_CityNorth,
+  Trees3_CityEast,
+  House2_CityNorth,
 ]);
 
 var barren_points = ee.FeatureCollection([
@@ -863,17 +863,17 @@ var barren_points = ee.FeatureCollection([
 ]);
 
 var tree_points = ee.FeatureCollection([
-  BurnedTrees1_CityNorth,
-  BurnedTrees2_CitySouth,
-  BurnedTrees3_CityEast,
-  BurnedTrees4_CityWest,
+  Trees1_CityNorth,
+  Trees2_CitySouth,
+  Trees3_CityEast,
+  Trees4_CityWest,
 ]);
 
 var house_points = ee.FeatureCollection([
-  BurntHouse1_CityWest,
-  BurnedHouse2_CityNorth,
-  BurnedHouse3_CitySouth,
-  BurnedHouse4_CityEast,
+  House1_CityWest,
+  House2_CityNorth,
+  House3_CitySouth,
+  House4_CityEast,
 ]);
 
 // Define customization options for an all chart
