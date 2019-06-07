@@ -89,7 +89,7 @@ var Barren1_CitySouth =
               [-121.572704092467, 39.79432018722106]]], null, false),
         {
           "system:index": "0",
-          "label": "BurnTree1"
+          "label": "Tree1"
         }),
     Trees2_CitySouth = 
     /* color: #bf04c2 */
@@ -105,8 +105,8 @@ var Barren1_CitySouth =
               [-121.59670803010874, 39.747225152237036],
               [-121.59670803010874, 39.747616983858165]]], null, false),
         {
-          "label": "BurnTree2",
-          "system:index": "0"
+          "system:index": "0",
+          "label": "Tree2"
         }),
     Trees3_CityEast = 
     /* color: #ff0000 */
@@ -122,8 +122,8 @@ var Barren1_CitySouth =
               [-121.56624618232661, 39.7520239049731],
               [-121.56624618232661, 39.7538220622707]]], null, false),
         {
-          "label": "BurnTree3",
-          "system:index": "0"
+          "system:index": "0",
+          "label": "Tree3"
         }),
     Trees4_CityWest = /* color: #00ff00 */ee.Feature(
         ee.Geometry.Polygon(
@@ -132,8 +132,8 @@ var Barren1_CitySouth =
               [-121.60057041109019, 39.781431902669866],
               [-121.60134288728648, 39.78092483249213]]]),
         {
-          "label": "BurnTree4",
-          "system:index": "0"
+          "system:index": "0",
+          "label": "Tree4"
         }),
     House1_CityWest = /* color: #0000ff */ee.Feature(
         ee.Geometry.Polygon(
@@ -146,8 +146,8 @@ var Barren1_CitySouth =
               [-121.59030050882461, 39.78465494060938],
               [-121.59351915964248, 39.78460547282974]]]),
         {
-          "label": "BurntHouse1",
-          "system:index": "0"
+          "system:index": "0",
+          "label": "House1"
         }),
     House2_CityNorth = 
     /* color: #009999 */
@@ -163,8 +163,8 @@ var Barren1_CitySouth =
               [-121.58215195783737, 39.796698788122534],
               [-121.58215195783737, 39.79771063147241]]], null, false),
         {
-          "label": "BurntHouse2",
-          "system:index": "0"
+          "system:index": "0",
+          "label": "House2"
         }),
     House3_CitySouth = 
     /* color: #ff00ff */
@@ -180,8 +180,8 @@ var Barren1_CitySouth =
               [-121.60535843023422, 39.743689132231154],
               [-121.60535843023422, 39.745899971758774]]], null, false),
         {
-          "label": "BurntHouse3",
-          "system:index": "0"
+          "system:index": "0",
+          "label": "House3"
         }),
     House4_CityEast = /* color: #ff9999 */ee.Feature(
         ee.Geometry.Polygon(
@@ -194,8 +194,8 @@ var Barren1_CitySouth =
               [-121.57230825075271, 39.761629531560764],
               [-121.5727374041951, 39.7613120064941]]]),
         {
-          "label": "BurntHouse4",
-          "system:index": "0"
+          "system:index": "0",
+          "label": "House4"
         }),
     Community_Park = /* color: #bf04c2 */ee.Feature(
         ee.Geometry.Polygon(
