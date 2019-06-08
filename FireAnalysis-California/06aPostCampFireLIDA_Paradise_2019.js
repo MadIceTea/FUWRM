@@ -433,6 +433,7 @@ var predictionBands = ["blue","green","red","nir","swir1","swir2","ndvi"];
 
 var trainingimage = ndvi.select(predictionBands);
 
+//fusion-table of polygons drawn in Google Earth Desktop
 var trainingpolygons = ee.FeatureCollection("ft:18YC87APdWwx55ugWEISbXldcTG20wlxnwgD00X70");
 
 var training = trainingimage.sampleRegions({
