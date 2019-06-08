@@ -401,7 +401,7 @@ var STD_NAMES = ["blue","green","red","nir","swir1","swir2"];
 Map.addLayer(Paradise, {color: "000000"}, "Town of Paradise", 1, 1);
 
 //Center Map
-Map.setCenter(-121.619, 39.894, 10);
+Map.setCenter(-121.621, 39.762, 13);
 
 //filtering against Paradise at [about] half-year resolution
 var landsat_SR = ee.ImageCollection("LANDSAT/LC08/C01/T1_SR") //load collection 1 - LANDSAT8 raws post-CampFire
@@ -416,7 +416,7 @@ print(landsat_SR); //date debug
 var median = landsat_SR.median();
 
 //Display the Composite
-Map.addLayer(landsat_SR, {"bands":["red","blue","green"],min:0,max:2000}, "baselayer", 0, 1);
+Map.addLayer(landsat_SR, {"bands":["red","green","blue"],min:0,max:2000}, "baselayer", 0, 1);
 
 function addNDVI(image) {
   return image
@@ -434,7 +434,7 @@ var predictionBands = ["blue","green","red","nir","swir1","swir2","ndvi"];
 var trainingimage = ndvi.select(predictionBands);
 
 //fusion-table of polygons drawn in Google Earth Desktop
-var trainingpolygons = ee.FeatureCollection("ft:16S88DhNyQ5xqOlnmOENIJ52Doc0sYyu77ANBwhXG");
+var trainingpolygons = ee.FeatureCollection("ft:1l1hqnAXR3H8CRL5SzrKq5YpuW2UWMA2FG0p1sR-N");
 
 var training = trainingimage.sampleRegions({
     collection: trainingpolygons,
@@ -449,7 +449,7 @@ var trained = ee.Classifier.cart().train(training,"class", predictionBands);
 var CARTclassified = trainingimage.select(predictionBands).classify(trained);
 
 //Display the result using 0=barren, 1=urban, 2=green, 3=water
-Map.addLayer(CARTclassified, {min: 0, max: 3, palette: ["784800","FFF44F","228B22","97CAF9"]}, "CARTclassification", 1, 1);
+Map.addLayer(CARTclassified, {min: 0, max: 3, palette: ["784800","FFF44F","228B22","97CAF9"]}, "CARTclassification", 1, 0.85);
 
 var single = CARTclassified;
 
