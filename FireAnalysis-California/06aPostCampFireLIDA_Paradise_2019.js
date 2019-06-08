@@ -439,7 +439,7 @@ var trainingpolygons = ee.FeatureCollection("ft:18YC87APdWwx55ugWEISbXldcTG20wlx
 var training = trainingimage.sampleRegions({
     collection: trainingpolygons,
     properties: ["class"],
-    scale: 160
+    scale: 30
 });
 
 //Train the CART classifier (a regular expression, not made up) with default parameters
@@ -448,7 +448,7 @@ var trained = ee.Classifier.cart().train(training,"class", predictionBands);
 //Classify image with the same bands used for training.
 var CARTclassified = trainingimage.select(predictionBands).classify(trained);
 
-//Display the result
+//Display the result using 0=barren, 1=urban, 2=green, 3=water
 Map.addLayer(CARTclassified, {min: 0, max: 3, palette: ["784800","FFF44F","228B22","97CAF9"]}, "CARTclassification", 1, 1);
 
 var single = CARTclassified;
