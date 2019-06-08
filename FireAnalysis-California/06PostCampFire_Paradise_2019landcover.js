@@ -403,8 +403,7 @@ Map.addLayer(Paradise, {color: "000000"}, "Town of Paradise", 1, 1);
 //Center Map
 Map.setCenter(-121.619, 39.894, 10);
 
-//filtering Against Paradise at 1-year resolution
-
+//filtering landsat imagery in Paradise
 var landsat_SR = ee.ImageCollection("LANDSAT/LC08/C01/T1_SR") //load LANDSAT8 raws for during the fire period
 	.filterBounds(Paradise)
 	.filterDate("2019-01-01","2019-06-01")
