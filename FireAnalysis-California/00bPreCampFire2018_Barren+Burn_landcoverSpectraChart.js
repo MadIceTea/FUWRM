@@ -990,3 +990,11 @@ var sample_spectraChart = ui.Chart.image.regions(
 
 // Display the chart in Console.
 print(sample_spectraChart);
+
+Export.table.toDrive({
+  collection: all_points,
+  description: "ParadiseTrainingPolygons",
+  folder: "California-Paradise_CampFire2018",
+  fileNamePrefix:"Paradise_Training_Polygons",
+  fileFormat:"KML"
+});
