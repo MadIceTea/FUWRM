@@ -397,9 +397,6 @@ var Big_Square = /* color: #acc235 */ee.Geometry.Polygon(
 var Landsat_8_BANDS = ["B2","B3","B4","B5","B6","B7"];
 var STD_NAMES = ["blue","green","red","nir","swir1","swir2"];
 
-//Add an outline of the Town of Paradise
-Map.addLayer(Paradise, {color: "000000"}, "Town of Paradise", 1, 1);
-
 //Center Map
 Map.setCenter(-121.621, 39.762, 13);
 
@@ -449,7 +446,7 @@ var trained = ee.Classifier.cart().train(training,"class", predictionBands);
 var CARTclassified = trainingimage.select(predictionBands).classify(trained);
 
 //Display the result using 0=barren, 1=urban, 2=green, 3=water
-Map.addLayer(CARTclassified, {min: 0, max: 3, palette: ["784800","FFF44F","228B22","97CAF9"]}, "CARTclassification", 1, 0.85);
+Map.addLayer(CARTclassified, {min: 0, max: 3, palette: ["784800","FFF44F","228B22","97CAF9"]}, "CARTclassification", 1, 0.6);
 
 var single = CARTclassified;
 
