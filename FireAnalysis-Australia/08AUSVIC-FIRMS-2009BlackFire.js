@@ -1,6 +1,6 @@
 /**** Start of imports. If edited, may not auto-convert in the playground. ****/
 var Big_Square = 
-    /* color: #ec3e3e */
+    /* color: #ff6c64 */
     /* displayProperties: [
       {
         "type": "rectangle"
@@ -13,10 +13,18 @@ var Big_Square =
           [146.16235336406248, -37.18091645226004]]], null, false);
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
 // Import the Province of Victoria from Fusion Table
-var Victoria = ee.FeatureCollection('ft:1UzSGq1cWUA5PloR9VxO7AVTu4vVXL3BHNiJKv6XB').geometry();
+var Victoria = ee.FeatureCollection("ft:1UzSGq1cWUA5PloR9VxO7AVTu4vVXL3BHNiJKv6XB").geometry();
 
-// show the layer
+// Also import the metropolitan regions of Melbourne, Buxton-Narbethlong-Marysville, and the Kinglake Cities
+var Melbourne = ee.FeatureCollection("ft:1IS6OpUOtWinTQd2KKzFHIyLQEOy_Mf-Pg7f7j1qz").geometry();
+var BuxNarbMary = ee.FeatureCollection("ft:1hseXyjCm5NM3krhX5qJB6-Gkl0e5o84tBD1WnbeJ").geometry();
+var Kinglake = ee.FeatureCollection("ft:1uTaTWzmTW02jGVsMa6AggqK6ncqY2527kJQh1t1z").geometry(); 
+
+// show the layers
 Map.addLayer(Victoria, {color: "55EAEC"}, "Province of Victoria, Australia", 1, 0.5);
+Map.addLayer(Melbourne, {color: "4229FF"}, "Melbourne, VIC, Australia", 1, 0.5);
+Map.addLayer(Melbourne, {color: "BF19DB"}, "Buxton-Narbelthong-Marysville, VIC, Australia", 1, 0.8);
+Map.addLayer(Melbourne, {color: "31994D"}, "Kinglake, VIC, Australia", 1, 0.8);
 
 //Center Map
 Map.setCenter(145.5032, -37.6399, 6);
