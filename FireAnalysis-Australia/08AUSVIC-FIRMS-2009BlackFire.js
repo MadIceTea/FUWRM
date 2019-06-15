@@ -27,7 +27,7 @@ Map.addLayer(BuxNarbMary, {color: "BF19DB"}, "Buxton-Narbelthong-Marysville, VIC
 Map.addLayer(Kinglake, {color: "31994D"}, "Kinglake, VIC, Australia", 1, 1);
 
 //Center Map
-Map.setCenter(145.5032, -37.6399, 6);
+Map.centerObject(Big_Square, 9);
 
 var dataset = ee.ImageCollection("FIRMS")
   .filterBounds(Big_Square)
