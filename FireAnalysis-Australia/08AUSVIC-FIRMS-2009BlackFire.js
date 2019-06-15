@@ -31,14 +31,14 @@ Map.centerObject(Big_Square, 9);
 
 var dataset = ee.ImageCollection("FIRMS")
   .filterBounds(Big_Square)
-  .filter(ee.Filter.date("2009-02-06", "2009-03-15"));
+  .filter(ee.Filter.date("2009-02-04", "2009-02-15"));
 var fires = dataset.select("T21");
 var firesVis = {
   min: 305.1,
   max: 504.4,
   palette: ["red", "orange", "white"],
 };
-Map.addLayer(fires, firesVis, "Fires", 1, 0.8);
+Map.addLayer(fires, firesVis, "Fires", 1, 0.65);
 
 var single = dataset.median().select("T21");
 
