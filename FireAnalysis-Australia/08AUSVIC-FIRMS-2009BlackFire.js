@@ -1,6 +1,6 @@
 /**** Start of imports. If edited, may not auto-convert in the playground. ****/
 var Big_Square = 
-    /* color: #acc235 */
+    /* color: #ec3e3e */
     /* displayProperties: [
       {
         "type": "rectangle"
@@ -12,8 +12,14 @@ var Big_Square =
           [146.16235336406248, -38.13760786176182],
           [146.16235336406248, -37.18091645226004]]], null, false);
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
+// Import the Province of Victoria from Fusion Table
+var Victoria = ee.FeatureCollection('ft:1UzSGq1cWUA5PloR9VxO7AVTu4vVXL3BHNiJKv6XB').geometry();
+
+// show the layer
+Map.addLayer(Victoria, {color: "55EAEC"}, "Province of Victoria, Australia", 1, 0.5);
+
 //Center Map
-Map.setCenter(145.5032, -37.6399, 9);
+Map.setCenter(145.5032, -37.6399, 6);
 
 var dataset = ee.ImageCollection("FIRMS")
   .filterBounds(Big_Square)
