@@ -1,9 +1,16 @@
 /**** Start of imports. If edited, may not auto-convert in the playground. ****/
-var Big_Square = /* color: #acc235 */ee.Geometry.Polygon(
-        [[[144.88834045165265, -37.19777298820738],
-          [144.87965830417465, -37.9356098996829],
-          [145.72886259313373, -37.9356098996829],
-          [145.72018044565561, -37.19777298820738]]]);
+var Big_Square = 
+    /* color: #acc235 */
+    /* displayProperties: [
+      {
+        "type": "rectangle"
+      }
+    ] */
+    ee.Geometry.Polygon(
+        [[[144.84399398906248, -37.18091645226004],
+          [144.84399398906248, -38.13760786176182],
+          [146.16235336406248, -38.13760786176182],
+          [146.16235336406248, -37.18091645226004]]], null, false);
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
 //Center Map
 Map.setCenter(145.4767, -37.4039, 8);
