@@ -13,7 +13,7 @@ var Big_Square =
           [146.16235336406248, -37.18091645226004]]], null, false);
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
 //Center Map
-Map.setCenter(145.4767, -37.4039, 8);
+Map.setCenter(Big_Square);
 
 var dataset = ee.ImageCollection("FIRMS")
   .filterBounds(Big_Square)
