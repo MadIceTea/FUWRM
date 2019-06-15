@@ -22,9 +22,9 @@ var Kinglake = ee.FeatureCollection("ft:1uTaTWzmTW02jGVsMa6AggqK6ncqY2527kJQh1t1
 
 // show the layers
 Map.addLayer(Victoria, {color: "55EAEC"}, "Province of Victoria, Australia", 1, 0.5);
-Map.addLayer(Melbourne, {color: "4229FF"}, "Melbourne, VIC, Australia", 1, 0.5);
-Map.addLayer(Melbourne, {color: "BF19DB"}, "Buxton-Narbelthong-Marysville, VIC, Australia", 1, 0.8);
-Map.addLayer(Melbourne, {color: "31994D"}, "Kinglake, VIC, Australia", 1, 0.8);
+Map.addLayer(Melbourne, {color: "4229FF"}, "Melbourne, VIC, Australia", 1, 0.3);
+Map.addLayer(BuxNarbMary, {color: "BF19DB"}, "Buxton-Narbelthong-Marysville, VIC, Australia", 1, 0.8);
+Map.addLayer(Kinglake, {color: "31994D"}, "Kinglake, VIC, Australia", 1, 0.8);
 
 //Center Map
 Map.setCenter(145.5032, -37.6399, 6);
