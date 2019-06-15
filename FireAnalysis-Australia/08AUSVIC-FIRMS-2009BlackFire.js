@@ -21,10 +21,10 @@ var BuxNarbMary = ee.FeatureCollection("ft:1hseXyjCm5NM3krhX5qJB6-Gkl0e5o84tBD1W
 var Kinglake = ee.FeatureCollection("ft:1uTaTWzmTW02jGVsMa6AggqK6ncqY2527kJQh1t1z").geometry(); 
 
 // show the layers
-Map.addLayer(Victoria, {color: "55EAEC"}, "Province of Victoria, Australia", 1, 0.5);
+Map.addLayer(Victoria, {color: "55EAEC"}, "Province of Victoria, Australia", 1, 0.4);
 Map.addLayer(Melbourne, {color: "4229FF"}, "Melbourne, VIC, Australia", 1, 0.3);
-Map.addLayer(BuxNarbMary, {color: "BF19DB"}, "Buxton-Narbelthong-Marysville, VIC, Australia", 1, 0.8);
-Map.addLayer(Kinglake, {color: "31994D"}, "Kinglake, VIC, Australia", 1, 0.8);
+Map.addLayer(BuxNarbMary, {color: "BF19DB"}, "Buxton-Narbelthong-Marysville, VIC, Australia", 1, 1);
+Map.addLayer(Kinglake, {color: "31994D"}, "Kinglake, VIC, Australia", 1, 1);
 
 //Center Map
 Map.setCenter(145.5032, -37.6399, 6);
@@ -38,7 +38,7 @@ var firesVis = {
   max: 504.4,
   palette: ["red", "orange", "white"],
 };
-Map.addLayer(fires, firesVis, "Fires");
+Map.addLayer(fires, firesVis, "Fires", 1, 0.8);
 
 var single = dataset.median().select("T21");
 
