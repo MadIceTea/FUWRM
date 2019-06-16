@@ -16,9 +16,8 @@ var Big_Square =
 Map.centerObject(Big_Square, 11);
 
 var dataset = ee.ImageCollection("FIRMS")
-  // .filterBounds(Big_Square)
-  //.filter(ee.Filter.date("2005-07-28", "2005-07-29")); //interesting, there was a fire here in 2005 as well
-  .filter(ee.Filter.date("2019-04-04", "2019-04-11"));
+   .filterBounds(Big_Square)
+  .filter(ee.Filter.date("2019-04-03", "2019-04-06"));
 var fires = dataset.select("T21");
 var firesVis = {
   min: 309.6,
