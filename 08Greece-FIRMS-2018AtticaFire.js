@@ -31,8 +31,8 @@ var single = dataset.median().select("T21");
 
 //FIRMS False-Color Image Creation
 var vis = {
-  min: 305.4, 
-  max: 504.4,
+  min: 302.5, 
+  max: 343.8,
   palette: ["red", "orange", "white"],
 };
 
