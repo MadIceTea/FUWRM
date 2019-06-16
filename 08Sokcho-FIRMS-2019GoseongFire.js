@@ -54,8 +54,8 @@ single = single.addBands(mask);
 //FIRMS False-Color Image Export
 Export.image.toDrive({
   image: single,
-  description: "FIRMS_2018average_Sokcho_BigSquare",
-  folder: "SouthKorea-Goseong_BlackFire2009",
+  description: "FIRMS_2019_Sokcho_BigSquare",
+  folder: "SouthKorea_Sokcho_-GoseongFire2019",
   region:Big_Square,
   scale:30.0,
   fileFormat: "GeoTIFF",
