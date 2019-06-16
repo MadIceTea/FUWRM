@@ -30,7 +30,7 @@ Map.addLayer(Victoria, {color: "55EAEC"}, "Province of Victoria, Australia", 1, 
 Map.addLayer(Melbourne, {color: "000000"}, "Melbourne, VIC, Australia", 1, 0.3); //black
 Map.addLayer(BuxNarbMary, {color: "BF19DB"}, "Buxton-Narbelthong-Marysville, VIC, Australia", 1, 1); //purple
 Map.addLayer(Kinglake, {color: "31994D"}, "Kinglake, VIC, Australia", 1, 1); //green
-Map.addLayer(Labertouche, {color: "FFB7F5"}, "Labertouche, VIC, Australia", 1, 1); //pinkish-purple
+Map.addLayer(Labertouche, {color: "C18AB9"}, "Labertouche, VIC, Australia", 1, 1); //purple
 Map.addLayer(DrouinWest, {color: "270BFF"}, "Drouin West, VIC, Australia", 1, 1); //royal-deep blue
 Map.addLayer(Tonimbuk, {color: "4229FF"}, "Tonimbuk, VIC, Australia", 1, 1); //darker blue
 
