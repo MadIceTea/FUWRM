@@ -35,7 +35,7 @@ Map.addLayer(DrouinWest, {color: "C18AB9"}, "Drouin West, VIC, Australia", 1, 1)
 Map.addLayer(Tonimbuk, {color: "ADC91F"}, "Tonimbuk, VIC, Australia", 1, 1); //darker green
 
 //Center Map
-Map.centerObject(Big_Square, 8);
+Map.centerObject(Big_Square, 9);
 
 var dataset = ee.ImageCollection("FIRMS")
   .filterBounds(Big_Square)
