@@ -7,10 +7,10 @@ var Big_Square =
       }
     ] */
     ee.Geometry.Polygon(
-        [[[23.691849022438532, 38.151381357589514],
-          [23.691849022438532, 37.89661465827206],
-          [24.033798485329157, 37.89661465827206],
-          [24.033798485329157, 38.151381357589514]]], null, false);
+        [[[128.44236782126666, 38.23664595595953],
+          [128.44236782126666, 38.11195324573226],
+          [128.61128261618853, 38.11195324573226],
+          [128.61128261618853, 38.23664595595953]]], null, false);
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
 //Center Map
 Map.centerObject(Big_Square, 11);
@@ -18,11 +18,11 @@ Map.centerObject(Big_Square, 11);
 var dataset = ee.ImageCollection("FIRMS")
   // .filterBounds(Big_Square)
   //.filter(ee.Filter.date("2005-07-28", "2005-07-29")); //interesting, there was a fire here in 2005 as well
-  .filter(ee.Filter.date("2018-07-22", "2018-07-27"));
+  .filter(ee.Filter.date("2019-04-04", "2019-04-11"));
 var fires = dataset.select("T21");
 var firesVis = {
-  min: 302.5,
-  max: 343.8,
+  min: 309.6,
+  max: 326.3,
   palette: ["red", "orange", "white"],
 };
 Map.addLayer(fires, firesVis, "Fires", 1, 0.65);
@@ -31,8 +31,8 @@ var single = dataset.median().select("T21");
 
 //FIRMS False-Color Image Creation
 var vis = {
-  min: 302.5, 
-  max: 343.8,
+  min: 309.6,
+  max: 326.3,
   palette: ["red", "orange", "white"],
 };
 
