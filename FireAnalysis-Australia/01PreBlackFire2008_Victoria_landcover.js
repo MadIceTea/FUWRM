@@ -37,3 +37,102 @@ Map.addLayer(Tonimbuk, {color: "ADC91F"}, "Tonimbuk, VIC, Australia", 1, 1); //d
 //Center Map
 Map.centerObject(Big_Square, 9);
 
+//L8SR Bands and Human-Friendly Naming
+var LANDSAT_8_BANDS = ["B2", "B3", "B4","B5","B6","B10","B7"];
+var STD_NAMES = ["blue","green","red","nir","swir1","tir","swir2"];
+
+//Add an outline of the Town of Paradise
+Map.addLayer(Paradise, {color: "000000"}, "Town of Paradise", 1, 1);
+
+//Center Map
+Map.setCenter(-121.619, 39.894, 10);
+
+//filtering Against Paradise at 1-year resolution
+
+var landsat_SR = ee.ImageCollection("LANDSAT/LC08/C01/T1_SR") //load LANDSAT8 raws for during the fire period
+	.filterBounds(Paradise)
+	.filterDate("2018-01-01","2018-11-07")
+	// Filter cloudy scenes.
+  .filter(ee.Filter.lt("CLOUD_COVER", 35))
+	.select(LANDSAT_8_BANDS, STD_NAMES);
+
+print(landsat_SR); //date debug
+
+var single = landsat_SR.median();
+
+//Display the Composite
+Map.addLayer(landsat_SR, {"bands":["red","blue","green"],min:0,max:2000}, "baselayer", 1, 0);
+//Map.addLayer(landsat_SR, {"bands":["tir"],min:0,max:2000}, "temperature", 1, 1);
+
+var inputimage = landsat_SR.median();
+
+function addNDVI(image) {
+  return image
+    .addBands(image.normalizedDifference(["nir","red"]).rename("ndvi"))
+  ;
+}
+
+var ndvi = addNDVI(inputimage);
+
+//Toggle-display the single median-reduced image.
+Map.addLayer(single, {"bands":["red","blue","green"],min:0,max:2000}, "median_image", 1, 0.85);
+
+//Map of NDVI vegetation-water probability.
+Map.addLayer(ndvi,{bands:["ndvi"],min:0,max:1}, "ndvilayer", 1, 0.15);
+
+/*
+//predict land-cover bands
+var predictionBands = ["blue","green","red","nir","swir1","swir2","ndvi"];
+
+var trainingimage = ndvi.select(predictionBands);
+
+var trainingpolygons = ee.FeatureCollection("ft:18GtIidyOfJkJhnsX_-7MWr3b0VH3vZIKrymBsUC5");
+
+var training = trainingimage.sampleRegions({
+    collection: trainingpolygons,
+    properties: ["class"],
+    scale: 160
+});
+
+//Train the CART classifier (a regular expression, not made up) with default parameters
+var trained = ee.Classifier.cart().train(training,"class", predictionBands);
+
+//Classify image with the same bands used for training.
+var CARTclassified = trainingimage.select(predictionBands).classify(trained);
+
+//Display the result
+Map.addLayer(CARTclassified, {min: 0, max: 3, palette: ["97CAf9","784800", "228B22", "fff44f"]}, "CARTclassification", 1);
+*/
+
+//Landsat True-Color Image Export
+//Export Image
+var vis = {
+  min: 100, 
+  max: 2000,
+  gamma: 1.5,
+  bands: ["red", "green", "blue"]
+};
+
+// visualize image using visOpts above
+// turning it into 8-bit RGB image.
+single = single.visualize(vis);
+
+// obtain native scale of RGB bands
+var scale = single.projection().nominalScale().getInfo();
+
+// add an alpha channel as 4th band to mask no data regions
+var mask = single.mask().reduce(ee.Reducer.min())
+    .multiply(255).toByte();
+single = single.addBands(mask);
+
+//Landsat True-Color Image Export
+Export.image.toDrive({
+  image: single,
+  description: "landsat_preFire2018_Paradise_BigSquare",
+  folder: "California-Paradise_CampFire2018",
+  region:Big_Square,
+  scale:30.0,
+  fileFormat: "GeoTIFF",
+  crs: "EPSG:3857",
+  formatOptions: {cloudOptimized: true}
+});
