@@ -32,7 +32,7 @@ print(Labertouche);
 // Map.addLayer(Melbourne, {color: "000000"}, "Melbourne, VIC, Australia", 1, 0.3); //black
 // Map.addLayer(BuxNarbMary, {color: "BF19DB"}, "Buxton-Narbelthong-Marysville, VIC, Australia", 1, 1); //purple
 // Map.addLayer(Kinglake, {color: "31994D"}, "Kinglake, VIC, Australia", 1, 1); //green
-Map.addLayer(Labertouche, {color: "BCB3FF"}, "Labertouche, VIC, Australia", 1, 1); //lightish-purple
+Map.addLayer(Labertouche, {color: "270BFF"}, "Labertouche, VIC, Australia", 1, 1); //royal-deep blue
 Map.addLayer(DrouinWest, {color: "FFB7F5"}, "Drouin West, VIC, Australia", 1, 1); //pinkish-purple
 Map.addLayer(Tonimbuk, {color: "4229FF"}, "Tonimbuk, VIC, Australia", 1, 1); //darker blue
 
