@@ -14,7 +14,7 @@ var Big_Square =
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
 // Import Sokcho City from Fusion Table
 var Sokcho = ee.FeatureCollection("ft:1iyEzMFsLMvaMo9e9855Rpfky44tzW36lVnoOkXe5").geometry();
-Map.addLayer(Sokcho, {color: "55EAEC"}, "Sokcho, South Korea", 1, 0.4); //light blue
+Map.addLayer(Sokcho, {color: "55EAEC"}, "Sokcho, South Korea", 1, 1); //light blue
 
 //Center Map
 Map.centerObject(Big_Square, 11);
