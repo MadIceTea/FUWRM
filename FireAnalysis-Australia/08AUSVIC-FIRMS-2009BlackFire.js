@@ -42,7 +42,7 @@ var dataset = ee.ImageCollection("FIRMS")
   .filter(ee.Filter.date("2009-02-04", "2009-02-15"));
 var fires = dataset.select("T21");
 var firesVis = {
-  min: 305.3,
+  min: 305.4,
   max: 504.4,
   palette: ["red", "orange", "white"],
 };
@@ -52,7 +52,7 @@ var single = dataset.median().select("T21");
 
 //FIRMS False-Color Image Creation
 var vis = {
-  min: 305.3, 
+  min: 305.4, 
   max: 504.4,
   palette: ["red", "orange", "white"],
 };
