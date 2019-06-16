@@ -26,13 +26,13 @@ var DrouinWest = ee.FeatureCollection("ft:1g2cJ9z_o3gnFKfYxbPtF6DYgBOe-JUDoNHRhJ
 var Tonimbuk = ee.FeatureCollection("ft:1tqsM6Mt1HQD5QE_VF3vyDcj7beSlX0YQzHDSa2dd").geometry();
 
 // show the layers
-Map.addLayer(Victoria, {color: "55EAEC"}, "Province of Victoria, Australia", 1, 0.4);
-Map.addLayer(Melbourne, {color: "4229FF"}, "Melbourne, VIC, Australia", 1, 0.3);
-Map.addLayer(BuxNarbMary, {color: "BF19DB"}, "Buxton-Narbelthong-Marysville, VIC, Australia", 1, 1);
-Map.addLayer(Kinglake, {color: "31994D"}, "Kinglake, VIC, Australia", 1, 1);
-Map.addLayer(Labertouche, {color: "31994D"}, "Kinglake, VIC, Australia", 1, 1);
-Map.addLayer(DrouinWest, {color: "31994D"}, "Kinglake, VIC, Australia", 1, 1);
-Map.addLayer(Tonimbuk, {color: "31994D"}, "Kinglake, VIC, Australia", 1, 1);
+Map.addLayer(Victoria, {color: "55EAEC"}, "Province of Victoria, Australia", 1, 0.4); //light blue
+Map.addLayer(Melbourne, {color: "4229FF"}, "Melbourne, VIC, Australia", 1, 0.3); //darker blue
+Map.addLayer(BuxNarbMary, {color: "BF19DB"}, "Buxton-Narbelthong-Marysville, VIC, Australia", 1, 1); //purple
+Map.addLayer(Kinglake, {color: "31994D"}, "Kinglake, VIC, Australia", 1, 1); //green
+Map.addLayer(Labertouche, {color: "31994D"}, "Labertouche, VIC, Australia", 1, 1); 
+Map.addLayer(DrouinWest, {color: "31994D"}, "Drouin West, VIC, Australia", 1, 1);
+Map.addLayer(Tonimbuk, {color: "31994D"}, "Tonimbuk, VIC, Australia", 1, 1);
 
 //Center Map
 Map.centerObject(Big_Square, 8);
