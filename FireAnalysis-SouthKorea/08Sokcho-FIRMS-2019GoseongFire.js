@@ -12,9 +12,13 @@ var Big_Square =
           [128.61128261618853, 38.11195324573226],
           [128.61128261618853, 38.23664595595953]]], null, false);
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
-// Import Sokcho City from Fusion Table
+// Import Sokcho City and Goseong County-Town from Fusion Table
 var Sokcho = ee.FeatureCollection("ft:1iyEzMFsLMvaMo9e9855Rpfky44tzW36lVnoOkXe5").geometry();
+var Goseong = ee.FeatureCollection("ft:1R8IyhgmskDLku6cCD_sxOkQT4HfF67px3cuLSX43").geometry();
+
+//Display the layers
 Map.addLayer(Sokcho, {color: "55EAEC"}, "Sokcho, South Korea", 1, 1); //light blue
+Map.addLayer(Goseong, {color: "8410FF"}, "Goseong, South Korea", 1, 1); //purple
 
 //Center Map
 Map.centerObject(Big_Square, 11);
