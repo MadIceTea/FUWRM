@@ -30,7 +30,7 @@ var Tonimbuk = ee.FeatureCollection("ft:1tqsM6Mt1HQD5QE_VF3vyDcj7beSlX0YQzHDSa2d
 // Map.addLayer(Melbourne, {color: "000000"}, "Melbourne, VIC, Australia", 1, 0.3); //black
 // Map.addLayer(BuxNarbMary, {color: "BF19DB"}, "Buxton-Narbelthong-Marysville, VIC, Australia", 1, 1); //purple
 // Map.addLayer(Kinglake, {color: "31994D"}, "Kinglake, VIC, Australia", 1, 1); //green
-Map.addLayer(Labertouche, {color: "FFD65F"}, "Labertouche, VIC, Australia", 1, 1); //orange
+Map.addLayer(Labertouche, {color: "BCB3FF"}, "Labertouche, VIC, Australia", 1, 1); //lightish-purple
 Map.addLayer(DrouinWest, {color: "FFB7F5"}, "Drouin West, VIC, Australia", 1, 1); //pinkish-purple
 Map.addLayer(Tonimbuk, {color: "4229FF"}, "Tonimbuk, VIC, Australia", 1, 1); //darker blue
 
