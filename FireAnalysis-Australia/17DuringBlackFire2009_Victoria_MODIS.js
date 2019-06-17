@@ -37,51 +37,32 @@ Map.addLayer(Tonimbuk, {color: "ADC91F"}, "Tonimbuk, VIC, Australia", 1, 1); //d
 //Center Map
 Map.centerObject(Big_Square, 9);
 
-//Sentinel-2 Bands and Human-Friendly Naming
-var SENTINEL_2_BANDS = ["B2","B3","B4","B8","B11","B12"];
-var STD_NAMES = ["blue","green","red","nir","swir1","swir2"];
+var dataset = ee.ImageCollection("MODIS/006/MCD64A1")
+                  .filter(ee.Filter.date("2018-11-01", "2018-12-01"));
+var burnedArea = dataset.select("BurnDate");
+var burnedAreaVis = {
+  min: 312.0, // Nov. 8th, 2018 (CampFire sparked)
+  max: 329.0, // Nov. 25th, 2018 (CampFire contained)
+  palette:["black","grey","white"]
+};
+Map.addLayer(burnedArea, burnedAreaVis, "Burned Area");
 
-//filtering Against Melbourne Region at a time resolution during the fire
-var sentinel_AR = ee.ImageCollection("COPERNICUS/S2") //load Sentinel2 raws for the duration of the fire
-	.filterBounds(Melbourne)
-	.filterDate("2009-02-04","2009-02-15")
-	// No need to filter for cloudy scenes: smoke is a given in fires.
-	.select(SENTINEL_2_BANDS, STD_NAMES);
+print(dataset);
 
-print(sentinel_AR); //date debug
+single = dataset.first().select("BurnDate");
 
-//Display the Composite ImageCollection
-Map.addLayer(sentinel_AR, {"bands":["red","blue","green"],min:0,max:2000}, "baselayer", 1, 0);
-
-var single = sentinel_AR.median();
-
-function addNDVI(image) {
-  return image
-    .addBands(image.normalizedDifference(["nir","red"]).rename("ndvi"))
-  ;
-}
-
-var ndvi = addNDVI(single);
-
-//Toggle-display the single median-reduced image.
-Map.addLayer(single, {"bands":["red","blue","green"],min:0,max:2000}, "median_image", 1, 0.8);
-
-//Map of NDVI vegetation-water probability.
-Map.addLayer(ndvi,{bands:["ndvi"],min:0,max:1}, "ndvilayer", 1, 0.15);
-
-//Export Image
+//Export Process
 var vis = {
-  min: 100, 
-  max: 2000,
-  gamma: 1.5,
-  bands: ["red", "green", "blue"]
+  min: 312, 
+  max: 329,
+  palette: ["black","grey","white"],
 };
 
 // visualize image using visOpts above
-// turning it into 8-bit RGB image.
-single = single.visualize(vis);
+// turning it into 8-bit visible image.
+var single = single.visualize(vis);
 
-// obtain native scale of RGB bands
+// obtain native scale of avg_rad band
 var scale = single.projection().nominalScale().getInfo();
 
 // add an alpha channel as 4th band to mask no data regions
@@ -89,11 +70,11 @@ var mask = single.mask().reduce(ee.Reducer.min())
     .multiply(255).toByte();
 single = single.addBands(mask);
 
-//Sentinel True-Color Image Export
+//MODIS MCD64A1 Product Image Export
 Export.image.toDrive({
   image: single,
-  description: "sentinel_averageDuringFire2009_Victoria_BigSquare",
-  folder: "Australia-Victoria_BlackFire2009",
+  description: "MODIS_MCD64A1-2009_BlackFireBurnScar_Victoria_BigSquare",
+  folder: "California-Paradise_CampFire2018",
   region:Big_Square,
   scale:30.0,
   fileFormat: "GeoTIFF",
