@@ -19,7 +19,7 @@ var STD_NAMES = ["blue","green","red","nir","swir1","swir2"];
 //filtering Against Melbourne Region at a time resolution during the fire
 var sentinel_AR = ee.ImageCollection("COPERNICUS/S2") //load Sentinel2 raws for the duration of the fire
 	.filterBounds(Melbourne)
-	.filterDate("2018-11-08","2018-11-25")
+	.filterDate("2009-02-04","2009-02-15")
 	// No need to filter for cloudy scenes: smoke is a given in fires.
 	.select(SENTINEL_2_BANDS, STD_NAMES);
 
