@@ -44,7 +44,7 @@ var STD_NAMES = ["blue","green","red","nir","swir1","tir","swir2"];
 //filtering Against Melbourne region at time resolution during the fire
 
 var landsat_SR = ee.ImageCollection("LANDSAT/LE07/C01/T1_SR") //load LANDSAT7 raws for during the fire period
-	.filterBounds(Victoria)
+	.filterBounds(Melbourne)
 	.filterDate("2009-02-16", "2010-01-01")
 	// Filter cloudy scenes.
   .filter(ee.Filter.lt("CLOUD_COVER", 10))
