@@ -128,8 +128,8 @@ single = single.addBands(mask);
 //Sentinel True-Color Image Export
 Export.image.toDrive({
   image: single,
-  description: "sentinel_averageDuringFire_Victoria_BigSquare",
-  folder: "California-Paradise_CampFire2018",
+  description: "sentinel_averageDuringFire2009_Victoria_BigSquare",
+  folder: "Australia-Victoria_BlackFire2009",
   region:Big_Square,
   scale:30.0,
   fileFormat: "GeoTIFF",
