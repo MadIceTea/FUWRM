@@ -38,11 +38,11 @@ Map.addLayer(Tonimbuk, {color: "ADC91F"}, "Tonimbuk, VIC, Australia", 1, 1); //d
 Map.centerObject(Big_Square, 9);
 
 var dataset = ee.ImageCollection("MODIS/006/MCD64A1")
-                  .filter(ee.Filter.date("2018-11-01", "2018-12-01"));
+                  .filter(ee.Filter.date("2009-02-04", "2009-02-15"));
 var burnedArea = dataset.select("BurnDate");
 var burnedAreaVis = {
-  min: 312.0, // Nov. 8th, 2018 (CampFire sparked)
-  max: 329.0, // Nov. 25th, 2018 (CampFire contained)
+  min: 312.0,
+  max: 329.0,
   palette:["black","grey","white"]
 };
 Map.addLayer(burnedArea, burnedAreaVis, "Burned Area");
