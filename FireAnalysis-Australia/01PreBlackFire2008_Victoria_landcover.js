@@ -37,24 +37,18 @@ Map.addLayer(Tonimbuk, {color: "ADC91F"}, "Tonimbuk, VIC, Australia", 1, 1); //d
 //Center Map
 Map.centerObject(Big_Square, 9);
 
-//L8SR Bands and Human-Friendly Naming
-var LANDSAT_8_BANDS = ["B2", "B3", "B4","B5","B6","B10","B7"];
+//L7SR Bands and Human-Friendly Naming
+var LANDSAT_7_BANDS = ["B1","B2","B3","B4","B5","B6","B7"];
 var STD_NAMES = ["blue","green","red","nir","swir1","tir","swir2"];
 
-//Add an outline of the Town of Paradise
-Map.addLayer(Paradise, {color: "000000"}, "Town of Paradise", 1, 1);
-
-//Center Map
-Map.setCenter(-121.619, 39.894, 10);
-
-//filtering Against Paradise at 1-year resolution
+//filtering Against Victoria at 1-year resolution
 
 var landsat_SR = ee.ImageCollection("LANDSAT/LC08/C01/T1_SR") //load LANDSAT8 raws for during the fire period
-	.filterBounds(Paradise)
-	.filterDate("2018-01-01","2018-11-07")
+	.filterBounds(Victoria)
+	.filterDate("2008-01-01","2009-01-01")
 	// Filter cloudy scenes.
   .filter(ee.Filter.lt("CLOUD_COVER", 35))
-	.select(LANDSAT_8_BANDS, STD_NAMES);
+	.select(LANDSAT_7_BANDS, STD_NAMES);
 
 print(landsat_SR); //date debug
 
@@ -80,30 +74,6 @@ Map.addLayer(single, {"bands":["red","blue","green"],min:0,max:2000}, "median_im
 //Map of NDVI vegetation-water probability.
 Map.addLayer(ndvi,{bands:["ndvi"],min:0,max:1}, "ndvilayer", 1, 0.15);
 
-/*
-//predict land-cover bands
-var predictionBands = ["blue","green","red","nir","swir1","swir2","ndvi"];
-
-var trainingimage = ndvi.select(predictionBands);
-
-var trainingpolygons = ee.FeatureCollection("ft:18GtIidyOfJkJhnsX_-7MWr3b0VH3vZIKrymBsUC5");
-
-var training = trainingimage.sampleRegions({
-    collection: trainingpolygons,
-    properties: ["class"],
-    scale: 160
-});
-
-//Train the CART classifier (a regular expression, not made up) with default parameters
-var trained = ee.Classifier.cart().train(training,"class", predictionBands);
-
-//Classify image with the same bands used for training.
-var CARTclassified = trainingimage.select(predictionBands).classify(trained);
-
-//Display the result
-Map.addLayer(CARTclassified, {min: 0, max: 3, palette: ["97CAf9","784800", "228B22", "fff44f"]}, "CARTclassification", 1);
-*/
-
 //Landsat True-Color Image Export
 //Export Image
 var vis = {
@@ -128,7 +98,7 @@ single = single.addBands(mask);
 //Landsat True-Color Image Export
 Export.image.toDrive({
   image: single,
-  description: "landsat_preFire2018_Paradise_BigSquare",
+  description: "landsat_preFire2008_Victoria_BigSquare",
   folder: "Australia-Victoria_BlackFire2009",
   region:Big_Square,
   scale:30.0,
