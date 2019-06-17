@@ -41,13 +41,13 @@ Map.centerObject(Big_Square, 9);
 var LANDSAT_7_BANDS = ["B1","B2","B3","B4","B5","B6","B7"];
 var STD_NAMES = ["blue","green","red","nir","swir1","tir","swir2"];
 
-//filtering Against Victoria at 1-year resolution
+//filtering Against Melbourne region at time resolution during the fire
 
 var landsat_SR = ee.ImageCollection("LANDSAT/LE07/C01/T1_SR") //load LANDSAT7 raws for during the fire period
 	.filterBounds(Victoria)
-	.filterDate("2008-01-01","2009-01-01")
+	.filterDate("2009-02-04", "2009-02-15")
 	// Filter cloudy scenes.
-  .filter(ee.Filter.lt("CLOUD_COVER", 10))
+  //.filter(ee.Filter.lt("CLOUD_COVER", 10)) //expecting clouds from the smoke
 	.select(LANDSAT_7_BANDS, STD_NAMES);
 
 print(landsat_SR); //date debug
