@@ -12,6 +12,8 @@ var Big_Square =
           [146.16235336406248, -38.13760786176182],
           [146.16235336406248, -37.18091645226004]]], null, false);
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
+
+
 //Sentinel-2 Bands and Human-Friendly Naming
 var SENTINEL_2_BANDS = ["B2","B3","B4","B8","B11","B12"];
 var STD_NAMES = ["blue","green","red","nir","swir1","swir2"];
