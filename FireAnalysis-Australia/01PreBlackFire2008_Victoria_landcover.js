@@ -129,7 +129,7 @@ single = single.addBands(mask);
 Export.image.toDrive({
   image: single,
   description: "landsat_preFire2018_Paradise_BigSquare",
-  folder: "California-Paradise_CampFire2018",
+  folder: "Australia-Victoria_BlackFire2009",
   region:Big_Square,
   scale:30.0,
   fileFormat: "GeoTIFF",
