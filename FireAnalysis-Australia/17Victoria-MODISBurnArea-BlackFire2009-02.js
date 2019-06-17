@@ -38,7 +38,7 @@ Map.addLayer(Tonimbuk, {color: "ADC91F"}, "Tonimbuk, VIC, Australia", 1, 1); //d
 Map.centerObject(Big_Square, 9);
 
 var dataset = ee.ImageCollection("MODIS/006/MCD64A1")
-                  .filter(ee.Filter.date("2009-02-04", "2009-02-15"));
+                  .filter(ee.Filter.date("2009-02-01", "2009-03-01"));
 var burnedArea = dataset.select("BurnDate");
 var burnedAreaVis = {
   min: 312.0,
