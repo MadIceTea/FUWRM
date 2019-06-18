@@ -398,8 +398,9 @@ var collection = ee.ImageCollection("NOAA/VIIRS/DNB/MONTHLY_V1/VCMCFG")
   .filterDate("2013-01-01","2014-01-01") // for 2018 (until the week before the fire started)
   .filterBounds(Paradise); //around the Town of Paradise, California, USA
 
-var lida2008Paradise = ee.Image("users/GEE_Alex/classifiedImage_2008_Paradise_BigSquare");
-
+// var lida2008Paradise = ee.Image("users/GEE_Alex/classifiedImage_2008_Paradise_BigSquare");
+var lida20087Paradise = ee.Image("users/GEE_Alex/classifiedImage_2013landsat7_Paradise_BigSquare");
+var lida20138Paradise = ee.Image("users/GEE_Alex/classifiedImage_2013landsat8_Paradise_BigSquare");
 var viirs = collection.median(); //lighting composite, taking median values
 
 //Center Map
@@ -412,7 +413,10 @@ Map.addLayer(Paradise, {color: "acc235"}, "Town of Paradise", 1, 1);
 Map.addLayer(viirs,{bands:["avg_rad", "avg_rad", "cf_cvg"],min:1,max:5}, "median nightmap", 0, 1);
 var single = viirs.select("avg_rad");
 Map.addLayer(single,{bands:["avg_rad"],min:1,max:10, palette: ["black", "orange", "white"]},"average masked nightmap", 1, 0.9);
-Map.addLayer(lida2008Paradise,{bands:["vis-red", "vis-green", "vis-blue"],min:0,max:255}, "CARTClassified2008", 1, 0.8);
+// Map.addLayer(lida2008Paradise,{bands:["vis-red", "vis-green", "vis-blue"],min:0,max:255}, "CARTClassified2008", 1, 0.8);
+Map.addLayer(lida20137Paradise,{bands:["vis-red", "vis-green", "vis-blue"],min:0,max:255}, "CARTClassified2013-landsat7", 1, 0.8);
+Map.addLayer(lida20138Paradise,{bands:["vis-red", "vis-green", "vis-blue"],min:0,max:255}, "CARTClassified2013-landsat8", 1, 0.8);
+
 //debug
 print(collection);
 print(viirs);
