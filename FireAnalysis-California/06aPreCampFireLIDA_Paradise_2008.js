@@ -470,7 +470,6 @@ var mask = single.mask().reduce(ee.Reducer.min())
     .multiply(255).toByte();
 single = single.addBands(mask);
 
-/*
 //Landsat True-Color Image Export
 Export.image.toDrive({
   image: single,
@@ -482,7 +481,6 @@ Export.image.toDrive({
   crs: "EPSG:3857",
   formatOptions: {cloudOptimized: true}
 });
-*/
 
 Export.image.toAsset({
   image: single,
