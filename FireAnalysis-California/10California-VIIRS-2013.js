@@ -399,6 +399,7 @@ var collection = ee.ImageCollection("NOAA/VIIRS/DNB/MONTHLY_V1/VCMCFG")
   .filterBounds(Paradise); //around the Town of Paradise, California, USA
 
 var lida2008Paradise = ee.Image("users/GEE_Alex/classifiedImage_2008_Paradise_BigSquare");
+
 var viirs = collection.median(); //lighting composite, taking median values
 
 //Center Map
