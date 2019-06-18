@@ -414,8 +414,8 @@ Map.addLayer(viirs,{bands:["avg_rad", "avg_rad", "cf_cvg"],min:1,max:5}, "median
 var single = viirs.select("avg_rad");
 Map.addLayer(single,{bands:["avg_rad"],min:1,max:10, palette: ["black", "orange", "white"]},"average masked nightmap", 1, 0.9);
 // Map.addLayer(lida2008Paradise,{bands:["vis-red", "vis-green", "vis-blue"],min:0,max:255}, "CARTClassified2008", 1, 0.8);
-Map.addLayer(lida20137Paradise,{bands:["vis-red", "vis-green", "vis-blue"],min:0,max:255}, "CARTClassified2013-landsat7", 1, 0.8);
-Map.addLayer(lida20138Paradise,{bands:["vis-red", "vis-green", "vis-blue"],min:0,max:255}, "CARTClassified2013-landsat8", 1, 0.8);
+Map.addLayer(lida20137Paradise,{bands:["vis-red", "vis-green", "vis-blue"],min:0,max:255}, "CARTClassified2013-landsat7", 1, 0.6);
+Map.addLayer(lida20138Paradise,{bands:["vis-red", "vis-green", "vis-blue"],min:0,max:255}, "CARTClassified2013-landsat8", 1, 0.6);
 
 //debug
 print(collection);
