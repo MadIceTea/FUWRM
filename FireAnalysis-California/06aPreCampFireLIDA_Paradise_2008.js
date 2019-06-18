@@ -489,7 +489,6 @@ Export.image.toAsset({
   description: "classifiedImage_2008_Paradise_BigSquare",
   region:Big_Square,
   scale:30.0,
-  fileFormat: "GeoTIFF",
   crs: "EPSG:3857",
   formatOptions: {cloudOptimized: true}
 });
