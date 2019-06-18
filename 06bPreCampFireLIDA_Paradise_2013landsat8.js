@@ -404,7 +404,7 @@ Map.setCenter(-121.621, 39.762, 13);
 
 var landsat_SR = ee.ImageCollection("LANDSAT/LC08/C01/T1_SR") //load LANDSAT8 raws for during the fire period
 	.filterBounds(Paradise)
-	.filterDate("2013-01-01","2014-01-01")
+	.filterDate("2013-01-01","2014-01-01") //note that there is no imagery for Jan-March 2013 with Landsat8
 	// Filter cloudy scenes.
   .filter(ee.Filter.lt("CLOUD_COVER", 35))
 	.select(LANDSAT_8_BANDS, STD_NAMES);
