@@ -486,7 +486,7 @@ Export.image.toDrive({
 
 Export.image.toAsset({
   image: single,
-  description: "classifiedImage_2008_Paradise_BigSquare",
+  description: "classifiedImage_2008_Paradise_BigSquare | Asset",
   region:Big_Square,
   scale:30.0,
   crs: "EPSG:3857"
