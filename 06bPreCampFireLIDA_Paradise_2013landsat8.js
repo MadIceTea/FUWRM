@@ -474,7 +474,7 @@ single = single.addBands(mask);
 //Landsat True-Color Image Export
 Export.image.toDrive({
   image: single,
-  description: "classifiedImage_2013_Paradise_BigSquare",
+  description: "classifiedImage_2013landsat8_Paradise_BigSquare",
   folder: "California-Paradise_CampFire2018",
   region:Big_Square,
   scale:30.0,
@@ -485,7 +485,7 @@ Export.image.toDrive({
 
 Export.image.toAsset({
   image: single,
-  description: "classifiedImage_2013_Paradise_BigSquare-Asset",
+  description: "classifiedImage_2013landsat8_Paradise_BigSquare-Asset",
   region:Big_Square,
   scale:30.0,
   crs: "EPSG:3857"
