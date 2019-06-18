@@ -399,6 +399,8 @@ var collection = ee.ImageCollection("NOAA/DMSP-OLS/NIGHTTIME_LIGHTS")
   .filterDate("2008-01-01","2009-01-01") // for 2008
   .filterBounds(Paradise); //around the Town of Paradise, California, USA
 
+var lida2008Paradise = ee.Image("users/GEE_Alex/classifiedImage_2008_Paradise_BigSquare");
+
 var DMSP = collection.median(); //lighting composite, taking median values
 
 //Center Map
@@ -411,6 +413,7 @@ Map.addLayer(Paradise, {color: "acc235"}, "Town of Paradise", 1, 1);
 Map.addLayer(DMSP,{bands:["avg_vis", "stable_lights", "cf_cvg"],min:1,max:5}, "median nightmap", 0, 1);
 var single = DMSP.select("stable_lights");
 Map.addLayer(single,{bands:["stable_lights"],min:1,max:10,palette: ["black", "orange", "white"]},"average cleaned nightmap", 1, 0.9);
+Map.addLayer(lida2008Paradise, {min: 0, max: 3, palette: ["784800","FFF44F","228B22","97CAF9"]}, "CARTclassification", 1, 0.75);
 
 //debug
 print(collection);
