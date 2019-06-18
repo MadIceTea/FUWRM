@@ -489,6 +489,5 @@ Export.image.toAsset({
   description: "classifiedImage_2008_Paradise_BigSquare",
   region:Big_Square,
   scale:30.0,
-  crs: "EPSG:3857",
-  formatOptions: {cloudOptimized: true}
+  crs: "EPSG:3857"
 });
