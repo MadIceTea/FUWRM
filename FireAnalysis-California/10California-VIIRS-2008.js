@@ -413,7 +413,7 @@ Map.addLayer(Paradise, {color: "acc235"}, "Town of Paradise", 1, 1);
 Map.addLayer(DMSP,{bands:["avg_vis", "stable_lights", "cf_cvg"],min:1,max:5}, "median nightmap", 0, 1);
 var single = DMSP.select("stable_lights");
 Map.addLayer(single,{bands:["stable_lights"],min:1,max:10,palette: ["black", "orange", "white"]},"average cleaned nightmap", 1, 0.9);
-Map.addLayer(lida2008Paradise, {min: 0, max: 3, palette: ["784800","FFF44F","228B22","97CAF9"]}, "CARTclassification", 1, 0.75);
+Map.addLayer(lida2008Paradise,{min:0,max:3},"CARTclassification", 1, 0.75);
 
 //debug
 print(collection);
