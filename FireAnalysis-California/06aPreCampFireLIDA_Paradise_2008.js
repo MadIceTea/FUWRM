@@ -394,19 +394,19 @@ var Big_Square = /* color: #acc235 */ee.Geometry.Polygon(
           [-121.873712, 39.883994]]]);
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
 //bands to be considered
-var Landsat_5_BANDS = ["B1","B2","B3","B4","B5","B7"];
+var Landsat_7_BANDS = ["B1","B2","B3","B4","B5","B7"];
 var STD_NAMES = ["blue","green","red","nir","swir1","swir2"];
 
 //Center Map
 Map.setCenter(-121.621, 39.762, 13);
 
 //filtering against Paradise at [about] half-year resolution
-var landsat_SR = ee.ImageCollection("LANDSAT/LT05/C01/T1_SR") //load collection 1 - LANDSAT8 raws post-CampFire
+var landsat_SR = ee.ImageCollection("LANDSAT/LE07/C01/T1_SR") //load collection 1 - LANDSAT8 raws post-CampFire
 	.filterBounds(Paradise)
-	.filterDate("2008-01-01","2009-01-01")
+	.filterDate("2013-01-01","2014-01-01")
 	// Filter cloudy scenes.
   .filter(ee.Filter.lt("CLOUD_COVER", 35))
-	.select(Landsat_5_BANDS, STD_NAMES);
+	.select(Landsat_7_BANDS, STD_NAMES);
 
 print(landsat_SR); //date debug
 
