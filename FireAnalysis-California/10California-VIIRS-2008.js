@@ -393,15 +393,13 @@ var Big_Square = /* color: #acc235 */ee.Geometry.Polygon(
           [-121.812967, 39.884304],
           [-121.873712, 39.883994]]]);
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
-//Import images for 2008, around a decade before the Camp Fire.
-//Use DMSP-OLS dataset Nighttime lights set.
-var collection = ee.ImageCollection("NOAA/DMSP-OLS/NIGHTTIME_LIGHTS")
-  .filterDate("2008-01-01","2009-01-01") // for 2008
+//Import images for 2013, until CampFire started.
+var collection = ee.ImageCollection("NOAA/VIIRS/DNB/MONTHLY_V1/VCMCFG")
+  .filterDate("2013-01-01","2014-01-01") // for 2018 (until the week before the fire started)
   .filterBounds(Paradise); //around the Town of Paradise, California, USA
 
 var lida2008Paradise = ee.Image("users/GEE_Alex/classifiedImage_2008_Paradise_BigSquare");
-
-var DMSP = collection.median(); //lighting composite, taking median values
+var viirs = collection.median(); //lighting composite, taking median values
 
 //Center Map
 Map.setCenter(-121.619, 39.894, 10);
@@ -410,14 +408,13 @@ Map.setCenter(-121.619, 39.894, 10);
 //Brightest value in Town of Paradise during Camp Fire (~10) is max.
 //Minimum is set to 1 to eliminate street lighting.
 Map.addLayer(Paradise, {color: "acc235"}, "Town of Paradise", 1, 1);
-Map.addLayer(DMSP,{bands:["avg_vis", "stable_lights", "cf_cvg"],min:1,max:5}, "median nightmap", 0, 1);
-var single = DMSP.select("stable_lights");
-Map.addLayer(single,{bands:["stable_lights"],min:1,max:10,palette: ["black", "orange", "white"]},"average cleaned nightmap", 1, 1);
+Map.addLayer(viirs,{bands:["avg_rad", "avg_rad", "cf_cvg"],min:1,max:5}, "median nightmap", 0, 1);
+var single = viirs.select("avg_rad");
+Map.addLayer(single,{bands:["avg_rad"],min:1,max:10, palette: ["black", "orange", "white"]},"average masked nightmap", 1, 0.9);
 Map.addLayer(lida2008Paradise,{bands:["vis-red", "vis-green", "vis-blue"],min:0,max:255}, "CARTClassified2008", 1, 0.8);
-
 //debug
 print(collection);
-print(DMSP);
+print(viirs);
 print(single);
 
 //Export Process
@@ -439,10 +436,10 @@ var mask = single.mask().reduce(ee.Reducer.min())
     .multiply(255).toByte();
 single = single.addBands(mask);
 
-//DMSP Image Export
+//VIIRS Image Export
 Export.image.toDrive({
   image: single,
-  description: "DMSPColored_2008_Paradise_BigSquare",
+  description: "VIIRSColored_2013_Paradise_BigSquare",
   folder: "California-Paradise_CampFire2018",
   region:Big_Square,
   scale:30.0,
