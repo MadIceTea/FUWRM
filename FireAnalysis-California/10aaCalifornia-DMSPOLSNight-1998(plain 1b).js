@@ -13,7 +13,7 @@ var collection = ee.ImageCollection("NOAA/DMSP-OLS/NIGHTTIME_LIGHTS")
 var DMSP = collection.median(); //lighting composite, taking median values
 
 //Center Map
-Map.setCenter(-121.621, 39.762, 13);
+Map.setCenter(-121.619, 39.894, 10);
 
 //Display Layers on the Map with limited range of values.
 //Minimum is set to 1 to eliminate street lighting.
