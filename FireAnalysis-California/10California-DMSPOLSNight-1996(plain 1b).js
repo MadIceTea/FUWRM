@@ -396,7 +396,7 @@ var Big_Square = /* color: #acc235 */ee.Geometry.Polygon(
 //Import images for 1996, around a decade before the Camp Fire.
 //Use DMSP-OLS dataset Nighttime lights set.
 var collection = ee.ImageCollection("NOAA/DMSP-OLS/NIGHTTIME_LIGHTS")
-  .filterDate("1996-01-01","1996-01-01") // for 1996
+  .filterDate("1996-01-01","1997-01-01") // for 1996
   .filterBounds(Paradise); //around the Town of Paradise, California, USA
   
 var DMSP = collection.median(); //lighting composite, taking median values
