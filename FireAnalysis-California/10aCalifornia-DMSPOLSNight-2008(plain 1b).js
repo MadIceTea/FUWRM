@@ -8,7 +8,7 @@ var Big_Square = /* color: #acc235 */ee.Geometry.Polygon(
 //Import images for 2008, around a decade before the Camp Fire.
 //Use DMSP-OLS dataset Nighttime lights set.
 var collection = ee.ImageCollection("NOAA/DMSP-OLS/NIGHTTIME_LIGHTS")
-  .filterDate("2008-01-01","2009-01-01") // for 2008
+  .filterDate("2008-01-01","2009-01-01"); // for 2008
 
 var DMSP = collection.median(); //lighting composite, taking median values
 
