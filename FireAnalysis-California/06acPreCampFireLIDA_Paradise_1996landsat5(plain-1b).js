@@ -403,7 +403,7 @@ Map.setCenter(-121.621, 39.762, 13);
 //filtering against Paradise at [about] half-year resolution
 var landsat_SR = ee.ImageCollection("LANDSAT/LT05/C01/T1_SR") //load collection 1 - LANDSAT8 raws post-CampFire
 	.filterBounds(Paradise)
-	.filterDate("1998-01-01","1999-01-01")
+	.filterDate("1996-01-01","1997-01-01")
 	// Filter cloudy scenes.
   .filter(ee.Filter.lt("CLOUD_COVER", 35))
 	.select(Landsat_5_BANDS, STD_NAMES);
