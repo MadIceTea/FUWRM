@@ -407,9 +407,9 @@ Map.setCenter(-121.619, 39.894, 10);
 //Display Layers on the Map with limited range of values.
 //Brightest value in Town of Paradise during Camp Fire (~10) is max.
 //Minimum is set to 1 to eliminate street lighting.
-Map.addLayer(DMSP,{bands:["avg_vis", "stable_lights", "cf_cvg"],min:0,max:60}, "median nightmap", 0, 1);
+Map.addLayer(DMSP,{bands:["avg_vis", "stable_lights", "cf_cvg"],min:0,max:61.5}, "median nightmap", 0, 1);
 var single = DMSP.select("stable_lights");
-Map.addLayer(single,{bands:["stable_lights"],min:0,max:60,palette: ["black", "orange", "white"]},"average cleaned nightmap", 1, 1);
+Map.addLayer(single,{bands:["stable_lights"],min:0,max:61.5,palette: ["black", "orange", "white"]},"average cleaned nightmap", 1, 1);
 
 //DMSP Image Export
 Export.image.toDrive({
