@@ -417,6 +417,5 @@ Export.image.toDrive({
   description: "DMSPColored_2008_Paradise_BigSquare-1band",
   folder: "California-Paradise_CampFire2018",
   region:Big_Square,
-  scale:30.0,
-  formatOptions: {cloudOptimized: true}
+  scale:30.0
 });
