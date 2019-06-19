@@ -25,7 +25,7 @@ Map.addLayer(single,{bands:["stable_lights"],min:0,max:60,palette: ["black", "or
 //DMSP Image Export
 Export.image.toDrive({
   image: single,
-  description: "DMSPColored_2008_Paradise_BigSquare",
+  description: "DMSPColored_2008_Paradise_BigSquare-1band",
   folder: "California-Paradise_CampFire2018",
   region:Big_Square,
   scale:30.0,
