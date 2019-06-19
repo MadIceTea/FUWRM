@@ -401,7 +401,7 @@ var STD_NAMES = ["blue","green","red","nir","swir1","swir2"];
 Map.setCenter(-121.621, 39.762, 13);
 
 //filtering against Paradise at [about] half-year resolution
-var landsat_SR = ee.ImageCollection("LANDSAT/LC08/C01/T1_SR") //load collection 1 - LANDSAT8 raws
+var landsat_SR = ee.ImageCollection("LANDSAT/LC08/C01/T1_SR") //load collection 1 - LANDSAT8 raws pre-Camp Fire
 	.filterBounds(Paradise)
 	.filterDate("2018-01-01","2018-11-01")
 	// Filter cloudy scenes.
