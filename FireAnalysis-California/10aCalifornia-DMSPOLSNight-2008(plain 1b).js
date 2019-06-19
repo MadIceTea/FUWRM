@@ -418,7 +418,5 @@ Export.image.toDrive({
   folder: "California-Paradise_CampFire2018",
   region:Big_Square,
   scale:30.0,
-  fileFormat: "GeoTIFF",
-  crs: "EPSG:3857",
   formatOptions: {cloudOptimized: true}
 });
