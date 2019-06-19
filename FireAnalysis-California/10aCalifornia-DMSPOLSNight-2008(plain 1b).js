@@ -9,7 +9,6 @@ var Big_Square = /* color: #acc235 */ee.Geometry.Polygon(
 //Use DMSP-OLS dataset Nighttime lights set.
 var collection = ee.ImageCollection("NOAA/DMSP-OLS/NIGHTTIME_LIGHTS")
   .filterDate("2008-01-01","2009-01-01") // for 2008
-  .filterBounds(Paradise); //around the Town of Paradise, California, USA
 
 var DMSP = collection.median(); //lighting composite, taking median values
 
@@ -19,7 +18,6 @@ Map.setCenter(-121.619, 39.894, 10);
 //Display Layers on the Map with limited range of values.
 //Brightest value in Town of Paradise during Camp Fire (~10) is max.
 //Minimum is set to 1 to eliminate street lighting.
-Map.addLayer(Paradise, {color: "acc235"}, "Town of Paradise", 1, 1);
 Map.addLayer(DMSP,{bands:["avg_vis", "stable_lights", "cf_cvg"],min:1,max:5}, "median nightmap", 0, 1);
 var single = DMSP.select("stable_lights");
 Map.addLayer(single,{bands:["stable_lights"],min:1,max:10,palette: ["black", "orange", "white"]},"average cleaned nightmap", 1, 1);
