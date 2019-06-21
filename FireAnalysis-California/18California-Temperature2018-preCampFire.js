@@ -393,6 +393,12 @@ var Big_Square = /* color: #acc235 */ee.Geometry.Polygon(
           [-121.812967, 39.884304],
           [-121.873712, 39.883994]]]);
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
+// TODO
+// Change from the N. American DLAS to Global DLAS
+
+
+
+
 //Center the Map
 Map.setCenter(-121.619, 39.894, 10);
 
