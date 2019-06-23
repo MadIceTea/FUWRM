@@ -46,7 +46,7 @@ var landsat_SR = ee.ImageCollection("LANDSAT/LE07/C01/T1_SR") //load LANDSAT7 ra
 	.filterBounds(Big_Square)
 	.filterDate("2018-01-01", "2019-01-01")
 	// Filter cloudy scenes.
-  .filter(ee.Filter.lt("CLOUD_COVER", 5))
+  .filter(ee.Filter.lt("CLOUD_COVER", 4.5))
 	.select(LANDSAT_7_BANDS, STD_NAMES);
 
 print(landsat_SR); //date debug
@@ -72,7 +72,7 @@ var predictionBands = ["blue","green","red","nir","swir1","swir2","ndvi"];
 var trainingimage = ndvi.select(predictionBands);
 
 //fusion-table of polygons drawn in Google Earth Desktop
-var trainingpolygons = ee.FeatureCollection("ft:1YBmiKZM2pDv08IX6RIUMl_47Lw8UNE6FTqk1KA2L");
+var trainingpolygons = ee.FeatureCollection("ft:1jseqoUudExqMPdRtdemoa2OxtQLm9tnP0dS7LqaB");
 
 var training = trainingimage.sampleRegions({
     collection: trainingpolygons,
