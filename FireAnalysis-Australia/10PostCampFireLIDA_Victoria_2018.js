@@ -73,7 +73,7 @@ var predictionBands = ["blue","green","red","nir","swir1","swir2","ndvi"];
 var trainingimage = ndvi.select(predictionBands);
 
 //fusion-table of polygons drawn in Google Earth Desktop
-var trainingpolygons = ee.FeatureCollection("ft:1fJTAvmqprnXrKiKjCfjevexnlQUeCV_XErp6zQIO");
+var trainingpolygons = ee.FeatureCollection("ft:1zSdIrfJN2Kbvn3Z7rEpf7A0FOH5jmai4xDUKehXl");
 
 var training = trainingimage.sampleRegions({
     collection: trainingpolygons,
@@ -115,8 +115,8 @@ single = single.addBands(mask);
 //Landsat True-Color Image Export
 Export.image.toDrive({
   image: single,
-  description: "classifiedImage_postFire2009_Victoria_BigSquare",
-  folder: "Australia-Victoria_BlackFire2009",
+  description: "classifiedImage_postFire2018_Victoria_BigSquare",
+  folder: "Australia-Victoria_BlackFire2018",
   region:Big_Square,
   scale:30.0,
   fileFormat: "GeoTIFF",
