@@ -37,7 +37,7 @@ Map.addLayer(Tonimbuk, {color: "ADC91F"}, "Tonimbuk, VIC, Australia", 1, 1); //d
 //Center Map
 Map.centerObject(Big_Square, 9);
 
-//L7SR Bands and Human-Friendly Naming
+//L5SR Bands and Human-Friendly Naming [1998 is the first year (working backwards) where only L5 imagery is available.]
 var LANDSAT_5_BANDS = ["B1","B2","B3","B4","B5","B6","B7"];
 var STD_NAMES = ["blue","green","red","nir","swir1","tir","swir2"];
 
