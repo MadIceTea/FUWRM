@@ -37,10 +37,10 @@ Map.addLayer(Tonimbuk, {color: "ADC91F"}, "Tonimbuk, VIC, Australia", 1, 1); //d
 //Center Map
 Map.centerObject(Big_Square, 9);
 
-//Import images for 2018, almost a decade after the Black Fire.
-//Use DMSP-OLS dataset Nighttime lights set.
+//Import images for 2019, almost a decade after the Black Fire. Use time range used in LIDA classification.
+//Use NOAA-VIIRS dataset Nighttime lights set.
 var collection = ee.ImageCollection("NOAA/VIIRS/DNB/MONTHLY_V1/VCMCFG")
-  .filterDate("2018-01-01","2019-01-01") // for 2018
+  .filterDate("2018-12-01","2019-05-01") // for 2018
   .filterBounds(Big_Square); //around the export area
 
 //The values were overexposed to show small townships clearly, at the expense of overexposing Melbourne itself.  
