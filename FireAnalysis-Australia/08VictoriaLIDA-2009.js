@@ -101,7 +101,7 @@ single = single.addBands(mask);
 //Landsat True-Color Image Export
 Export.image.toDrive({
   image: single,
-  description: "classifiedImage_postFire2009_Paradise_BigSquare",
+  description: "classifiedImage_postFire2009_Victoria_BigSquare",
   folder: "",
   region:Big_Square,
   scale:30.0,
