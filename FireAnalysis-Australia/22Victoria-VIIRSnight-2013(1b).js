@@ -38,7 +38,7 @@ Map.addLayer(Tonimbuk, {color: "ADC91F"}, "Tonimbuk, VIC, Australia", 1, 1); //d
 Map.centerObject(Big_Square, 9);
 
 //Import images for 2013, almost five years after the Black Fire.
-//Use DMSP-OLS dataset Nighttime lights set.
+//Use NOAA-VIIRS dataset Nighttime lights set.
 var collection = ee.ImageCollection("NOAA/VIIRS/DNB/MONTHLY_V1/VCMCFG")
   .filterDate("2013-01-01","2014-01-01") // for 2013
   .filterBounds(Big_Square); //around the export area
