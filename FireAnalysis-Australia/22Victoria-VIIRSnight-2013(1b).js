@@ -46,7 +46,7 @@ var collection = ee.ImageCollection("NOAA/VIIRS/DNB/MONTHLY_V1/VCMCFG")
 var viirs = collection.median(); //lighting composite, taking median values
 Map.addLayer(viirs,{bands:["avg_rad", "avg_rad", "cf_cvg"],min:1,max:5}, "median nightmap", 0, 0.9);
 var single = viirs.select("avg_rad");
-Map.addLayer(single,{bands:["avg_rad"],min:1,max:10, palette: ["black", "orange", "white"]},"average masked nightmap", 1, 0.9);
+Map.addLayer(single,{bands:["avg_rad"],min:1,max:5, palette: ["black", "orange", "white"]},"average masked nightmap", 1, 0.9);
 
 Export.image.toDrive({
   image: single,
