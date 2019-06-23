@@ -102,7 +102,7 @@ single = single.addBands(mask);
 Export.image.toDrive({
   image: single,
   description: "classifiedImage_postFire2009_Victoria_BigSquare",
-  folder: "",
+  folder: "Australia-Victoria_BlackFire2009",
   region:Big_Square,
   scale:30.0,
   fileFormat: "GeoTIFF",
