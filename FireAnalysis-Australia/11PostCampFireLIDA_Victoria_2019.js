@@ -41,11 +41,10 @@ Map.centerObject(Big_Square, 9);
 var LANDSAT_7_BANDS = ["B1","B2","B3","B4","B5","B6","B7"];
 var STD_NAMES = ["blue","green","red","nir","swir1","tir","swir2"];
 
-//filtering Against Melbourne region at time resolution during the fire
-
+//filtering Against the entire export region from December 2019 to April 2019 (sample representation)
 var landsat_SR = ee.ImageCollection("LANDSAT/LE07/C01/T1_SR") //load LANDSAT7 raws for during the fire period
-	.filterBounds(Melbourne)
-	.filterDate("2009-02-16", "2010-01-01")
+	.filterBounds(Big_Square)
+	.filterDate("2018-12-01", "2019-05-01")
 	// Filter cloudy scenes.
   .filter(ee.Filter.lt("CLOUD_COVER", 35))
 	.select(LANDSAT_7_BANDS, STD_NAMES);
