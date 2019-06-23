@@ -59,5 +59,4 @@ Export.image.toDrive({
   scale:30.0,
   fileFormat: "GeoTIFF",
   crs: "EPSG:3857",
-  formatOptions: {cloudOptimized: true},
 });
