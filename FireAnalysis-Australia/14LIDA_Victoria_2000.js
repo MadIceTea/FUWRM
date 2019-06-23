@@ -114,7 +114,7 @@ single = single.addBands(mask);
 //Landsat True-Color Image Export
 Export.image.toDrive({
   image: single,
-  description: "classifiedImage_2000_lowCloudVictoria_BigSquare",
+  description: "classifiedImage_2000l7_lowCloudVictoria_BigSquare",
   folder: "Australia-Victoria_BlackFire2009",
   region:Big_Square,
   scale:30.0,
