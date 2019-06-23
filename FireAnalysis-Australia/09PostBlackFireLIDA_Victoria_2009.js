@@ -46,7 +46,7 @@ var landsat_SR = ee.ImageCollection("LANDSAT/LE07/C01/T1_SR") //load LANDSAT7 ra
 	.filterBounds(Melbourne)
 	.filterDate("2009-02-16", "2010-01-01")
 	// Filter cloudy scenes.
-  .filter(ee.Filter.lt("CLOUD_COVER", 33.5))
+  .filter(ee.Filter.lt("CLOUD_COVER", 5))
 	.select(LANDSAT_7_BANDS, STD_NAMES);
 
 print(landsat_SR); //date debug
