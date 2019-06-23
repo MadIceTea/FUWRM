@@ -40,7 +40,7 @@ Map.centerObject(Big_Square, 9);
 //Import images for 2000, around a decade before the Black Fire.
 //Use DMSP-OLS dataset Nighttime lights set.
 var collection = ee.ImageCollection("NOAA/DMSP-OLS/NIGHTTIME_LIGHTS")
-  .filterDate("2000-01-01","2000-01-01") // for 2000
+  .filterDate("2000-01-01","2001-01-01") // for 2000
   .filterBounds(Big_Square); //around the export area
   
 var DMSP = collection.median(); //lighting composite, taking median values
