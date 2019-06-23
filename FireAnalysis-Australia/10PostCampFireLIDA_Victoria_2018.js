@@ -41,8 +41,7 @@ Map.centerObject(Big_Square, 9);
 var LANDSAT_7_BANDS = ["B1","B2","B3","B4","B5","B6","B7"];
 var STD_NAMES = ["blue","green","red","nir","swir1","tir","swir2"];
 
-//filtering Against Melbourne region at time resolution during the fire
-
+//filtering Against the entire export region at 1-year resolution in 2018
 var landsat_SR = ee.ImageCollection("LANDSAT/LE07/C01/T1_SR") //load LANDSAT7 raws for during the fire period
 	.filterBounds(Big_Square)
 	.filterDate("2018-01-01", "2019-01-01")
