@@ -393,7 +393,7 @@ var Big_Square = /* color: #acc235 */ee.Geometry.Polygon(
           [-121.812967, 39.884304],
           [-121.873712, 39.883994]]]);
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
-//Import images for 1998, around a decade before the Camp Fire.
+//Import images for 1998, around two decades before the Camp Fire.
 //Use DMSP-OLS dataset Nighttime lights set.
 var collection = ee.ImageCollection("NOAA/DMSP-OLS/NIGHTTIME_LIGHTS")
   .filterDate("1998-01-01","1999-01-01") // for 1998
