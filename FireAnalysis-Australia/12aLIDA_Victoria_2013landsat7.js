@@ -41,7 +41,7 @@ Map.centerObject(Big_Square, 9);
 var LANDSAT_7_BANDS = ["B1","B2","B3","B4","B5","B6","B7"];
 var STD_NAMES = ["blue","green","red","nir","swir1","tir","swir2"];
 
-//filtering Against the entire export region for one-year (2010).
+//filtering Against the entire export region for one-year (2013).
 var landsat_SR = ee.ImageCollection("LANDSAT/LE07/C01/T1_SR") //load LANDSAT7 raws
 	.filterBounds(Melbourne)
 	.filterDate("2013-01-01", "2014-01-01")
@@ -114,7 +114,7 @@ single = single.addBands(mask);
 //Landsat True-Color Image Export
 Export.image.toDrive({
   image: single,
-  description: "classifiedImage_postFire2013_Victoria_BigSquare",
+  description: "classifiedImage_postFire2013l7_Victoria_BigSquare",
   folder: "Australia-Victoria_BlackFire2009",
   region:Big_Square,
   scale:30.0,
