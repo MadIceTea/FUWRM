@@ -12,7 +12,6 @@ var Big_Square =
           [146.16235336406248, -38.13760786176182],
           [146.16235336406248, -37.18091645226004]]], null, false);
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
-/*
 // Import the Province of Victoria from Fusion Table
 var Victoria = ee.FeatureCollection("ft:1UzSGq1cWUA5PloR9VxO7AVTu4vVXL3BHNiJKv6XB").geometry();
 
@@ -34,7 +33,6 @@ Map.addLayer(Kinglake, {color: "31994D"}, "Kinglake, VIC, Australia", 1, 1); //g
 Map.addLayer(Labertouche, {color: "270BFF"}, "Labertouche, VIC, Australia", 1, 1); //royal-deep blue
 Map.addLayer(DrouinWest, {color: "C18AB9"}, "Drouin West, VIC, Australia", 1, 1); //purple
 Map.addLayer(Tonimbuk, {color: "ADC91F"}, "Tonimbuk, VIC, Australia", 1, 1); //darker green
-*/
 
 //Center Map
 Map.centerObject(Big_Square, 9);
