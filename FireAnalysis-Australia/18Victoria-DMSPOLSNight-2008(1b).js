@@ -47,7 +47,7 @@ var DMSP = collection.median(); //lighting composite, taking median values
 
 //Display Layers on the Map with limited range of values.
 //Minimum is set to 1 to eliminate street lighting.
-Map.addLayer(DMSP,{bands:["avg_vis", "stable_lights", "cf_cvg"],min:0,max:64.5}, "median nightmap", 0, 0.9);
+Map.addLayer(DMSP,{bands:["avg_vis", "stable_lights", "cf_cvg"],min:0,max:63}, "median nightmap", 0, 0.9);
 var single = DMSP.select("stable_lights");
 Map.addLayer(single,{bands:["stable_lights"],min:0,max:63,palette: ["black", "orange", "white"]},"average cleaned nightmap", 1, 0.9);
 
