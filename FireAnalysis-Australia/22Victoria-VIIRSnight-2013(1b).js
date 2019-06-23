@@ -42,7 +42,8 @@ Map.centerObject(Big_Square, 9);
 var collection = ee.ImageCollection("NOAA/VIIRS/DNB/MONTHLY_V1/VCMCFG")
   .filterDate("2013-01-01","2014-01-01") // for 2013
   .filterBounds(Big_Square); //around the export area
-  
+
+//The values were overexposed to show small townships clearly, at the expense of overexposing Melbourne itself.  
 var viirs = collection.median(); //lighting composite, taking median values
 Map.addLayer(viirs,{bands:["avg_rad", "avg_rad", "cf_cvg"],min:1,max:5}, "median nightmap", 0, 0.9);
 var single = viirs.select("avg_rad");
