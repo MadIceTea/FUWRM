@@ -115,8 +115,8 @@ single = single.addBands(mask);
 //Landsat True-Color Image Export
 Export.image.toDrive({
   image: single,
-  description: "classifiedImage_postFire2018_Victoria_BigSquare",
-  folder: "Australia-Victoria_BlackFire2018",
+  description: "classifiedImage_postFire2019_Victoria_BigSquare",
+  folder: "Australia-Victoria_BlackFire2019",
   region:Big_Square,
   scale:30.0,
   fileFormat: "GeoTIFF",
