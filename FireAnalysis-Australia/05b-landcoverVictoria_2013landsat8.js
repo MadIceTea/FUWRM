@@ -37,13 +37,13 @@ Map.addLayer(Tonimbuk, {color: "ADC91F"}, "Tonimbuk, VIC, Australia", 1, 1); //d
 //Center Map
 Map.centerObject(Big_Square, 9);
 
-//L7SR Bands and Human-Friendly Naming
-var LANDSAT_7_BANDS = ["B1","B2","B3","B4","B5","B6","B7"];
+//L8SR Bands and Human-Friendly Naming
+var LANDSAT_8_BANDS = ["B2", "B3", "B4","B5","B6","B10","B7"];
 var STD_NAMES = ["blue","green","red","nir","swir1","tir","swir2"];
 
 //filtering Against Victoria at 1-year resolution
 
-var landsat_SR = ee.ImageCollection("LANDSAT/LC08/C01/T1_SR") //load LANDSAT8 raws for period available (mid-April to December 2013)
+var landsat_SR = ee.ImageCollection("LANDSAT/LE07/C01/T1_SR") //load LANDSAT7 raws for during the fire period
 	.filterBounds(Melbourne)
 	.filterDate("2008-01-01","2009-01-01")
 	// Filter cloudy scenes.
