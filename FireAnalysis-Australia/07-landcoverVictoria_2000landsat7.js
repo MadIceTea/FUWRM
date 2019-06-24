@@ -98,7 +98,7 @@ single = single.addBands(mask);
 //Landsat True-Color Image Export
 Export.image.toDrive({
   image: single,
-  description: "landsat_2000_Victoria_BigSquare",
+  description: "landsat_2000l7_Victoria_BigSquare",
   folder: "Australia-Victoria_BlackFire2009",
   region:Big_Square,
   scale:30.0,
