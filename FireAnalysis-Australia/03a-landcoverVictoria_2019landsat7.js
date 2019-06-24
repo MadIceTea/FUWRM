@@ -69,7 +69,7 @@ function addNDVI(image) {
 var ndvi = addNDVI(inputimage);
 
 //Toggle-display the single median-reduced image.
-Map.addLayer(single, {"bands":["red","blue","green"],min:0,max:2000}, "median_image", 1, 0.85);
+Map.addLayer(single, {"bands":["red","green","blue"],min:0,max:2000}, "median_image", 1, 0.85);
 
 //Map of NDVI vegetation-water probability.
 Map.addLayer(ndvi,{bands:["ndvi"],min:0,max:1}, "ndvilayer", 1, 0.15);
