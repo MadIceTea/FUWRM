@@ -466,7 +466,7 @@ var vis = {
   min: 100, 
   max: 2000,
   gamma: 1.5,
-  bands: ["red", "green", "blue"]
+  bands: ["red","green","blue"]
 };
 
 // visualize image using visOpts above
