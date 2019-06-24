@@ -413,7 +413,7 @@ var sentinel_AR = ee.ImageCollection("COPERNICUS/S2") //load Sentinel2 raws for 
 print(sentinel_AR); //date debug
 
 //Display the Composite ImageCollection
-Map.addLayer(sentinel_AR, {"bands":["red","blue","green"],min:0,max:2000}, "baselayer", 1, 0);
+Map.addLayer(sentinel_AR, {"bands":["red","green","blue"],min:0,max:2000}, "baselayer", 1, 0);
 
 var single = sentinel_AR.median();
 
@@ -426,7 +426,7 @@ function addNDVI(image) {
 var ndvi = addNDVI(single);
 
 //Toggle-display the single median-reduced image.
-Map.addLayer(single, {"bands":["red","blue","green"],min:0,max:2000}, "median_image", 1, 0.8);
+Map.addLayer(single, {"bands":["red","green","blue"],min:0,max:2000}, "median_image", 1, 0.8);
 
 //Map of NDVI vegetation-water probability.
 Map.addLayer(ndvi,{bands:["ndvi"],min:0,max:1}, "ndvilayer", 1, 0.15);
