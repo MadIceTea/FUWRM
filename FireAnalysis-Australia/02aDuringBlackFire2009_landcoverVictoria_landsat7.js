@@ -56,7 +56,7 @@ print(landsat_SR); //date debug
 var single = landsat_SR.median();
 
 //Display the Composite
-Map.addLayer(landsat_SR, {"bands":["red","blue","green"],min:0,max:2000}, "baselayer", 1, 0);
+Map.addLayer(landsat_SR, {"bands":["red","green","blue"],min:0,max:2000}, "baselayer", 1, 0);
 //Map.addLayer(landsat_SR, {"bands":["tir"],min:0,max:2000}, "temperature", 1, 1);
 
 var inputimage = landsat_SR.median();
@@ -70,7 +70,7 @@ function addNDVI(image) {
 var ndvi = addNDVI(inputimage);
 
 //Toggle-display the single median-reduced image.
-Map.addLayer(single, {"bands":["red","blue","green"],min:0,max:2000}, "median_image", 1, 0.85);
+Map.addLayer(single, {"bands":["red","green","blue"],min:0,max:2000}, "median_image", 1, 0.85);
 
 //Map of NDVI vegetation-water probability.
 Map.addLayer(ndvi,{bands:["ndvi"],min:0,max:1}, "ndvilayer", 1, 0.15);
