@@ -45,7 +45,7 @@ var STD_NAMES = ["blue","green","red","nir","swir1","tir","swir2"];
 
 var landsat_SR = ee.ImageCollection("LANDSAT/LE07/C01/T1_SR") //load LANDSAT7 raws
 	.filterBounds(Melbourne)
-	.filterDate("2008-01-01","2009-01-01")
+	.filterDate("2013-01-01","2014-01-01")
 	// Filter cloudy scenes.
   .filter(ee.Filter.lt("CLOUD_COVER", 5))
 	.select(LANDSAT_7_BANDS, STD_NAMES);
