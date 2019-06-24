@@ -419,7 +419,7 @@ print(landsat_SR); //date debug
 Map.addLayer(ee.Image(0));
 
 //Display the Composite
-Map.addLayer(landsat_SR, {"bands":["red","blue","green"],min:0,max:2000}, "baselayer", 0, 0.7);
+Map.addLayer(landsat_SR, {"bands":["red","green","blue"],min:0,max:2000}, "baselayer", 0, 0.7);
 Map.addLayer(landsat_SR, {"bands":["tir"],min:0,max:2000}, "temperature", 0, 1);
 
 var inputimage = landsat_SR.median();
