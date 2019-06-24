@@ -46,9 +46,8 @@ var STD_NAMES = ["blue","green","red","nir","swir1","tir","swir2"];
 var landsat_SR = ee.ImageCollection("LANDSAT/LE07/C01/T1_SR") //load LANDSAT7 raws for during the fire period
 	.filterBounds(Melbourne)
 	.filterDate("2009-02-04", "2009-02-15")
-	//.filterDate("2009-02-08", "2009-02-09")
-	// Filter cloudy scenes.
-  //.filter(ee.Filter.lt("CLOUD_COVER", 10)) //expecting clouds from the smoke
+	//.filterDate("2009-02-08", "2009-02-09") //worst days of the fire, no result
+	//No cloud filters; expecting clouds from the smoke anyway
 	.select(LANDSAT_7_BANDS, STD_NAMES);
 
 print(landsat_SR); //date debug
