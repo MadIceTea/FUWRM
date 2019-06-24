@@ -45,7 +45,7 @@ var STD_NAMES = ["blue","green","red","nir","swir1","tir","swir2"];
 
 var landsat_SR = ee.ImageCollection("LANDSAT/LE07/C01/T1_SR") //load LANDSAT7 raws
 	.filterBounds(Melbourne)
-	.filterDate("2008-01-01","2009-01-01")
+	.filterDate("2018-01-01","2019-01-01")
 	// Filter cloudy scenes.
   .filter(ee.Filter.lt("CLOUD_COVER", 5))
 	.select(LANDSAT_7_BANDS, STD_NAMES);
@@ -98,7 +98,7 @@ single = single.addBands(mask);
 //Landsat True-Color Image Export
 Export.image.toDrive({
   image: single,
-  description: "landsat_preFire2008_Victoria_BigSquare",
+  description: "landsat_preFire2018l7_Victoria_BigSquare",
   folder: "Australia-Victoria_BlackFire2009",
   region:Big_Square,
   scale:30.0,
