@@ -43,7 +43,7 @@ var STD_NAMES = ["blue","green","red","nir","swir1","tir","swir2"];
 
 //filtering Against Victoria at 1-year resolution
 
-var landsat_SR = ee.ImageCollection("LANDSAT/LC08/C01/T1_SR") //load LANDSAT8 raws for during the fire period
+var landsat_SR = ee.ImageCollection("LANDSAT/LC08/C01/T1_SR") //load LANDSAT8 raws
 	.filterBounds(Melbourne)
 	.filterDate("2008-01-01","2009-01-01")
 	// Filter cloudy scenes.
