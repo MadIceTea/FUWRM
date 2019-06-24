@@ -38,17 +38,17 @@ Map.addLayer(Tonimbuk, {color: "ADC91F"}, "Tonimbuk, VIC, Australia", 1, 1); //d
 Map.centerObject(Big_Square, 9);
 
 //L7SR Bands and Human-Friendly Naming
-var LANDSAT_7_BANDS = ["B1","B2","B3","B4","B5","B6","B7"];
+var LANDSAT_5_BANDS = ["B1","B2","B3","B4","B5","B6","B7"];
 var STD_NAMES = ["blue","green","red","nir","swir1","tir","swir2"];
 
 //filtering Against Victoria at 1-year resolution
 
-var landsat_SR = ee.ImageCollection("LANDSAT/LE07/C01/T1_SR") //load LANDSAT7 raws
+var landsat_SR = ee.ImageCollection("LANDSAT/LT05/C01/T1_SR") //load LANDSAT5 raws
 	.filterBounds(Melbourne)
-	.filterDate("2008-01-01","2009-01-01")
+	.filterDate("1998-01-01","1999-01-01")
 	// Filter cloudy scenes.
   .filter(ee.Filter.lt("CLOUD_COVER", 5))
-	.select(LANDSAT_7_BANDS, STD_NAMES);
+	.select(LANDSAT_5_BANDS, STD_NAMES);
 
 print(landsat_SR); //date debug
 
@@ -98,7 +98,7 @@ single = single.addBands(mask);
 //Landsat True-Color Image Export
 Export.image.toDrive({
   image: single,
-  description: "landsat_preFire2008_Victoria_BigSquare",
+  description: "landsat_1998l5_Victoria_BigSquare",
   folder: "Australia-Victoria_BlackFire2009",
   region:Big_Square,
   scale:30.0,
