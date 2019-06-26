@@ -427,7 +427,7 @@ var mask = single.mask().reduce(ee.Reducer.min())
     .multiply(255).toByte();
 single = single.addBands(mask);
 
-//GPWv4 Image Export
+//WorldPop Image Export
 Export.image.toDrive({
   image: single,
   description: "WorldPop2019_Paradise_BigSquare",
