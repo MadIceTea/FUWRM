@@ -34,8 +34,8 @@ single = single.addBands(mask);
 //WorldPop Image Export
 Export.image.toDrive({
   image: single,
-  description: "WorldPop2019_Paradise_BigSquare",
-  folder: "California-Paradise_CampFire2018",
+  description: "WorldPop2000_Victoria_BigSquare",
+  folder: "Australia-Victoria_BlackFire2009",
   region:Big_Square,
   scale:30.0,
   fileFormat: "GeoTIFF",
