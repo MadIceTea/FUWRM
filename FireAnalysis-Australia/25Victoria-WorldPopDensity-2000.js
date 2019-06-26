@@ -10,7 +10,6 @@ print(single);
 Map.setCenter(-121.619, 39.894, 10);
 
 //Display Layers on the Map with limited range of values.
-Map.addLayer(Paradise, {color: "acc235"}, "Town of Paradise", 1, 1);
 Map.addLayer(single, {"bands":["b1"],min:1,max:10,palette: ["black", "orange", "white"]}, "population density", 1, 0.85);
 
 //Export Process
