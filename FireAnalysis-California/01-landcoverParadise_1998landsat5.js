@@ -13,8 +13,8 @@ var Magalia = ee.FeatureCollection("ft:1BCMRnYS4plV2NVWtP6dZHYmE1V00kY8baAPU9Udm
 var Chico = ee.FeatureCollection("ft:1mmRj4fN8mmvtynTxG56XMZJ-1y9n1i-lDUCIsXwV").geometry();
 
 // show the layers
-Map.addLayer(Paradise, {color: "55EAEC"}, "Town of Paradise, California", 1, 0.4); //light blue
-Map.addLayer(Magalia, {color: "ADC91F"}, "Town of Magalia, California", 1, 0.3); //darker green
+Map.addLayer(Paradise, {color: "BC2066"}, "Town of Paradise, California", 1, 0.4); //reddish-purple
+Map.addLayer(Magalia, {color: "280AC2"}, "Town of Magalia, California", 1, 0.3); //royal blue
 Map.addLayer(Chico, {color: "BF19DB"}, "City of Chico, California", 1, 1); //purple
 
 //Center Map
