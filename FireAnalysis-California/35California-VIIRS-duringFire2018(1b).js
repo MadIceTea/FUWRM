@@ -22,7 +22,7 @@ Map.centerObject(Paradise, 10);
 
 //Import images for 2018, for the month of November (during the fire).
 var collection = ee.ImageCollection("NOAA/VIIRS/DNB/MONTHLY_V1/VCMCFG")
-  .filterDate("2018-01-01","2018-11-01") // for 2018
+  .filterDate("2018-11-01","2018-12-01") // for Nov. 2018
   .filterBounds(Paradise); //around the Town of Paradise, California, USA
 
 var viirs = collection.median(); //lighting composite, taking median values
@@ -36,7 +36,7 @@ Map.addLayer(single,{bands:["avg_rad"],min:1,max:10, palette: ["black", "orange"
 //VIIRS Image Export
 Export.image.toDrive({
   image: single,
-  description: "VIIRS_2018_beforeFireParadise_BigSquare-1b",
+  description: "VIIRS_2018_duringFireParadise_BigSquare-1b",
   folder: "California-Paradise_CampFire2018",
   region:Big_Square,
   scale:30.0
