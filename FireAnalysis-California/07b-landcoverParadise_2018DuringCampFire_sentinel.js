@@ -25,7 +25,8 @@ var SENTINEL_2_BANDS = ["B2", "B3","B4","B8","B11","B12"];
 var STD_NAMES = ["blue","green","red","nir","swir1","swir2"];
 
 //Filtering against Paradise for the duration of the Camp Fire.
-var sentinel_AR = ee.ImageCollection("COPERNICUS/S2") //load Sentinel2 raws for the duration of the fire
+//Only Lvl-1C TOA imagery was available, no SR imagery was caputred by Lvl-2A sentinel.
+var sentinel_AR = ee.ImageCollection("COPERNICUS/S2") //load Sentinel2 TOA raws for the duration of the fire
 	.filterBounds(Paradise)
 	.filterDate("2018-11-08","2018-11-25")
 	// No need to filter for cloudy scenes: smoke is a given in fires.
