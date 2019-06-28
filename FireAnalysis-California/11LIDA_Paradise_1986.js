@@ -413,7 +413,7 @@ var LANDSAT_5_BANDS = ["B1","B2","B3","B4","B5","B6","B7"];
 var STD_NAMES = ["blue","green","red","nir","swir1","tir","swir2"];
 
 //Filtering against Paradise at one-year resolution.
-var landsat_SR = ee.ImageCollection("LANDSAT/LT05/C01/T1_SR") //load collection 1 - LANDSAT5 raws
+var landsat_SR = ee.ImageCollection("LANDSAT/LT05/C01/T1_SR") //load LANDSAT5 raws
 	.filterBounds(Paradise)
 	.filterDate("1986-01-01","1987-01-01")
 	// Filter cloudy scenes.
