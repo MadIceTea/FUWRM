@@ -5,20 +5,6 @@ var Big_Square = /* color: #acc235 */ee.Geometry.Polygon(
           [-121.16965143565142, 39.49365087730002],
           [-121.16965143565142, 40.231519880601745]]]);
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
-//Import images for 1996.
-//Use DMSP-OLS dataset Nighttime lights set.
-var collection = ee.ImageCollection("NOAA/DMSP-OLS/NIGHTTIME_LIGHTS")
-  .filterDate("1996-01-01","1997-01-01") // for 1996
-  .filterBounds(Paradise); //around the Town of Paradise, California, USA
-  
-var DMSP = collection.median(); //lighting composite, taking median values
-
-//Display Layers on the Map with limited range of values.
-//Minimum is set to 1 to eliminate street lighting.
-Map.addLayer(DMSP,{bands:["avg_vis", "stable_lights", "cf_cvg"],min:1,max:63}, "median nightmap", 0, 1);
-var single = DMSP.select("stable_lights");
-Map.addLayer(single,{bands:["stable_lights"],min:1,max:63,palette: ["black", "orange", "white"]},"average cleaned nightmap", 1, 1);
-
 // Import the primary region of interest, Town of Paradise which burned in the Camp Fire of 2018.
 var Paradise = ee.FeatureCollection("ft:1JIO1SLcMe08lHJWUIP7zWpW5razN6FfIwibHtcje").geometry();
 
@@ -33,6 +19,20 @@ Map.addLayer(Chico, {color: "1C06C2"}, "City of Chico, California", 1, 1); //dee
 
 //Center Map
 Map.centerObject(Paradise, 10);
+
+//Import images for 1996.
+//Use DMSP-OLS dataset Nighttime lights set.
+var collection = ee.ImageCollection("NOAA/DMSP-OLS/NIGHTTIME_LIGHTS")
+  .filterDate("1996-01-01","1997-01-01") // for 1996
+  .filterBounds(Paradise); //around the Town of Paradise, California, USA
+  
+var DMSP = collection.median(); //lighting composite, taking median values
+
+//Display Layers on the Map with limited range of values.
+//Minimum is set to 1 to eliminate street lighting.
+Map.addLayer(DMSP,{bands:["avg_vis", "stable_lights", "cf_cvg"],min:1,max:63}, "median nightmap", 0, 1);
+var single = DMSP.select("stable_lights");
+Map.addLayer(single,{bands:["stable_lights"],min:1,max:63,palette: ["black", "orange", "white"]},"average cleaned nightmap", 1, 1);
 
 //debug
 print(collection);
