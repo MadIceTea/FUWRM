@@ -37,7 +37,6 @@ var single = landsat_SR.median();
 
 //Display the Composite
 Map.addLayer(landsat_SR, {"bands":["red","green","blue"],min:0,max:2000}, "baselayer", 1, 0);
-//Map.addLayer(landsat_SR, {"bands":["tir"],min:0,max:2000}, "temperature", 1, 1);
 
 var inputimage = landsat_SR.median();
 
