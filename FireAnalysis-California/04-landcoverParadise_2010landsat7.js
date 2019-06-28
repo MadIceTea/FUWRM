@@ -24,7 +24,7 @@ Map.centerObject(Paradise, 10);
 var LANDSAT_7_BANDS = ["B1","B2","B3","B4","B5","B6","B7"];
 var STD_NAMES = ["blue","green","red","nir","swir1","tir","swir2"];
 
-//filtering Against Paradise at 1-year resolution
+//Filtering against Paradise at 1-year resolution.
 var landsat_SR = ee.ImageCollection("LANDSAT/LE07/C01/T1_SR") //load LANDSAT7 raws
 	.filterBounds(Paradise)
 	.filterDate("2010-01-01","2011-01-01")
