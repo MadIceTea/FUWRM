@@ -41,7 +41,7 @@ Map.centerObject(Big_Square, 9);
 var LANDSAT_8_BANDS = ["B2", "B3", "B4","B5","B6","B10","B7"];
 var STD_NAMES = ["blue","green","red","nir","swir1","tir","swir2"];
 
-//filtering Against the Melbourne region for what has so far occured in 2019.
+//Filtering against the Melbourne region for what has so far occured in 2019.
 var landsat_SR = ee.ImageCollection("LANDSAT/LC08/C01/T1_SR") //load LANDSAT8 raws
 	.filterBounds(Melbourne)
 	.filterDate("2018-12-01","2019-05-01")
