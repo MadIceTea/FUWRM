@@ -27,7 +27,7 @@ var STD_NAMES = ["blue","green","red","nir","swir1","tir","swir2"];
 //Filtering against Paradise at one-year resolution.
 var landsat_SR = ee.ImageCollection("LANDSAT/LE07/C01/T1_SR") //load LANDSAT7 raws
 	.filterBounds(Paradise)
-	.filterDate("2006-01-01","2007-01-01")
+	.filterDate("2008-01-01","2008-01-01")
 	// Filter cloudy scenes.
   .filter(ee.Filter.lt("CLOUD_COVER", 35))
 	.select(LANDSAT_7_BANDS, STD_NAMES);
@@ -75,7 +75,7 @@ Map.addLayer(CARTclassified, {min: 0, max: 3, palette: ["784800","FFF44F","228B2
 //Landsat True-Color Image Export
 Export.image.toDrive({
   image: CARTclassified,
-  description: "classifiedImage_2006landsat5_Paradise_BigSquare",
+  description: "classifiedImage_2008l7_Paradise_BigSquare",
   folder: "California-Paradise_CampFire2018",
   region:Big_Square,
   scale:30.0
