@@ -26,7 +26,7 @@ var STD_NAMES = ["blue","green","red","nir","swir1","tir","swir2"];
 
 //filtering Against Paradise a (near) 1-year resolution
 
-var landsat_SR = ee.ImageCollection("LANDSAT/LE07/C01/T1_SR") //load LANDSAT8 raws
+var landsat_SR = ee.ImageCollection("LANDSAT/LC08/C01/T1_SR") //load LANDSAT8 raws
 	.filterBounds(Paradise)
 	.filterDate("2013-01-01","2014-01-01")
 	// Filter cloudy scenes.
