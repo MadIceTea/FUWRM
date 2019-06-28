@@ -448,6 +448,28 @@ var CARTclassified = trainingimage.select(predictionBands).classify(trained);
 //Display the result using 0=barren, 1=urban, 2=green, 3=water
 Map.addLayer(CARTclassified, {min: 0, max: 3, palette: ["784800","FFF44F","228B22","97CAF9"]}, "CARTclassification", 1, 0.75);
 
+var single = CARTclassified;
+
+//Classification Image Export
+//Visualization Settings
+var vis = {
+  min: 0, 
+  max: 3,
+  palette: ["784800","FFF44F","228B22","97CAF9"]
+};
+
+// visualize image using visOpts above
+// turning it into 8-bit RGB image.
+single = single.visualize(vis);
+
+// obtain native scale of RGB bands
+var scale = single.projection().nominalScale().getInfo();
+
+// add an alpha channel as 4th band to mask no data regions
+var mask = single.mask().reduce(ee.Reducer.min())
+    .multiply(255).toByte();
+single = single.addBands(mask);
+
 //Landsat True-Color Image Export
 Export.image.toDrive({
   image: CARTclassified,
