@@ -21,7 +21,7 @@ Map.addLayer(Chico, {color: "1C06C2"}, "City of Chico, California", 1, 1); //dee
 Map.centerObject(Paradise, 10);
 
 //Import images for 2013.
-var collection = ee.ImageCollection("NOAA/VIIRS/DNB/MONTHLY_V1/VCMSLCFG")
+var collection = ee.ImageCollection("NOAA/VIIRS/DNB/MONTHLY_V1/VCMCFG")
   .filterDate("2013-01-01","2014-01-01") // for 2013
   .filterBounds(Paradise); //around the Town of Paradise, California, USA
 
