@@ -30,7 +30,7 @@ var landsat_SR = ee.ImageCollection("LANDSAT/LC08/C01/T1_SR") //load LANDSAT8 ra
 	.filterDate("2018-01-01","2018-11-01")
 	// Filter cloudy scenes.
   .filter(ee.Filter.lt("CLOUD_COVER", 35))
-	.select(LANDSAT_7_BANDS, STD_NAMES);
+	.select(LANDSAT_8_BANDS, STD_NAMES);
 
 print(landsat_SR); //date debug
 
