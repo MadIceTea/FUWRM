@@ -24,12 +24,6 @@ Map.centerObject(Paradise, 10);
 var LANDSAT_8_BANDS = ["B2","B3","B4","B5","B6","B10","B7"];
 var STD_NAMES = ["blue","green","red","nir","swir1","tir","swir2"];
 
-//Add an outline of the Town of Paradise
-Map.addLayer(Paradise, {color: "000000"}, "Town of Paradise", 1, 1);
-
-//Center Map
-Map.setCenter(-121.619, 39.894, 10);
-
 //Filtering against Paradise at (near) 1-year resolution.
 var landsat_SR = ee.ImageCollection("LANDSAT/LC08/C01/T1_SR") //load LANDSAT8 raws for during the fire period
 	.filterBounds(Paradise)
