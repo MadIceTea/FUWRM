@@ -24,9 +24,6 @@ Map.centerObject(Paradise, 10);
 var LANDSAT_7_BANDS = ["B1","B2","B3","B4","B5","B6","B7"];
 var STD_NAMES = ["blue","green","red","nir","swir1","tir","swir2"];
 
-//Add an outline of the Town of Paradise
-Map.addLayer(Paradise, {color: "000000"}, "Town of Paradise", 1, 1);
-
 //Center Map
 Map.setCenter(-121.619, 39.894, 10);
 
