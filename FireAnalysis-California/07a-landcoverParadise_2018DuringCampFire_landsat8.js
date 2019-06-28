@@ -21,7 +21,7 @@ Map.addLayer(Chico, {color: "1C06C2"}, "City of Chico, California", 1, 1); //dee
 Map.centerObject(Paradise, 10);
 
 //L8SR Bands and Human-Friendly Naming
-var LANDSAT_8_BANDS = ["B2","B3", "B4","B5","B6","B10","B7"];
+var LANDSAT_8_BANDS = ["B2", "B3", "B4","B5","B6","B10","B7"];
 var STD_NAMES = ["blue","green","red","nir","swir1","tir","swir2"];
 
 //filtering Against Paradise for the duration of the Camp Fire
@@ -32,11 +32,6 @@ var landsat_SR = ee.ImageCollection("LANDSAT/LC08/C01/T1_SR") //load LANDSAT8 ra
 	.select(LANDSAT_8_BANDS, STD_NAMES);
 
 print(landsat_SR); //date debug
-
-/*
-Black Image background
-Map.addLayer(ee.Image(0), {color: "000000"}, "Black Background", 1, 1);
-*/
 
 var single = landsat_SR.median();
 
