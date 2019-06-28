@@ -6,7 +6,7 @@ var Big_Square = /* color: #acc235 */ee.Geometry.Polygon(
           [-121.16965143565142, 40.231519880601745]]]);
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
 //L7SR Bands and Human-Friendly Naming
-var LANDSAT_7_BANDS = ["B1", "B2", "B3","B4","B5","B6","B7"];
+var LANDSAT_7_BANDS = ["B1","B2","B3","B4","B5","B6","B7"];
 var STD_NAMES = ["blue","green","red","nir","swir1","tir","swir2"];
 
 //Add an outline of the Town of Paradise
