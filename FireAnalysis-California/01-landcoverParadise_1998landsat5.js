@@ -1,16 +1,9 @@
 /**** Start of imports. If edited, may not auto-convert in the playground. ****/
-var Big_Square = 
-    /* color: #ff6c64 */
-    /* displayProperties: [
-      {
-        "type": "rectangle"
-      }
-    ] */
-    ee.Geometry.Polygon(
-        [[[144.84399398906248, -37.18091645226004],
-          [144.84399398906248, -38.13760786176182],
-          [146.16235336406248, -38.13760786176182],
-          [146.16235336406248, -37.18091645226004]]], null, false);
+var Big_Square = /* color: #acc235 */ee.Geometry.Polygon(
+        [[[-122.03757135752642, 40.231519880601745],
+          [-122.03757135752642, 39.49365087730002],
+          [-121.16965143565142, 39.49365087730002],
+          [-121.16965143565142, 40.231519880601745]]]);
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
 // Import the primary region of interest, Town of Paradise which burned in the Camp Fire of 2018.
 var Paradise = ee.FeatureCollection("ft:1JIO1SLcMe08lHJWUIP7zWpW5razN6FfIwibHtcje").geometry();
