@@ -24,12 +24,6 @@ Map.centerObject(Paradise, 10);
 var SENTINEL_2_BANDS = ["B2", "B3","B4","B8","B11","B12"];
 var STD_NAMES = ["blue","green","red","nir","swir1","swir2"];
 
-//Add an outline of the Town of Paradise
-Map.addLayer(Paradise, {color: "000000"}, "Town of Paradise", 1, 1);
-
-//Center Map
-Map.setCenter(-121.619, 39.894, 10);
-
 //filtering Against Paradise at 1-year resolution
 var sentinel_AR = ee.ImageCollection("COPERNICUS/S2") //load Sentinel2 raws for the duration of the fire
 	.filterBounds(Paradise)
