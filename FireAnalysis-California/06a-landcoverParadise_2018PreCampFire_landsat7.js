@@ -21,8 +21,8 @@ Map.addLayer(Chico, {color: "1C06C2"}, "City of Chico, California", 1, 1); //dee
 Map.centerObject(Paradise, 10);
 
 //L7SR Bands and Human-Friendly Naming
-var Landsat_7_BANDS = ["B1","B2","B3","B4","B5","B7"];
-var STD_NAMES = ["blue","green","red","nir","swir1","swir2"];
+var LANDSAT_7_BANDS = ["B1","B2","B3","B4","B5","B6","B7"];
+var STD_NAMES = ["blue","green","red","nir","swir1","LANDSAT_7_BANDS","swir2"];
 
 //Add an outline of the Town of Paradise
 Map.addLayer(Paradise, {color: "000000"}, "Town of Paradise", 1, 1);
@@ -37,7 +37,7 @@ var landsat_SR = ee.ImageCollection("LANDSAT/LE07/C01/T1_SR") //load LANDSAT7 ra
 	.filterDate("2018-01-01","2018-11-07")
 	// Filter cloudy scenes.
   .filter(ee.Filter.lt("CLOUD_COVER", 35))
-	.select(Landsat_7_BANDS, STD_NAMES);
+	.select(LANDSAT_7_BANDS, STD_NAMES);
 
 print(landsat_SR); //date debug
 
