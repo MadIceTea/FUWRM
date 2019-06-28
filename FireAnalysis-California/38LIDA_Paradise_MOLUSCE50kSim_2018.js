@@ -5,10 +5,7 @@ var Big_Square = /* color: #acc235 */ee.Geometry.Polygon(
           [-121.16965143565142, 39.49365087730002],
           [-121.16965143565142, 40.231519880601745]]]);
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
-var CARTclassified = ee.Image("users/GEE_Alex/MOLUSCEsims_USA/LIDAParadise_2023_Simulation");
-
-//Center Map
-Map.setCenter(-121.621, 39.762, 13);
+var CARTclassified = ee.Image("TODO:2018 image");
 
 //Display the result using 0=barren, 1=urban, 2=green, 3=water
 Map.addLayer(CARTclassified, {min: 0, max: 3, palette: ["784800","FFF44F","228B22","97CAF9"]}, "CARTclassification", 1, 0.75);
@@ -38,7 +35,7 @@ single = single.addBands(mask);
 //Landsat True-Color Image Export
 Export.image.toDrive({
   image: single,
-  description: "classifiedImage_2023_MOLUSCEsim50k_Paradise_BigSquare",
+  description: "classifiedImage_2018_MOLUSCEsim50k_Paradise_BigSquare",
   folder: "California-Paradise_CampFire2018",
   region:Big_Square,
   scale:30.0,
@@ -49,7 +46,7 @@ Export.image.toDrive({
 
 Export.image.toAsset({
   image: single,
-  description: "classifiedImage_2023_MOLUSCEsim50k_Paradise_BigSquare-Asset",
+  description: "classifiedImage_2018_MOLUSCEsim50k_Paradise_BigSquare-Asset",
   region:Big_Square,
   scale:30.0,
   crs: "EPSG:3857"
