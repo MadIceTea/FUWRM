@@ -408,17 +408,17 @@ Map.addLayer(Chico, {color: "1C06C2"}, "City of Chico, California", 1, 1); //dee
 //Center Map
 Map.centerObject(Paradise, 10);
 
-//L8SR Bands and Human-Friendly Naming
-var LANDSAT_8_BANDS = ["B2","B3","B4","B5","B6","B10","B7"];
+//L7SR Bands and Human-Friendly Naming
+var LANDSAT_7_BANDS = ["B1","B2","B3","B4","B5","B6","B7"];
 var STD_NAMES = ["blue","green","red","nir","swir1","tir","swir2"];
 
 //Filtering against Paradise for what has past so far in 2019.
-var landsat_SR = ee.ImageCollection("LANDSAT/LC08/C01/T1_SR") //load LANDSAT8 raws for during the fire period
+var landsat_SR = ee.ImageCollection("LANDSAT/LE07/C01/T1_SR") //load LANDSAT7 raws for during the fire period
 	.filterBounds(Paradise)
 	.filterDate("2019-01-01","2019-05-01")
 	// Filter cloudy scenes.
   .filter(ee.Filter.lt("CLOUD_COVER", 35))
-	.select(LANDSAT_8_BANDS, STD_NAMES);
+	.select(LANDSAT_7_BANDS, STD_NAMES);
 
 print(landsat_SR); //date debug
 
@@ -444,32 +444,6 @@ Map.addLayer(single, {"bands":["red","green","blue"],min:0,max:2000}, "median_im
 //Map of NDVI vegetation-water probability.
 Map.addLayer(ndvi,{bands:["ndvi"],min:0,max:1}, "ndvilayer", 1, 0.15);
 
-/*
-//predict land-cover bands
-var predictionBands = ["blue","green","red","nir","swir1","swir2","ndvi"];
-
-var trainingimage = ndvi.select(predictionBands);
-
-var trainingpolygons = ee.FeatureCollection("ft:18GtIidyOfJkJhnsX_-7MWr3b0VH3vZIKrymBsUC5");
-
-var training = trainingimage.sampleRegions({
-    collection: trainingpolygons,
-    properties: ["class"],
-    scale: 160
-});
-
-//Train the CART classifier (a regular expression, not made up) with default parameters
-var trained = ee.Classifier.cart().train(training,"class", predictionBands);
-
-//Classify image with the same bands used for training.
-var CARTclassified = trainingimage.select(predictionBands).classify(trained);
-
-//Display the result
-Map.addLayer(CARTclassified, {min: 0, max: 3, palette: ["97CAf9","784800", "228B22", "fff44f"]}, "CARTclassification", 1);
-*/
-
-//Landsat True-Color Image Export
-//Export Image
 var vis = {
   min: 100, 
   max: 2000,
@@ -492,7 +466,7 @@ single = single.addBands(mask);
 //Landsat True-Color Image Export
 Export.image.toDrive({
   image: single,
-  description: "landsat_postFire2019l8_Paradise_BigSquare",
+  description: "landsat_postFire2019l7_Paradise_BigSquare",
   folder: "California-Paradise_CampFire2018",
   region:Big_Square,
   scale:30.0,
