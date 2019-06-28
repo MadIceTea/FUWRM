@@ -8,6 +8,15 @@ var Big_Square = /* color: #acc235 */ee.Geometry.Polygon(
 // Import the primary region of interest, Town of Paradise which burned in the Camp Fire of 2018.
 var Paradise = ee.FeatureCollection("ft:1JIO1SLcMe08lHJWUIP7zWpW5razN6FfIwibHtcje").geometry();
 
+/*
+// Add an outline of Butte County (of which Paradise is a part of)
+var Butte_County = ee.FeatureCollection("TIGER/2016/Counties")
+  .filter(ee.Filter.eq("NAME", "Butte"));
+print(Butte_County);
+var table = Butte_County;
+Map.addLayer(table, {color: "acc235"}, "Butte County", 1, 1);
+*/
+
 //Also import the small town region of Magalia to the north, and the larger city of Chico to the west.
 var Magalia = ee.FeatureCollection("ft:1BCMRnYS4plV2NVWtP6dZHYmE1V00kY8baAPU9Udm").geometry();
 var Chico = ee.FeatureCollection("ft:1mmRj4fN8mmvtynTxG56XMZJ-1y9n1i-lDUCIsXwV").geometry();
@@ -19,16 +28,6 @@ Map.addLayer(Chico, {color: "1C06C2"}, "City of Chico, California", 1, 1); //dee
 
 //Center Map
 Map.centerObject(Paradise, 10);
-
-//Add an outline of Butte County (of which Paradise is a part of)
-var Butte_County = ee.FeatureCollection("TIGER/2016/Counties")
-  .filter(ee.Filter.eq("NAME", "Butte"));
-print(Butte_County);
-var table = Butte_County;
-Map.addLayer(table, {color: "acc235"}, "Butte County", 1, 1);
-
-//Center Map
-Map.setCenter(-121.616, 39.761, 9);
 
 var dataset = ee.ImageCollection("FIRMS")
   .filterBounds(Butte_County)
