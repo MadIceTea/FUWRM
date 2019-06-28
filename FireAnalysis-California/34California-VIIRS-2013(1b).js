@@ -27,9 +27,6 @@ var collection = ee.ImageCollection("NOAA/VIIRS/DNB/MONTHLY_V1/VCMSLCFG")
 
 var viirs = collection.median(); //lighting composite, taking median values
 
-//Center Map
-Map.setCenter(-121.619, 39.894, 10);
-
 //Display Layers on the Map with limited range of values.
 //Brightest value in Town of Paradise during Camp Fire (~10) is max.
 //Minimum is set to 1 to eliminate street lighting.
