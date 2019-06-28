@@ -24,7 +24,8 @@ Map.centerObject(Paradise, 10);
 var LANDSAT_8_BANDS = ["B2","B3","B4","B5","B6","B10","B7"];
 var STD_NAMES = ["blue","green","red","nir","swir1","tir","swir2"];
 
-//Filtering against Paradise at one-year resolution.
+//Filtering against Paradise at near one-year resolution, previous the Camp Fire.
+//There will be no modeling for during the camp fire, because there isn't enough temporal resolution.
 var landsat_SR = ee.ImageCollection("LANDSAT/LC08/C01/T1_SR") //load LANDSAT8 raws
 	.filterBounds(Paradise)
 	.filterDate("2018-01-01","2018-11-01")
