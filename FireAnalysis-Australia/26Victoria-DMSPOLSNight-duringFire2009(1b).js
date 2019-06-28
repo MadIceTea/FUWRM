@@ -53,7 +53,7 @@ Map.addLayer(single,{bands:["stable_lights"],min:0,max:63,palette: ["black", "or
 
 Export.image.toDrive({
   image: single,
-  description: "DMSPColored_duringFire2009_Paradise_BigSquare-1b",
+  description: "DMSPColored_duringFire2009_Victoria_BigSquare-1b",
   folder: "Australia-Victoria_BlackFire2009",
   region:Big_Square,
   scale:30.0,
