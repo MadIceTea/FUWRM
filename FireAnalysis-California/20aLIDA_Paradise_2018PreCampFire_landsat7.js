@@ -76,7 +76,7 @@ Map.addLayer(CARTclassified, {min: 0, max: 3, palette: ["784800","FFF44F","228B2
 //Landsat True-Color Image Export
 Export.image.toDrive({
   image: CARTclassified,
-  description: "classifiedImage_PreCampFire2018l7_Paradise_BigSquare",
+  description: "classifiedImage_PreCampFire2018l7_Paradise_BigSquare-1b",
   folder: "California-Paradise_CampFire2018",
   region:Big_Square,
   scale:30.0
