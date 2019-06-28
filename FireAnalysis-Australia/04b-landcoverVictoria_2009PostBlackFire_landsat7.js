@@ -41,7 +41,7 @@ Map.centerObject(Big_Square, 9);
 var LANDSAT_7_BANDS = ["B1","B2","B3","B4","B5","B6","B7"];
 var STD_NAMES = ["blue","green","red","nir","swir1","tir","swir2"];
 
-//filtering Against Melbourne at 1-year resolution
+//Filtering against Melbourne region at a near 1-year resolution (post-Black Fires).
 var landsat_SR = ee.ImageCollection("LANDSAT/LE07/C01/T1_SR") //load LANDSAT7 raws
 	.filterBounds(Melbourne)
 	.filterDate("2009-02-15","2010-01-01")
