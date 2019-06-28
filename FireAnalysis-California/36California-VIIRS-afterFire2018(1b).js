@@ -31,7 +31,7 @@ var viirs = collection.median(); //lighting composite, taking median values
 //Brightest value in Town of Paradise during Camp Fire (~10) is max.
 //Minimum is set to 1 to eliminate street lighting.
 var single = viirs.select("avg_rad");
-Map.addLayer(single,{bands:["avg_rad"],min:1,max:10, palette: ["black", "orange", "white"]},"average masked nightmap", 1, 0.85);
+Map.addLayer(single,{bands:["avg_rad"],min:1,max:10, palette: ["black", "orange", "white"]},"average cleaned nightmap", 1, 0.85);
 
 //VIIRS Image Export
 Export.image.toDrive({
