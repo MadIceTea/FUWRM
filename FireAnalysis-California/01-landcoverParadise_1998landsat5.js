@@ -18,7 +18,7 @@ Map.addLayer(Magalia, {color: "ADC91F"}, "Town of Magalia, California", 1, 0.3);
 Map.addLayer(Chico, {color: "BF19DB"}, "City of Chico, California", 1, 1); //purple
 
 //Center Map
-Map.centerObject(Big_Square, 9);
+Map.centerObject(Paradise, 9);
 
 //L5SR Bands and Human-Friendly Naming
 var LANDSAT_5_BANDS = ["B1","B2","B3","B4","B5","B6","B7"];
