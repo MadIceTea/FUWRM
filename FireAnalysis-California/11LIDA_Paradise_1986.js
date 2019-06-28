@@ -412,9 +412,6 @@ Map.centerObject(Paradise, 10);
 var LANDSAT_5_BANDS = ["B1","B2","B3","B4","B5","B6","B7"];
 var STD_NAMES = ["blue","green","red","nir","swir1","tir","swir2"];
 
-//Center Map
-Map.setCenter(-121.621, 39.762, 13);
-
 //filtering against Paradise at [about] half-year resolution
 var landsat_SR = ee.ImageCollection("LANDSAT/LT05/C01/T1_SR") //load collection 1 - LANDSAT5 raws
 	.filterBounds(Paradise)
