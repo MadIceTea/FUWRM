@@ -26,7 +26,7 @@ var STD_NAMES = ["blue","green","red","nir","swir1","tir","swir2"];
 
 //Filtering against Paradise for the portion of 2013 with landsat 8 imagery.
 //Landsat 8 imagery is not available for January - early April 2013.
-var landsat_SR = ee.ImageCollection("LANDSAT/LE07/C01/T1_SR") //load LANDSAT8 raws
+var landsat_SR = ee.ImageCollection("LANDSAT/LC08/C01/T1_SR") //load LANDSAT8 raws
 	.filterBounds(Paradise)
 	.filterDate("2013-04-11","2014-01-01")
 	// Filter cloudy scenes.
