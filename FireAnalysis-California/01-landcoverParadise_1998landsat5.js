@@ -38,7 +38,7 @@ print(landsat_SR); //date debug
 var single = landsat_SR.median();
 
 //Display the Composite
-Map.addLayer(landsat_SR, {"bands":["red","green","blue"],min:0,max:2000}, "baselayer", 0.85, 0);
+Map.addLayer(landsat_SR, {"bands":["red","green","blue"],min:0,max:2000}, "baselayer", 1, 0.85);
 
 var inputimage = landsat_SR.median();
 
