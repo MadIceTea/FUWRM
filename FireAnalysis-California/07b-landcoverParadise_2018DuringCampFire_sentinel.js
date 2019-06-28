@@ -75,7 +75,7 @@ single = single.addBands(mask);
 //Sentinel True-Color Image Export
 Export.image.toDrive({
   image: single,
-  description: "sentinel_averageDuringFire2018_Paradise_BigSquare",
+  description: "sentinel_duringFire2018l7_Paradise_BigSquare",
   folder: "California-Paradise_CampFire2018",
   region:Big_Square,
   scale:30.0,
