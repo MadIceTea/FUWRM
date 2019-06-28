@@ -13,18 +13,18 @@ var Magalia = ee.FeatureCollection("ft:1BCMRnYS4plV2NVWtP6dZHYmE1V00kY8baAPU9Udm
 var Chico = ee.FeatureCollection("ft:1mmRj4fN8mmvtynTxG56XMZJ-1y9n1i-lDUCIsXwV").geometry();
 
 // show the layers
-Map.addLayer(Paradise, {color: "BC2066"}, "Town of Paradise, California", 1, 0.4); //reddish-purple
+Map.addLayer(Paradise, {color: "BF19DB"}, "Town of Paradise, California", 1, 0.4); //deep purple
 Map.addLayer(Magalia, {color: "280AC2"}, "Town of Magalia, California", 1, 0.3); //royal blue
-Map.addLayer(Chico, {color: "BF19DB"}, "City of Chico, California", 1, 1); //purple
+Map.addLayer(Chico, {color: "BC2066"}, "City of Chico, California", 1, 1); //reddish-purple
 
 //Center Map
-Map.centerObject(Paradise, 9);
+Map.centerObject(Paradise, 10);
 
 //L5SR Bands and Human-Friendly Naming
 var LANDSAT_5_BANDS = ["B1","B2","B3","B4","B5","B6","B7"];
 var STD_NAMES = ["blue","green","red","nir","swir1","tir","swir2"];
 
-//filtering Against Victoria at 1-year resolution
+//filtering Against Paradise at 1-year resolution
 
 var landsat_SR = ee.ImageCollection("LANDSAT/LT05/C01/T1_SR") //load LANDSAT5 raws
 	.filterBounds(Paradise)
@@ -52,7 +52,7 @@ function addNDVI(image) {
 var ndvi = addNDVI(inputimage);
 
 //Toggle-display the single median-reduced image.
-Map.addLayer(single, {"bands":["red","green","blue"],min:0,max:2000}, "median_image", 1, 0.85);
+Map.addLayer(single, {"bands":["red","green","blue"],min:0,max:2000}, "median_image", 1, 0.8);
 
 //Map of NDVI vegetation-water probability.
 Map.addLayer(ndvi,{bands:["ndvi"],min:0,max:1}, "ndvilayer", 1, 0.15);
