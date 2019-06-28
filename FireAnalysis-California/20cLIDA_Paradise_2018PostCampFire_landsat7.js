@@ -55,7 +55,7 @@ var predictionBands = ["blue","green","red","nir","swir1","swir2","ndvi"];
 var trainingimage = ndvi.select(predictionBands);
 
 //fusion-table of polygons drawn in Google Earth Desktop
-var trainingpolygons = ee.FeatureCollection("ft:1DEQC9tLdjoERve9NKtLizNd19_eaoyk-Jslwogc-");
+var trainingpolygons = ee.FeatureCollection("ft:1l1hqnAXR3H8CRL5SzrKq5YpuW2UWMA2FG0p1sR-N");
 
 var training = trainingimage.sampleRegions({
     collection: trainingpolygons,
