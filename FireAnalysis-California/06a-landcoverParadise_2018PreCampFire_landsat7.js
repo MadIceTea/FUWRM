@@ -22,7 +22,7 @@ Map.centerObject(Paradise, 10);
 
 //L7SR Bands and Human-Friendly Naming
 var LANDSAT_7_BANDS = ["B1","B2","B3","B4","B5","B6","B7"];
-var STD_NAMES = ["blue","green","red","nir","swir1","LANDSAT_7_BANDS","swir2"];
+var STD_NAMES = ["blue","green","red","nir","swir1","tir","swir2"];
 
 //Add an outline of the Town of Paradise
 Map.addLayer(Paradise, {color: "000000"}, "Town of Paradise", 1, 1);
