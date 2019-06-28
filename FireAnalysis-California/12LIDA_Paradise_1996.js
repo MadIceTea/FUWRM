@@ -97,7 +97,7 @@ single = single.addBands(mask);
 //Landsat True-Color Image Export
 Export.image.toDrive({
   image: CARTclassified,
-  description: "classifiedImage_1996landsat5_Paradise_BigSquare-1b",
+  description: "classifiedImage_1996landsat5_Paradise_BigSquare",
   folder: "California-Paradise_CampFire2018",
   region:Big_Square,
   scale:30.0
