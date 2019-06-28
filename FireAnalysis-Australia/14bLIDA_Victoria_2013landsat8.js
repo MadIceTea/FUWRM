@@ -38,7 +38,7 @@ Map.addLayer(Tonimbuk, {color: "ADC91F"}, "Tonimbuk, VIC, Australia", 1, 1); //d
 Map.centerObject(Big_Square, 9);
 
 //L8SR Bands and Human-Friendly Naming
-var LANDSAT_8_BANDS = ["B2", "B3", "B4","B5","B6","B10","B7"];
+var LANDSAT_8_BANDS = ["B2","B3","B4","B5","B6","B10","B7"];
 var STD_NAMES = ["blue","green","red","nir","swir1","tir","swir2"];
 
 //filtering Against the entire export region for one-year (2013).
