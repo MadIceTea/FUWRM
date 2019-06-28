@@ -29,39 +29,14 @@ var collection = ee.ImageCollection("NOAA/DMSP-OLS/NIGHTTIME_LIGHTS")
 var DMSP = collection.median(); //lighting composite, taking median values
 
 //Display Layers on the Map with limited range of values.
-//Minimum is set to 1 to eliminate street lighting.
-Map.addLayer(DMSP,{bands:["avg_vis", "stable_lights", "cf_cvg"],min:1,max:63}, "median nightmap", 0, 1);
+Map.addLayer(DMSP,{bands:["avg_vis", "stable_lights", "cf_cvg"],min:0,max:63}, "median nightmap", 0, 1);
 var single = DMSP.select("stable_lights");
-Map.addLayer(single,{bands:["stable_lights"],min:1,max:63,palette: ["black", "orange", "white"]},"average cleaned nightmap", 1, 1);
-
-//debug
-print(collection);
-print(DMSP);
-print(single);
-
-//Export Process
-var vis = {
-  min: 1, 
-  max: 63,
-  palette: ["black", "orange", "white"],
-};
-
-// visualize image using visOpts above
-// turning it into 8-bit visible image.
-single = single.visualize(vis);
-
-// obtain native scale of avg_rad band
-var scale = single.projection().nominalScale().getInfo();
-
-// add an alpha channel as 4th band to mask no data regions
-var mask = single.mask().reduce(ee.Reducer.min())
-    .multiply(255).toByte();
-single = single.addBands(mask);
+Map.addLayer(single,{bands:["stable_lights"],min:0,max:63,palette: ["black", "orange", "white"]},"average cleaned nightmap", 1, 1);
 
 //DMSP Image Export
 Export.image.toDrive({
   image: single,
-  description: "DMSPColored_1996_Paradise_BigSquare-1band",
+  description: "DMSPColored_1996_Paradise_BigSquare-1b",
   folder: "California-Paradise_CampFire2018",
   region:Big_Square,
   scale:30.0
