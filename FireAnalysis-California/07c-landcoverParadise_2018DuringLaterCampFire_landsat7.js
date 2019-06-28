@@ -9,7 +9,7 @@ var Big_Square = /* color: #acc235 */ee.Geometry.Polygon(
 var LANDSAT_7_BANDS = ["B1","B2","B3","B4","B5","B6","B7"];
 var STD_NAMES = ["blue","green","red","nir","swir1","tir","swir2"];
 
-//filtering Against Paradise at 1-year resolution
+//Filtering against Paradise for the duration of the Camp Fire.
 var landsat_SR = ee.ImageCollection("LANDSAT/LE07/C01/T1_SR") //load LANDSAT7 raws for during the fire period
 	.filterBounds(Paradise)
 	.filterDate("2018-11-08","2018-11-25")
