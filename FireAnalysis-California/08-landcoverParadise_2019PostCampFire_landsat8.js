@@ -415,7 +415,7 @@ var STD_NAMES = ["blue","green","red","nir","swir1","tir","swir2"];
 //Filtering against Paradise for what has past so far in 2019.
 var landsat_SR = ee.ImageCollection("LANDSAT/LC08/C01/T1_SR") //load LANDSAT8 raws for during the fire period
 	.filterBounds(Paradise)
-	.filterDate("2019-01-01","2019-06-01")
+	.filterDate("2019-01-01","2019-05-01")
 	// Filter cloudy scenes.
   .filter(ee.Filter.lt("CLOUD_COVER", 35))
 	.select(LANDSAT_8_BANDS, STD_NAMES);
