@@ -20,8 +20,8 @@ Map.addLayer(Chico, {color: "1C06C2"}, "City of Chico, California", 1, 1); //dee
 //Center Map
 Map.centerObject(Paradise, 10);
 
-//L5SR Bands and Human-Friendly Naming
-var LANDSAT_7_BANDS = ["B1","B2","B3","B4","B5","B6","B7"];
+//L8SR Bands and Human-Friendly Naming
+var LANDSAT_8_BANDS = ["B2","B3","B4","B5","B6","B10","B7"];
 var STD_NAMES = ["blue","green","red","nir","swir1","tir","swir2"];
 
 //Filtering against Paradise for the portion of 2013 with landsat 8 imagery.
