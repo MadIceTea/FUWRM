@@ -24,7 +24,7 @@ Map.centerObject(Paradise, 10);
 var LANDSAT_8_BANDS = ["B2","B3","B4","B5","B6","B10","B7"];
 var STD_NAMES = ["blue","green","red","nir","swir1","tir","swir2"];
 
-//Filtering against Paradise at one-year resolution.
+//Filtering against Paradise at one-month resolution (December 2018) -- immediately following the fire.
 var landsat_SR = ee.ImageCollection("LANDSAT/LC08/C01/T1_SR") //load LANDSAT8 raws
 	.filterBounds(Paradise)
 	.filterDate("2018-11-26","2019-01-01")
