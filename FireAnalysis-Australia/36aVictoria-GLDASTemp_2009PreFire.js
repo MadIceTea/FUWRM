@@ -39,11 +39,11 @@ Map.centerObject(Big_Square, 9);
 
 var collection = ee.ImageCollection("NASA/GLDAS/V021/NOAH/G025/T3H")
   .select("SoilTMP0_10cm_inst")
-  .filterDate("2009-01-01", "2009-02-01");
+  .filterDate("2009-02-04", "2009-02-15");
 
 var band_viz = {
-  min: 0,
-  max: 800,
+  min: 273.15,
+  max: 298.15,
   palette: ["Navy", "SkyBlue", "Green", "YellowGreen", "Yellow", "Orange", "DarkOrange", "Red"]
 };
 
