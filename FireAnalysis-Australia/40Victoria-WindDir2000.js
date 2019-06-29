@@ -57,7 +57,7 @@ var vis = {
   min: 0,
   max: 360,
   palette: ["DarkOrange", "Yellow", "Green", "Navy"],
-  bands: ["SoilMoi0_10cm_inst"]
+  bands: ["th"]
 };
 
 // visualize image using visOpts above
