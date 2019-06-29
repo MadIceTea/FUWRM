@@ -38,7 +38,7 @@ Map.addLayer(Tonimbuk, {color: "ADC91F"}, "Tonimbuk, VIC, Australia", 1, 1); //d
 Map.centerObject(Big_Square, 9);
 
 var collection = ee.ImageCollection("NASA/GLDAS/V021/NOAH/G025/T3H")
-  .select("SoilTMP0_10cm_inst	")
+  .select("SoilTMP0_10cm_inst")
   .filterDate("2000-01-01", "2001-01-01");
 
 var band_viz = {
