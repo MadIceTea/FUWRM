@@ -39,7 +39,8 @@ Map.centerObject(Big_Square, 9);
 
 var collection = ee.ImageCollection("NOAA/NWS/RTMA")
   .select("WDIR")
-  .filterDate("2018-01-01", "2019-01-01");
+  .filterDate("2018-11-01", "2018-11-16")
+  .filterBounds(Big_Square);
 
 print(collection);
 
@@ -76,7 +77,7 @@ single = single.addBands(mask);
 
 Export.image.toDrive({
   image: single,
-  description: "WindDirColored_2018_Victoria_BigSquare",
+  description: "WindDirColored_duringFire2018_Victoria_BigSquare",
   folder: "Australia-Victoria_BlackFire2009",
   region:Big_Square,
   scale:30.0,
