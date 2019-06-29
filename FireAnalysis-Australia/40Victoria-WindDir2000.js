@@ -37,9 +37,11 @@ Map.addLayer(Tonimbuk, {color: "ADC91F"}, "Tonimbuk, VIC, Australia", 1, 1); //d
 //Center Map
 Map.centerObject(Big_Square, 9);
 
-var collection = ee.ImageCollection("IDAHO_EPSCOR/GRIDMET")
-  .select("th")
-  .filterDate("2000-01-01", "2001-01-01");
+var collection = ee.ImageCollection("NOAA/NWS/RTMA")
+  .select("WDIR")
+  .filterDate("2018-01-01", "2019-01-01");
+
+print(collection);
 
 var band_viz = {
   min: 0, // 0 Degrees (NORTH)
@@ -57,7 +59,7 @@ var vis = {
   min: 0,
   max: 360,
   palette: ["DarkOrange", "Yellow", "Green", "Navy"],
-  bands: ["th"]
+  bands: ["WDIR"]
 };
 
 // visualize image using visOpts above
@@ -74,7 +76,7 @@ single = single.addBands(mask);
 
 Export.image.toDrive({
   image: single,
-  description: "WindDirColored_2000_Victoria_BigSquare",
+  description: "WindDirColored_2018_Victoria_BigSquare",
   folder: "Australia-Victoria_BlackFire2009",
   region:Big_Square,
   scale:30.0,
