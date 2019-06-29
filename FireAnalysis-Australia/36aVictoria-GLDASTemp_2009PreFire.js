@@ -39,7 +39,7 @@ Map.centerObject(Big_Square, 9);
 
 var collection = ee.ImageCollection("NASA/GLDAS/V021/NOAH/G025/T3H")
   .select("SoilTMP0_10cm_inst")
-  .filterDate("2009-02-04", "2009-02-15");
+  .filterDate("2000-01-01", "2001-01-01");
 
 var band_viz = {
   min: 273.15,
@@ -50,6 +50,27 @@ var band_viz = {
 var single = collection.mean();
 
 Map.addLayer(single, band_viz, "At-Surface Soil Temperature", 1, 0.85);
+
+//Landsat True-Color Image Export
+//Export Image
+var vis = {
+  min: 273.15,
+  max: 298.15,
+  palette: ["Navy", "SkyBlue", "Green", "YellowGreen", "Yellow", "Orange", "DarkOrange", "Red"],
+  bands: ["SoilTMP0_10cm_inst"]
+};
+
+// visualize image using visOpts above
+// turning it into 8-bit RGB image.
+single = single.visualize(vis);
+
+// obtain native scale of RGB bands
+var scale = single.projection().nominalScale().getInfo();
+
+// add an alpha channel as 4th band to mask no data regions
+var mask = single.mask().reduce(ee.Reducer.min())
+    .multiply(255).toByte();
+single = single.addBands(mask);
 
 Export.image.toDrive({
   image: single,
