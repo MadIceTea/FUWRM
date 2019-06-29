@@ -51,7 +51,7 @@ var single = collection.mean();
 
 Map.addLayer(single, band_viz, "At-Surface Soil Temperature", 1, 0.85);
 
-//Landsat True-Color Image Export
+//True-Color Image Export
 //Export Image
 var vis = {
   min: 273.15,
