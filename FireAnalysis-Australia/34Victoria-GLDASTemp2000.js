@@ -38,11 +38,13 @@ Map.addLayer(Tonimbuk, {color: "ADC91F"}, "Tonimbuk, VIC, Australia", 1, 1); //d
 Map.centerObject(Big_Square, 9);
 
 var collection = ee.ImageCollection("NASA/GLDAS/V021/NOAH/G025/T3H")
-  .select("KBDI")
-  .filterDate("2008-01-01", "2009-01-01");
+  .select("SoilTMP0_10cm_inst	")
+  .filterDate("2000-01-01", "2001-01-01");
+
 var band_viz = {
   min: 0,
   max: 800,
   palette: ["Navy", "SkyBlue", "Green", "YellowGreen", "Yellow", "Orange", "DarkOrange", "Red"]
 };
-Map.addLayer(collection.mean(), band_viz, "KBDI", 1, 0.85);
+
+Map.addLayer(collection.mean(), band_viz, "At-Surface Soil Temperature", 1, 0.85);
