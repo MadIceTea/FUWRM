@@ -39,7 +39,7 @@ Map.centerObject(Big_Square, 9);
 
 var collection = ee.ImageCollection("NASA/GLDAS/V021/NOAH/G025/T3H")
   .select("SoilMoi0_10cm_inst")
-  .filterDate("2010-01-01", "2011-05-01");
+  .filterDate("2018-01-01", "2019-01-01");
 
 var band_viz = {
   min: 14.5, //14.5Pa
@@ -74,7 +74,7 @@ single = single.addBands(mask);
 
 Export.image.toDrive({
   image: single,
-  description: "SoilMoistureColored_2010_Victoria_BigSquare",
+  description: "SoilMoistureColored_2018_Victoria_BigSquare",
   folder: "Australia-Victoria_BlackFire2009",
   region:Big_Square,
   scale:30.0,
