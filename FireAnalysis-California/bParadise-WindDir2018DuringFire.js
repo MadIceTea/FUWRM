@@ -1,17 +1,3 @@
-/**** Start of imports. If edited, may not auto-convert in the playground. ****/
-var Big_Square = 
-    /* color: #ff6c64 */
-    /* displayProperties: [
-      {
-        "type": "rectangle"
-      }
-    ] */
-    ee.Geometry.Polygon(
-        [[[144.84399398906248, -37.18091645226004],
-          [144.84399398906248, -38.13760786176182],
-          [146.16235336406248, -38.13760786176182],
-          [146.16235336406248, -37.18091645226004]]], null, false);
-/***** End of imports. If edited, may not auto-convert in the playground. *****/
 // Import the Province of Victoria from Fusion Table
 var Victoria = ee.FeatureCollection("ft:1UzSGq1cWUA5PloR9VxO7AVTu4vVXL3BHNiJKv6XB").geometry();
 
@@ -39,7 +25,7 @@ Map.centerObject(Big_Square, 9);
 
 var collection = ee.ImageCollection("NOAA/NWS/RTMA")
   .select("WDIR")
-  .filterDate("2018-11-01", "2018-11-16")
+  .filterDate("2018-11-08","2018-11-25")
   .filterBounds(Big_Square);
 
 print(collection);
@@ -77,7 +63,7 @@ single = single.addBands(mask);
 
 Export.image.toDrive({
   image: single,
-  description: "WindDirColored_duringFire2018_Victoria_BigSquare",
+  description: "WindDirColored_duringFire2018_Paradise_BigSquare",
   folder: "Australia-Victoria_BlackFire2009",
   region:Big_Square,
   scale:30.0,
