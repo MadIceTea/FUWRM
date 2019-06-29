@@ -38,22 +38,20 @@ Map.addLayer(Tonimbuk, {color: "ADC91F"}, "Tonimbuk, VIC, Australia", 1, 1); //d
 Map.centerObject(Big_Square, 9);
 
 //Import images for 2013, almost five years after the Black Fire.
-//Use DMSP-OLS dataset Nighttime lights set.
-var collection = ee.ImageCollection("NOAA/DMSP-OLS/NIGHTTIME_LIGHTS")
+//Use NOAA-VIIRS dataset Nighttime lights set.
+var collection = ee.ImageCollection("NOAA/VIIRS/DNB/MONTHLY_V1/VCMCFG")
   .filterDate("2013-01-01","2014-01-01") // for 2013
   .filterBounds(Big_Square); //around the export area
-  
-var DMSP = collection.median(); //lighting composite, taking median values
 
-//Display Layers on the Map with limited range of values.
-//Minimum is set to 1 to eliminate street lighting.
-Map.addLayer(DMSP,{bands:["avg_vis", "stable_lights", "cf_cvg"],min:0,max:63}, "median nightmap", 0, 0.9);
-var single = DMSP.select("stable_lights");
-Map.addLayer(single,{bands:["stable_lights"],min:0,max:63,palette: ["black", "orange", "white"]},"average cleaned nightmap", 1, 0.9);
+//The values were overexposed to show small townships clearly, at the expense of overexposing Melbourne itself.  
+var viirs = collection.median(); //lighting composite, taking median values
+Map.addLayer(viirs,{bands:["avg_rad", "avg_rad", "cf_cvg"],min:1,max:5}, "median nightmap", 0, 0.9);
+var single = viirs.select("avg_rad");
+Map.addLayer(single,{bands:["avg_rad"],min:1,max:5, palette: ["black", "orange", "white"]},"average masked nightmap", 1, 0.9);
 
 Export.image.toDrive({
   image: single,
-  description: "DMSPColored_2013_Paradise_BigSquare-1b",
+  description: "VIIRSColored_2013_Paradise_BigSquare-1b",
   folder: "Australia-Victoria_BlackFire2009",
   region:Big_Square,
   scale:30.0,
