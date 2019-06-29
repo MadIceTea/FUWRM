@@ -40,9 +40,44 @@ Map.centerObject(Big_Square, 9);
 var collection = ee.ImageCollection('UTOKYO/WTLAB/KBDI/v1')
   .select("KBDI")
   .filterDate("2008-01-01", "2009-01-01");
+  
 var band_viz = {
   min: 0,
   max: 800,
   palette: ["Navy", "SkyBlue", "Green", "YellowGreen", "Yellow", "Orange", "DarkOrange", "Red"]
 };
+
+var single = collection.mean();
+
 Map.addLayer(collection.mean(), band_viz, "KBDI", 1, 0.85);
+
+//True-Color Image Export
+//Export Image
+var vis = {
+  min: 0,
+  max: 800,
+  palette: ["Navy", "SkyBlue", "Green", "YellowGreen", "Yellow", "Orange", "DarkOrange", "Red"],
+  bands: ["KBDI"]
+};
+
+// visualize image using visOpts above
+// turning it into 8-bit RGB image.
+single = single.visualize(vis);
+
+// obtain native scale of RGB bands
+var scale = single.projection().nominalScale().getInfo();
+
+// add an alpha channel as 4th band to mask no data regions
+var mask = single.mask().reduce(ee.Reducer.min())
+    .multiply(255).toByte();
+single = single.addBands(mask);
+
+Export.image.toDrive({
+  image: single,
+  description: "KBDIColored_2008_Victoria_BigSquare",
+  folder: "Australia-Victoria_BlackFire2009",
+  region:Big_Square,
+  scale:30.0,
+  fileFormat: "GeoTIFF",
+  crs: "EPSG:3857",
+});
