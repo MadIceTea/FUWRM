@@ -45,9 +45,7 @@ var collection_b = ee.ImageCollection("JAXA/GPM_L3/GSMaP/v6/reanalysis")
   .select("hourlyPrecipRateGC")
   .filterDate("2000-06-01", "2001-01-01");
 
-var mean_a = collection_a.mean();
-var mean_b = collection_b.mean();
-var single = mean_a + mean_b;
+var single = (collection_a.mean()).add((collection_b.mean()));
 
 var band_viz = {
   min: 0, //0 mm/hr
