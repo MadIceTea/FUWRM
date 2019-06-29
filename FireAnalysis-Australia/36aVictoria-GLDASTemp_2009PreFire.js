@@ -74,7 +74,7 @@ single = single.addBands(mask);
 
 Export.image.toDrive({
   image: single,
-  description: "TempsColored_preFire2009_Paradise_BigSquare-1b",
+  description: "TempsColored_preFire2009_Victoria_BigSquare",
   folder: "Australia-Victoria_BlackFire2009",
   region:Big_Square,
   scale:30.0,
