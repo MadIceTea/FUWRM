@@ -51,7 +51,7 @@ Map.addLayer(single,{bands:["avg_rad"],min:1,max:5, palette: ["black", "orange",
 
 Export.image.toDrive({
   image: single,
-  description: "VIIRSColored_2019_Paradise_BigSquare-1b",
+  description: "VIIRS_2019_Paradise_BigSquare-1b",
   folder: "Australia-Victoria_BlackFire2009",
   region:Big_Square,
   scale:30.0,
