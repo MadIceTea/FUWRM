@@ -47,4 +47,16 @@ var band_viz = {
   palette: ["Navy", "SkyBlue", "Green", "YellowGreen", "Yellow", "Orange", "DarkOrange", "Red"]
 };
 
-Map.addLayer(collection.mean(), band_viz, "At-Surface Soil Temperature", 1, 0.85);
+var single = collection.mean();
+
+Map.addLayer(single, band_viz, "At-Surface Soil Temperature", 1, 0.85);
+
+Export.image.toDrive({
+  image: single,
+  description: "TempsColored_2000_Paradise_BigSquare-1b",
+  folder: "Australia-Victoria_BlackFire2009",
+  region:Big_Square,
+  scale:30.0,
+  fileFormat: "GeoTIFF",
+  crs: "EPSG:3857",
+});
