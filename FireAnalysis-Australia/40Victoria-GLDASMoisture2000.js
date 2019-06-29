@@ -42,8 +42,8 @@ var collection = ee.ImageCollection("NASA/GLDAS/V021/NOAH/G025/T3H")
   .filterDate("2000-01-01", "2001-01-01");
 
 var band_viz = {
-  min: 2, //2Pa
-  max: 50, //50Pa
+  min: 20, //20Pa
+  max: 40, //40Pa
   palette: ["Red", "DarkOrange", "Orange", "Yellow", "YellowGreen", "Green", "SkyBlue", "Navy"]
 };
 
@@ -54,8 +54,8 @@ Map.addLayer(single, band_viz, "At-Surface Soil Moisture", 1, 0.85);
 //True-Color Image Export
 //Export Image
 var vis = {
-  min: 2,
-  max: 50,
+  min: 20,
+  max: 40,
   palette: ["Red", "DarkOrange", "Orange", "Yellow", "YellowGreen", "Green", "SkyBlue", "Navy"],
   bands: ["SoilMoi0_10cm_inst"]
 };
