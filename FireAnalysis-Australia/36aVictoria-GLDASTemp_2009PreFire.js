@@ -42,8 +42,8 @@ var collection = ee.ImageCollection("NASA/GLDAS/V021/NOAH/G025/T3H")
   .filterDate("2009-01-01", "2009-02-01");
 
 var band_viz = {
-  min: 273.15,
-  max: 298.15,
+  min: 273.15, //0C
+  max: 298.15, //25C
   palette: ["Navy", "SkyBlue", "Green", "YellowGreen", "Yellow", "Orange", "DarkOrange", "Red"]
 };
 
