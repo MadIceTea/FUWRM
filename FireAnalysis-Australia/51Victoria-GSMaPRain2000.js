@@ -37,17 +37,21 @@ Map.addLayer(Tonimbuk, {color: "ADC91F"}, "Tonimbuk, VIC, Australia", 1, 1); //d
 //Center Map
 Map.centerObject(Big_Square, 9);
 
-var collection = ee.ImageCollection("JAXA/GPM_L3/GSMaP/v6/reanalysis")
+var collection_a = ee.ImageCollection("JAXA/GPM_L3/GSMaP/v6/reanalysis")
   .select("hourlyPrecipRateGC")
-  .filterDate("2000-01-01", "2001-01-01");
+  .filterDate("2000-03-01", "2000-06-01");
+
+var collection_b = ee.ImageCollection("JAXA/GPM_L3/GSMaP/v6/reanalysis")
+  .select("hourlyPrecipRateGC")
+  .filterDate("2000-06-01", "2001-01-01");
+
+var single = collection_a.mean() + collection_b.mean();
 
 var band_viz = {
   min: 0, //0 mm/hr
   max: 200, //200 mm/hr
   palette: ["Red", "DarkOrange", "Orange", "Yellow", "YellowGreen", "Green", "SkyBlue", "Navy"]
 };
-
-var single = collection.mean();
 
 Map.addLayer(single, band_viz, "At-Surface Soil Moisture", 1, 0.85);
 
