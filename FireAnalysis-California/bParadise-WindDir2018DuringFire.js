@@ -30,7 +30,7 @@ print(collection);
 var band_viz = {
   min: 0, // 0 Degrees (NORTH)
   max: 360, // 360 Degrees (clockwise direction)
-  palette: ["DarkOrange", "Yellow", "Green", "Navy"] //North, West, South, East (by quadrant)
+  palette: ["Navy", "Yellow", "Green", "Red"] //North, West, South, East (by quadrant)
 };
 
 var single = collection.mean();
@@ -42,7 +42,7 @@ Map.addLayer(single, band_viz, "Wind Directionality", 1, 0.85);
 var vis = {
   min: 0,
   max: 360,
-  palette: ["DarkOrange", "Yellow", "Green", "Navy"],
+  palette: ["Navy", "Yellow", "Green", "Red"],
   bands: ["WDIR"]
 };
 
