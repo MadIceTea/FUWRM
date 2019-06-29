@@ -45,4 +45,4 @@ var band_viz = {
   max: 800,
   palette: ["Navy", "SkyBlue", "Green", "YellowGreen", "Yellow", "Orange", "DarkOrange", "Red"]
 };
-Map.addLayer(collection.mean(), band_viz, "KBDI");
+Map.addLayer(collection.mean(), band_viz, "KBDI", 1, 0.85);
