@@ -27,19 +27,18 @@ var collection_a = ee.ImageCollection("NOAA/NWS/RTMA")
 
 var collection_b = ee.ImageCollection("NOAA/NWS/RTMA")
   .select("WDIR")
-  .filterDate("2000-06-01", "2001-01-01")
+  .filterDate("2018-06-01", "2018-11-01")
 	.filterBounds(Paradise);
 
-var single = (collection_a.mean()).add((collection_b.mean()));
+var single = ((collection_a.mean()).add((collection_b.mean())).divide(2));
 
 var band_viz = {
   min: 0, // 0 Degrees (NORTH)
   max: 360, // 360 Degrees (clockwise direction)
   palette: ["Navy", "Red", "Green", "Yellow"] //North, West, South, East (by quadrant)
 };
-
-var single = collection.mean();
-
+Map.addLayer(collection_a, band_viz, "Wind Alpha", 0, 0.85);
+Map.addLayer(collection_b, band_viz, "Wind Beta", 0, 0.85);
 Map.addLayer(single, band_viz, "Wind Directionality", 1, 0.85);
 
 //True-Color Image Export
