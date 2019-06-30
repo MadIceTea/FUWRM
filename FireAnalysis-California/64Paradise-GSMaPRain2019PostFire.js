@@ -58,7 +58,7 @@ single = single.addBands(mask);
 
 Export.image.toDrive({
   image: single,
-  description: "PrecipColored_postFire2018_Paradise_BigSquare",
+  description: "PrecipColored_postFire2019_Paradise_BigSquare",
   folder: "California-Paradise_CampFire2018",
   region:Big_Square,
   scale:30.0,
