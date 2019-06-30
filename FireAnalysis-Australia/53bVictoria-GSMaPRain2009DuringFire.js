@@ -41,21 +41,24 @@ var collection = ee.ImageCollection("JAXA/GPM_L3/GSMaP/v6/reanalysis")
   .select("hourlyPrecipRateGC")
   .filterDate("2009-02-01", "2009-02-15");
 
-var single = collection.mean();
+var intermediate = collection.mean();
+var single = intermediate.multiply(360); //360 hours in TOI (time period of interest)
 
 var band_viz = {
-  min: 0, //0 mm/hr
-  max: 0.15, //0.15 mm/hr
+  min: 0, //0mm in a year (@ 0mm/hr)
+  max: 54, //0.05m total in TOI @ 0.15mm/hr
   palette: ["Red", "DarkOrange", "Orange", "Yellow", "YellowGreen", "Green", "SkyBlue", "Navy"]
 };
 
-Map.addLayer(single, band_viz, "Average Precipitation", 1, 0.85);
+// Map.addLayer(collection_a, band_viz, "Precip Alpha", 0, 0.85);
+// Map.addLayer(collection_b, band_viz, "Precip Beta", 0, 0.85);
+Map.addLayer(single, band_viz, "Total Yearly Average Precipitation", 1, 0.85);
 
 //True-Color Image Export
 //Export Image
 var vis = {
   min: 0,
-  max: 0.15,
+  max: 54,
   palette: ["Red", "DarkOrange", "Orange", "Yellow", "YellowGreen", "Green", "SkyBlue", "Navy"],
   bands: ["hourlyPrecipRateGC"]
 };
