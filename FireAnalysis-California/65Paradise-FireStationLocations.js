@@ -13,7 +13,7 @@ var Magalia = ee.FeatureCollection("ft:1BCMRnYS4plV2NVWtP6dZHYmE1V00kY8baAPU9Udm
 var Chico = ee.FeatureCollection("ft:1mmRj4fN8mmvtynTxG56XMZJ-1y9n1i-lDUCIsXwV").geometry();
 
 //Center Map
-Map.centerObject(Big_Square, 9);
+Map.centerObject(Paradise, 10);
 
 //The long list of all firefighting locations
 var firefight = ee.FeatureCollection("ft:1FzuhZVp5Y2xk0imZVxnHnVTv4NX1goh9vi9xp1bW").geometry();
