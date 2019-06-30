@@ -37,7 +37,7 @@ Map.addLayer(Tonimbuk, {color: "ADC91F"}, "Tonimbuk, VIC, Australia", 1, 1); //d
 //Center Map
 Map.centerObject(Big_Square, 9);
 
-var collection = ee.ImageCollection("JAXA/GPM_L3/GSMaP/v6/reanalysis")
+var collection = ee.ImageCollection("JAXA/GPM_L3/GSMaP/v6/operational")
   .select("hourlyPrecipRateGC")
   .filterDate("2019-01-01", "2019-05-01");
 
