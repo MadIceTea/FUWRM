@@ -24,6 +24,6 @@ var CFA =  ee.FeatureCollection("ft:1tS0GgWvzSa0_Nq_uBcZnC7irJJ45T-bybXBMBzXf").
 
 // show the layers
 Map.addLayer(Big_Square, {color: "55EAEC"}, "Region of Interest", 1, 0.5); //light blue
-Map.addLayer(FS, {color: "31994D"}, "Kinglake, VIC, Australia", 1, 0.85); //green
-Map.addLayer(CFA, {color: "C18AB9"}, "Drouin West, VIC, Australia", 1, 0.75); //purple
+Map.addLayer(FS, {color: "31994D"}, "Kinglake, VIC, Australia", 1, 1); //green
+Map.addLayer(CFA, {color: "C18AB9"}, "Drouin West, VIC, Australia", 1, 1); //purple
 Map.addLayer(firefight, {color: "ADC91F"}, "Tonimbuk, VIC, Australia", 0, 1); //darker green
