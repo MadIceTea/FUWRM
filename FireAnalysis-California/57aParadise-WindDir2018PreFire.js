@@ -37,8 +37,9 @@ var band_viz = {
   max: 360, // 360 Degrees (clockwise direction)
   palette: ["Navy", "Red", "Green", "Yellow"] //North, West, South, East (by quadrant)
 };
-Map.addLayer(collection_a, band_viz, "Wind Alpha", 0, 0.85);
-Map.addLayer(collection_b, band_viz, "Wind Beta", 0, 0.85);
+
+// Map.addLayer(collection_a, band_viz, "Wind Alpha", 0, 0.85);
+// Map.addLayer(collection_b, band_viz, "Wind Beta", 0, 0.85);
 Map.addLayer(single, band_viz, "Wind Directionality", 1, 0.85);
 
 //True-Color Image Export
