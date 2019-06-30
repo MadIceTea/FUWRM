@@ -39,15 +39,13 @@ Map.centerObject(Big_Square, 9);
 
 var collection_a = ee.ImageCollection("JAXA/GPM_L3/GSMaP/v6/reanalysis")
   .select("hourlyPrecipRateGC")
-  .filterDate("2000-03-01", "2000-06-01")
-  .filterBounds(Melbourne);
+  .filterDate("2000-03-01", "2000-06-01");
 
 var collection_b = ee.ImageCollection("JAXA/GPM_L3/GSMaP/v6/reanalysis")
   .select("hourlyPrecipRateGC")
-  .filterDate("2000-06-01", "2001-01-01")
-  .filterBounds(Melbourne);
+  .filterDate("2000-06-01", "2001-01-01");
 
-var single = (collection_a.mean()).add((collection_b.mean()));
+var single = ((collection_a.mean()).add((collection_b.mean())).divide(2));
 
 var band_viz = {
   min: 0, //0 mm/hr
@@ -55,6 +53,8 @@ var band_viz = {
   palette: ["Red", "DarkOrange", "Orange", "Yellow", "YellowGreen", "Green", "SkyBlue", "Navy"]
 };
 
+Map.addLayer(collection_a, band_viz, "Precip Alpha", 0, 0.85);
+Map.addLayer(collection_b, band_viz, "Precip Beta", 0, 0.85);
 Map.addLayer(single, band_viz, "Yearly Average Precipitation", 1, 0.85);
 
 //True-Color Image Export
