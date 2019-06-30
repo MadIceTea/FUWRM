@@ -20,4 +20,5 @@ Map.addLayer(Chico, {color: "1C06C2"}, "City of Chico, California", 1, 1); //dee
 //Center Map
 Map.centerObject(Paradise, 10);
 
-var collection = 
+//The list of fire stations
+var collection = ee.FeatureCollection("ft:TODO").geometry();
