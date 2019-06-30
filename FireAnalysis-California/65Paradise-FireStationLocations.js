@@ -26,10 +26,10 @@ Map.addLayer(ee.Image(0), {color: "000000"}, "Black Background", 1, 0.85);
 
 // show the layers
 Map.addLayer(Big_Square, {color: "55EAEC"}, "Region of Interest", 1, 0.15); //light blue
-Map.addLayer(FS, {color: "FF6C64"}, "Fire Stations", 1, 1); //red
-Map.addLayer(EFS, {color: "17FF2B"}, "Country Fire Authority Stations", 1, 1); //neon green
-Map.addLayer(VFS, {color: "C18AB9"}, "Country Fire Authority Stations", 1, 1); //purple
-Map.addLayer(firefight, {color: "ADC91F"}, "All Firefighting Locations", 1, 1); //darker green
 Map.addLayer(Paradise, {color: "280AC2"}, "Town of Paradise, California", 1, 0.45); //deep purple
 Map.addLayer(Magalia, {color: "91184E"}, "Town of Magalia, California", 1, 0.45); //reddish-purple
 Map.addLayer(Chico, {color: "1C06C2"}, "City of Chico, California", 1, 0.45); //deep blue
+Map.addLayer(firefight, {color: "ADC91F"}, "All Firefighting Locations", 1, 1); //darker green
+Map.addLayer(FS, {color: "FF6C64"}, "Fire Stations", 1, 1); //red
+Map.addLayer(EFS, {color: "17FF2B"}, "Country Fire Authority Stations", 1, 1); //neon green
+Map.addLayer(VFS, {color: "C18AB9"}, "Country Fire Authority Stations", 1, 1); //purple
