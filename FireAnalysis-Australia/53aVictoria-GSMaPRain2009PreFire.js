@@ -49,7 +49,7 @@ var band_viz = {
   palette: ["Red", "DarkOrange", "Orange", "Yellow", "YellowGreen", "Green", "SkyBlue", "Navy"]
 };
 
-Map.addLayer(single, band_viz, "Yearly Average Precipitation", 1, 0.85);
+Map.addLayer(single, band_viz, "Average Precipitation", 1, 0.85);
 
 //True-Color Image Export
 //Export Image
