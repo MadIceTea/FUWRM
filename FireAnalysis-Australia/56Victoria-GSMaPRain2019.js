@@ -37,16 +37,15 @@ Map.addLayer(Tonimbuk, {color: "ADC91F"}, "Tonimbuk, VIC, Australia", 1, 1); //d
 //Center Map
 Map.centerObject(Big_Square, 9);
 
-var collection = ee.ImageCollection("JAXA/GPM_L3/GSMaP/v6/operational")
+var collection = ee.ImageCollection("JAXA/GPM_L3/GSMaP/v6/reanalysis")
   .select("hourlyPrecipRateGC")
-  .filterDate("2019-01-01", "2019-05-01")
-  .filterBounds(Melbourne);
+  .filterDate("2019-01-01", "2019-05-01");
 
 var single = collection.mean();
 
 var band_viz = {
   min: 0, //0 mm/hr
-  max: 0.3, //0.3 mm/hr
+  max: 0.15, //0.15 mm/hr
   palette: ["Red", "DarkOrange", "Orange", "Yellow", "YellowGreen", "Green", "SkyBlue", "Navy"]
 };
 
@@ -56,7 +55,7 @@ Map.addLayer(single, band_viz, "Yearly Average Precipitation", 1, 0.85);
 //Export Image
 var vis = {
   min: 0,
-  max: 0.3,
+  max: 0.15,
   palette: ["Red", "DarkOrange", "Orange", "Yellow", "YellowGreen", "Green", "SkyBlue", "Navy"],
   bands: ["hourlyPrecipRateGC"]
 };
