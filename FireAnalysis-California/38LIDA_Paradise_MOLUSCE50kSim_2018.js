@@ -5,7 +5,7 @@ var Big_Square = /* color: #acc235 */ee.Geometry.Polygon(
           [-121.16965143565142, 39.49365087730002],
           [-121.16965143565142, 40.231519880601745]]]);
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
-var CARTclassified = ee.Image("TODO:2018 image");
+var CARTclassified = ee.Image("users/GEE_Alex/MOLUSCEsims_USA/LIDAParadise_2018_Simulation");
 
 // Import the primary region of interest, Town of Paradise which burned in the Camp Fire of 2018.
 var Paradise = ee.FeatureCollection("ft:1JIO1SLcMe08lHJWUIP7zWpW5razN6FfIwibHtcje").geometry();
