@@ -39,11 +39,13 @@ Map.centerObject(Big_Square, 9);
 
 var collection_a = ee.ImageCollection("JAXA/GPM_L3/GSMaP/v6/operational")
   .select("hourlyPrecipRateGC")
-  .filterDate("2018-01-01", "2018-06-01");
+  .filterDate("2018-01-01", "2018-06-01")
+  .filterBounds(Melbourne);
 
 var collection_b = ee.ImageCollection("JAXA/GPM_L3/GSMaP/v6/operational")
   .select("hourlyPrecipRateGC")
-  .filterDate("2018-06-01", "2019-01-01");
+  .filterDate("2018-06-01", "2019-01-01")
+  .filterBounds(Melbourne);
 
 var single = (collection_a.mean()).add((collection_b.mean()));
 
