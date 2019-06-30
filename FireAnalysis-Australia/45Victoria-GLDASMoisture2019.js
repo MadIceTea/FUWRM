@@ -39,7 +39,8 @@ Map.centerObject(Big_Square, 9);
 
 var collection = ee.ImageCollection("NASA/GLDAS/V021/NOAH/G025/T3H")
   .select("SoilMoi0_10cm_inst")
-  .filterDate("2019-01-01", "2019-05-01");
+  .filterDate("2019-01-01", "2019-05-01")
+  .filterBounds(Melbourne);
 
 var band_viz = {
   min: 14.5, //14.5Pa
