@@ -29,7 +29,7 @@ var single = intermediate.multiply(2880); //2880 hours in the time from Jan - en
 
 var band_viz = {
   min: 0, //0mm in a year (@ 0mm/hr)
-  max: 290, //0.29m total in year-to-date @ 0.1mm/hr
+  max: 720, //0.72m total in year-to-date @ 0.25mm/hr
   palette: ["Red", "DarkOrange", "Orange", "Yellow", "YellowGreen", "Green", "SkyBlue", "Navy"]
 };
 
@@ -39,7 +39,7 @@ Map.addLayer(single, band_viz, "Total Yearly Precipitation [to May]", 1, 0.85);
 //Export Image
 var vis = {
   min: 0,
-  max: 290,
+  max: 720,
   palette: ["Red", "DarkOrange", "Orange", "Yellow", "YellowGreen", "Green", "SkyBlue", "Navy"],
   bands: ["hourlyPrecipRateGC"]
 };
