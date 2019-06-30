@@ -30,6 +30,6 @@ Map.addLayer(Paradise, {color: "280AC2"}, "Town of Paradise, California", 1, 0.4
 Map.addLayer(Magalia, {color: "91184E"}, "Town of Magalia, California", 1, 0.45); //reddish-purple
 Map.addLayer(Chico, {color: "1C06C2"}, "City of Chico, California", 1, 0.45); //deep blue
 Map.addLayer(firefight, {color: "ADC91F"}, "All Firefighting Locations", 1, 1); //darker green
-Map.addLayer(FS, {color: "FF6C64"}, "Fire Stations", 1, 1); //red
 Map.addLayer(VFS, {color: "C18AB9"}, "Volunteer Fire Station", 1, 1); //purple
+Map.addLayer(FS, {color: "FF6C64"}, "Fire Stations", 1, 1); //red
 Map.addLayer(EFS, {color: "17FF2B"}, "Ex-Fire Station", 1, 1); //neon green
