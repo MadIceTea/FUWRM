@@ -39,8 +39,7 @@ Map.centerObject(Big_Square, 9);
 
 var collection = ee.ImageCollection('UTOKYO/WTLAB/KBDI/v1')
   .select("KBDI")
-  .filterDate("2018-01-01", "2019-01-01")
-  .filterBounds(Melbourne);
+  .filterDate("2018-01-01", "2018-11-01");
   
 var band_viz = {
   min: 0,
@@ -75,7 +74,7 @@ single = single.addBands(mask);
 
 Export.image.toDrive({
   image: single,
-  description: "KBDIColored_2018_Victoria_BigSquare",
+  description: "KBDIColored_preFire2018_Victoria_BigSquare",
   folder: "Australia-Victoria_BlackFire2009",
   region:Big_Square,
   scale:30.0,
