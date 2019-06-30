@@ -26,9 +26,9 @@ var collection = ee.ImageCollection("NASA/GLDAS/V021/NOAH/G025/T3H")
 	.filterBounds(Paradise);
 
 var band_viz = {
-  min: 273.15, //0C
-  max: 298.15, //25C
-  palette: ["Navy", "SkyBlue", "Green", "YellowGreen", "Yellow", "Orange", "DarkOrange", "Red"]
+  min: 14.5, //14.5Pa
+  max: 39.5, //39.5Pa
+  palette: ["Red", "DarkOrange", "Orange", "Yellow", "YellowGreen", "Green", "SkyBlue", "Navy"]
 };
 
 var single = collection.mean();
@@ -38,9 +38,9 @@ Map.addLayer(single, band_viz, "At-Surface Soil Temperature", 1, 0.85);
 //True-Color Image Export
 //Export Image
 var vis = {
-  min: 273.15,
-  max: 298.15,
-  palette: ["Navy", "SkyBlue", "Green", "YellowGreen", "Yellow", "Orange", "DarkOrange", "Red"],
+  min: 14.5, //14.5Pa
+  max: 39.5, //39.5Pa
+  palette: ["Red", "DarkOrange", "Orange", "Yellow", "YellowGreen", "Green", "SkyBlue", "Navy"],
   bands: ["SoilMoi0_10cm_inst"]
 };
 
