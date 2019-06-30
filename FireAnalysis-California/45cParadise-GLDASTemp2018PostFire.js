@@ -22,7 +22,7 @@ Map.centerObject(Paradise, 10);
 
 var collection = ee.ImageCollection("NASA/GLDAS/V021/NOAH/G025/T3H")
   .select("SoilTMP0_10cm_inst")
-	.filterDate("2018-12-01","2019-01-01")
+	.filterDate("2018-11-26","2019-01-01")
 	.filterBounds(Paradise);
 
 var band_viz = {
