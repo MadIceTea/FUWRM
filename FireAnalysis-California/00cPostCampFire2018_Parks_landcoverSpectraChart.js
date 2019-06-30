@@ -229,12 +229,7 @@ var Community_Park = /* color: #bf04c2 */ee.Feature(
         {
           "label": "Aquatic (Memorial) Park",
           "system:index": "0"
-        }),
-    Big_Square = /* color: #acc235 */ee.Geometry.Polygon(
-        [[[-122.03757135752642, 40.231519880601745],
-          [-122.03757135752642, 39.49365087730002],
-          [-121.16965143565142, 39.49365087730002],
-          [-121.16965143565142, 40.231519880601745]]]);
+        });
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
 // Import the primary region of interest, Town of Paradise which burned in the Camp Fire of 2018.
 var Paradise = ee.FeatureCollection("ft:1JIO1SLcMe08lHJWUIP7zWpW5razN6FfIwibHtcje").geometry();
