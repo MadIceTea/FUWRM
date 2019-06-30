@@ -39,8 +39,7 @@ Map.centerObject(Big_Square, 9);
 
 var collection = ee.ImageCollection("NASA/GLDAS/V021/NOAH/G025/T3H")
   .select("SoilMoi0_10cm_inst")
-  .filterDate("2009-02-16", "2010-01-01")
-  .filterBounds(Melbourne);
+  .filterDate("2009-02-16", "2010-01-01");
 
 var band_viz = {
   min: 14.5, //14.5Pa
@@ -50,7 +49,7 @@ var band_viz = {
 
 var single = collection.mean();
 
-Map.addLayer(single, band_viz, "At-Surface Soil Moisture", 1, 0.85);
+Map.addLayer(single, band_viz, "Average At-Surface Soil Moisture", 1, 0.85);
 
 //True-Color Image Export
 //Export Image
