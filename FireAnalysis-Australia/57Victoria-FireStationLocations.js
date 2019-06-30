@@ -38,7 +38,7 @@ Map.addLayer(ee.Image(0), {color: "000000"}, "Black Background", 1, 0.85);
 Map.addLayer(Big_Square, {color: "55EAEC"}, "Region of Interest", 1, 0.15); //light blue
 Map.addLayer(FS, {color: "FF6C64"}, "Fire Stations", 1, 1); //red
 Map.addLayer(CFA, {color: "C18AB9"}, "Country Fire Authority Stations", 1, 1); //purple
-Map.addLayer(firefight, {color: "ADC91F"}, "All Firefighting Locations", 0, 1); //darker green
+Map.addLayer(firefight, {color: "ADC91F"}, "All Firefighting Locations", 1, 1); //darker green
 Map.addLayer(BuxNarbMary, {color: "75FDFF"}, "Buxton-Narbelthong-Marysville, VIC, Australia", 1, 0.45); //light blue
 Map.addLayer(Kinglake, {color: "31994D"}, "Kinglake, VIC, Australia", 1, 0.45); //green
 Map.addLayer(Labertouche, {color: "270BFF"}, "Labertouche, VIC, Australia", 1, 0.45); //royal-deep blue
