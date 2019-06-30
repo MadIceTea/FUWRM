@@ -29,7 +29,7 @@ var collection_b = ee.ImageCollection("JAXA/GPM_L3/GSMaP/v6/reanalysis")
   .filterDate("2000-06-01", "2001-01-01");
 
 var intermediate = ((collection_a.mean()).add((collection_b.mean())).divide(2));
-var single = intermediate.multiply(8766);
+var single = intermediate.multiply(8766); //8766 hours in 1 year
 
 var band_viz = {
   min: 0, //0 mm(/hr)
