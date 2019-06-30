@@ -39,7 +39,8 @@ Map.centerObject(Big_Square, 9);
 
 var collection = ee.ImageCollection('UTOKYO/WTLAB/KBDI/v1')
   .select("KBDI")
-  .filterDate("2009-02-16", "2010-01-01");
+  .filterDate("2009-02-16", "2010-01-01")
+  .filterBounds(Melbourne);
   
 var band_viz = {
   min: 0,
