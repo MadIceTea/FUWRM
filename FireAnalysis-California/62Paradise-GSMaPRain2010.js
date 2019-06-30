@@ -22,30 +22,30 @@ Map.centerObject(Paradise, 10);
 
 var collection_a = ee.ImageCollection("JAXA/GPM_L3/GSMaP/v6/reanalysis")
   .select("hourlyPrecipRateGC")
-  .filterDate("2010-01-01", "2010-06-01");
+  .filterDate("2018-01-01", "2018-06-01");
 
 var collection_b = ee.ImageCollection("JAXA/GPM_L3/GSMaP/v6/reanalysis")
   .select("hourlyPrecipRateGC")
-  .filterDate("2010-06-01", "2011-01-01");
+  .filterDate("2018-06-01", "2018-11-01");
 
 var intermediate = ((collection_a.mean()).add((collection_b.mean())).divide(2));
-var single = intermediate.multiply(8766); //8766 hours in 1 year
+var single = intermediate.multiply(7296); //7296 hours in TOI (time of interest)
 
 var band_viz = {
   min: 0, //0mm in a year (@ 0mm/hr)
-  max: 877, //0.87m total in a year @ 0.1mm/hr
+  max: 730, //0.73m total in TOI @ 0.1mm/hr
   palette: ["Red", "DarkOrange", "Orange", "Yellow", "YellowGreen", "Green", "SkyBlue", "Navy"]
 };
 
 // Map.addLayer(collection_a, band_viz, "Precip Alpha", 0, 0.85);
 // Map.addLayer(collection_b, band_viz, "Precip Beta", 0, 0.85);
-Map.addLayer(single, band_viz, "Total Yearly Precipitation", 1, 0.85);
+Map.addLayer(single, band_viz, "Total Precipitation", 1, 0.85);
 
 //True-Color Image Export
 //Export Image
 var vis = {
   min: 0,
-  max: 877,
+  max: 730,
   palette: ["Red", "DarkOrange", "Orange", "Yellow", "YellowGreen", "Green", "SkyBlue", "Navy"],
   bands: ["hourlyPrecipRateGC"]
 };
@@ -64,7 +64,7 @@ single = single.addBands(mask);
 
 Export.image.toDrive({
   image: single,
-  description: "PrecipColored_2010_Paradise_BigSquare",
+  description: "PrecipColored_preFire2018_Paradise_BigSquare",
   folder: "California-Paradise_CampFire2018",
   region:Big_Square,
   scale:30.0,
