@@ -20,26 +20,47 @@ Map.addLayer(Chico, {color: "1C06C2"}, "City of Chico, California", 1, 1); //dee
 //Center Map
 Map.centerObject(Paradise, 10);
 
-// TODO
-// Change from the N. American DLAS to Global DLAS
+var collection = ee.ImageCollection("NASA/GLDAS/V021/NOAH/G025/T3H")
+  .select("SoilTMP0_10cm_inst")
+  .filterDate("2000-01-01", "2001-01-01");
 
-
-
-
-//Center the Map
-Map.setCenter(-121.619, 39.894, 10);
-
-//Add an outline of Town of Paradise.
-Map.addLayer(Paradise, {color: "acc235"}, "Town of Paradise", 1, 1);
-
-var dataset = ee.ImageCollection('NASA/NLDAS/FORA0125_H002')
-                  .filter(ee.Filter.date('2018-05-08', '2018-11-08'));
-var temperature = dataset.select('temperature');
-var temperatureVis = {
-  min: 10,
-  max: 26,
-  palette: ['3d2bd8', '4e86da', '62c7d8', '91ed90', 'e4f178', 'ed6a4c'],
+var band_viz = {
+  min: 273.15, //0C
+  max: 298.15, //25C
+  palette: ["Navy", "SkyBlue", "Green", "YellowGreen", "Yellow", "Orange", "DarkOrange", "Red"]
 };
-Map.addLayer(temperature, temperatureVis, 'Temperature');
 
-print(temperature);
+var single = collection.mean();
+
+Map.addLayer(single, band_viz, "At-Surface Soil Temperature", 1, 0.85);
+
+//True-Color Image Export
+//Export Image
+var vis = {
+  min: 273.15,
+  max: 298.15,
+  palette: ["Navy", "SkyBlue", "Green", "YellowGreen", "Yellow", "Orange", "DarkOrange", "Red"],
+  bands: ["SoilTMP0_10cm_inst"]
+};
+
+// visualize image using visOpts above
+// turning it into 8-bit RGB image.
+single = single.visualize(vis);
+
+// obtain native scale of RGB bands
+var scale = single.projection().nominalScale().getInfo();
+
+// add an alpha channel as 4th band to mask no data regions
+var mask = single.mask().reduce(ee.Reducer.min())
+    .multiply(255).toByte();
+single = single.addBands(mask);
+
+Export.image.toDrive({
+  image: single,
+  description: "TempsColored_2000_Paradise_BigSquare",
+  folder: "California-Paradise_CampFire2018",
+  region:Big_Square,
+  scale:30.0,
+  fileFormat: "GeoTIFF",
+  crs: "EPSG:3857",
+});
