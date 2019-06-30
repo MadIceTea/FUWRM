@@ -25,8 +25,6 @@ var collection = ee.ImageCollection("NOAA/NWS/RTMA")
   .filterDate("2018-11-08","2018-11-25")
 	.filterBounds(Paradise);
 
-print(collection);
-
 var band_viz = {
   min: 0, // 0 Degrees (NORTH)
   max: 360, // 360 Degrees (clockwise direction)
