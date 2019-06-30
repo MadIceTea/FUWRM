@@ -18,30 +18,35 @@ Map.addLayer(Magalia, {color: "91184E"}, "Town of Magalia, California", 1, 1); /
 Map.addLayer(Chico, {color: "1C06C2"}, "City of Chico, California", 1, 1); //deep blue
 
 //Center Map
-Map.centerObject(Paradise, 10);
+Map.centerObject(Big_Square, 10);
 
-var collection = ee.ImageCollection("IDAHO_EPSCOR/GRIDMET")
-  .select("th")
-  .filterDate("2000-01-01","2001-01-01")
-	.filterBounds(Paradise);
+var collection_a = ee.ImageCollection("JAXA/GPM_L3/GSMaP/v6/reanalysis")
+  .select("hourlyPrecipRateGC")
+  .filterDate("2000-03-01", "2000-06-01");
 
-var single = collection.mean();
+var collection_b = ee.ImageCollection("JAXA/GPM_L3/GSMaP/v6/reanalysis")
+  .select("hourlyPrecipRateGC")
+  .filterDate("2000-06-01", "2001-01-01");
+
+var single = ((collection_a.mean()).add((collection_b.mean())).divide(2));
 
 var band_viz = {
-  min: 0, // 0 Degrees (NORTH)
-  max: 360, // 360 Degrees (clockwise direction)
-  palette: ["Navy", "Red", "Green", "Yellow"] //North, West, South, East (by quadrant)
+  min: 0, //0 mm/hr
+  max: 0.15, //0.15 mm/hr
+  palette: ["Red", "DarkOrange", "Orange", "Yellow", "YellowGreen", "Green", "SkyBlue", "Navy"]
 };
 
-Map.addLayer(single, band_viz, "Yearly Average Wind Direction", 1, 0.85);
+// Map.addLayer(collection_a, band_viz, "Precip Alpha", 0, 0.85);
+// Map.addLayer(collection_b, band_viz, "Precip Beta", 0, 0.85);
+Map.addLayer(single, band_viz, "Yearly Average Precipitation", 1, 0.85);
 
 //True-Color Image Export
 //Export Image
 var vis = {
   min: 0,
-  max: 360,
-  palette: ["Navy", "Red", "Green", "Yellow"],
-  bands: ["th"]
+  max: 0.15,
+  palette: ["Red", "DarkOrange", "Orange", "Yellow", "YellowGreen", "Green", "SkyBlue", "Navy"],
+  bands: ["hourlyPrecipRateGC"]
 };
 
 // visualize image using visOpts above
@@ -58,7 +63,7 @@ single = single.addBands(mask);
 
 Export.image.toDrive({
   image: single,
-  description: "WindDirColored_2000_Paradise_BigSquare",
+  description: "PrecipColored_2000_Victoria_BigSquare",
   folder: "Australia-Victoria_BlackFire2009",
   region:Big_Square,
   scale:30.0,
