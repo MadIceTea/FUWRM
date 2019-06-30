@@ -23,7 +23,7 @@ Map.centerObject(Paradise, 10);
 var collection = ee.ImageCollection("NOAA/NWS/RTMA")
   .select("WDIR")
   .filterDate("2018-11-08","2018-11-25")
-  .filterBounds(Big_Square);
+	.filterBounds(Paradise);
 
 print(collection);
 
