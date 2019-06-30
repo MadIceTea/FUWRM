@@ -16,12 +16,12 @@ var Chico = ee.FeatureCollection("ft:1mmRj4fN8mmvtynTxG56XMZJ-1y9n1i-lDUCIsXwV")
 Map.centerObject(Paradise, 10);
 
 //The long list of all firefighting locations
-var FS =  ee.FeatureCollection("ft:1ZP4SIemODeXdRHi4DixnW14nsWp9M9o-Ort59f0v").geometry();
+var firefight = ee.FeatureCollection("ft:1FzuhZVp5Y2xk0imZVxnHnVTv4NX1goh9vi9xp1bW").geometry();
 
 //The broken-down list of specific types of fire stations.
-var EFS = ee.FeatureCollection("ft:1HvKhfJBdlAJrnHsfdCyLfxvbiA4dSewTjb9WEpZ2").geometry();
 var VFS =  ee.FeatureCollection("ft:1s_3k4biIxmdWbK1xrcAEA-NmgO7LsnAGIczQQ8H4").geometry();
-var firefight = ee.FeatureCollection("ft:1FzuhZVp5Y2xk0imZVxnHnVTv4NX1goh9vi9xp1bW").geometry();
+var FS =  ee.FeatureCollection("ft:1ZP4SIemODeXdRHi4DixnW14nsWp9M9o-Ort59f0v").geometry();
+var EFS = ee.FeatureCollection("ft:1HvKhfJBdlAJrnHsfdCyLfxvbiA4dSewTjb9WEpZ2").geometry();
 
 //Black Image background toggle for visibility
 Map.addLayer(ee.Image(0), {color: "000000"}, "Black Background", 1, 0.85);
