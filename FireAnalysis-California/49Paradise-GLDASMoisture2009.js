@@ -33,7 +33,7 @@ var band_viz = {
 
 var single = collection.mean();
 
-Map.addLayer(single, band_viz, "At-Surface Soil Moisture", 1, 0.85);
+Map.addLayer(single, band_viz, "Yearly Average At-Surface Soil Moisture", 1, 0.85);
 
 //True-Color Image Export
 //Export Image
