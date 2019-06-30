@@ -33,7 +33,7 @@ var band_viz = {
 
 var single = collection.mean();
 
-Map.addLayer(single, band_viz, "Wind Directionality", 1, 0.85);
+Map.addLayer(single, band_viz, "Average Wind Direction", 1, 0.85);
 
 //True-Color Image Export
 //Export Image
