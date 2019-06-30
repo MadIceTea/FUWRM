@@ -32,7 +32,7 @@ var FS =  ee.FeatureCollection("ft:1ipQ6dhXZGQbApdgJtgxYtFbc7fJH_ty2iy19TKfg").g
 var CFA =  ee.FeatureCollection("ft:1tS0GgWvzSa0_Nq_uBcZnC7irJJ45T-bybXBMBzXf").geometry();
 
 //Black Image background toggle for visibility
-Map.addLayer(ee.Image(0), {color: "000000"}, "Black Background", 1, 0.8);
+Map.addLayer(ee.Image(0), {color: "000000"}, "Black Background", 1, 0.85);
 
 // show the layers
 Map.addLayer(Big_Square, {color: "55EAEC"}, "Region of Interest", 1, 0.15); //light blue
