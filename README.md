@@ -29,7 +29,7 @@ The author encourages derivatives and the use of the code and models in any inte
 
 The author thanks Mr. Dalemans for his GitHub repo @ https://github.com/FlorisDalemans/biofuel-profitability/, as it serves the basis for this README file.
 
-The author also thanks Google Earth Engine for providing a convenient platform for the en-masse data collection, analysis, and calculation/visualization of Remote Sensing information. Without it, this project would not have been possible.
+The author also thanks Google Earth Engine for providing a convenient platform for the en-masse data collection, analysis, and calculation/visualization of Remote Sensing information. Without this and their training sessions, this project would not have been possible. (On that note, a thank you to Mr. Michael DeWitt of Google for teaching me how to effectively export and use coloring as-appears in the GEE editor in my exports.)
 
 Additionally, the author thanks Dr. W. Takeuchi -- thesis advisor at the University of Tokyo, for guidance and creation of the KBDI (Keetch-Bryam Drought Index) database used for the Australia region in this report.
 
