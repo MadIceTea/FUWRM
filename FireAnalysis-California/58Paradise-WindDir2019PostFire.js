@@ -60,7 +60,7 @@ single = single.addBands(mask);
 
 Export.image.toDrive({
   image: single,
-  description: "WindDirColored_2019_Paradise_BigSquare",
+  description: "WindDirColored_postFire2019_Paradise_BigSquare",
   folder: "Australia-Victoria_BlackFire2009",
   region:Big_Square,
   scale:30.0,
