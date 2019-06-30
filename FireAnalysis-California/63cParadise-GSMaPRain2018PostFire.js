@@ -29,19 +29,17 @@ var single = intermediate.multiply(864); //864 hours in TOI (time of interest)
 
 var band_viz = {
   min: 0, //0mm in a year (@ 0mm/hr)
-  max: 87, //0.08m total in TOI @ 0.1mm/hr
+  max: 220, //0.22m total in TOI @ 0.25mm/hr
   palette: ["Red", "DarkOrange", "Orange", "Yellow", "YellowGreen", "Green", "SkyBlue", "Navy"]
 };
 
-// Map.addLayer(collection_a, band_viz, "Precip Alpha", 0, 0.85);
-// Map.addLayer(collection_b, band_viz, "Precip Beta", 0, 0.85);
 Map.addLayer(single, band_viz, "Total Precipitation", 1, 0.85);
 
 //True-Color Image Export
 //Export Image
 var vis = {
   min: 0,
-  max: 87,
+  max: 220,
   palette: ["Red", "DarkOrange", "Orange", "Yellow", "YellowGreen", "Green", "SkyBlue", "Navy"],
   bands: ["hourlyPrecipRateGC"]
 };
