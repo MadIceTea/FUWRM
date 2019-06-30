@@ -39,7 +39,8 @@ Map.centerObject(Big_Square, 9);
 
 var collection = ee.ImageCollection("NASA/GLDAS/V021/NOAH/G025/T3H")
   .select("SoilTMP0_10cm_inst")
-  .filterDate("2008-01-01", "2009-01-01");
+  .filterDate("2008-01-01", "2009-01-01")
+  .filterBounds(Melbourne);
 
 var band_viz = {
   min: 273.15, //0C
