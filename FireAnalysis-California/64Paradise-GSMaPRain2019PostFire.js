@@ -29,7 +29,7 @@ var single = intermediate.multiply(2880); //2880 hours in the time from Jan - en
 
 var band_viz = {
   min: 0, //0mm in a year (@ 0mm/hr)
-  max: 290, //0.29m total in year-to-date @ 0.15mm/hr
+  max: 290, //0.29m total in year-to-date @ 0.1mm/hr
   palette: ["Red", "DarkOrange", "Orange", "Yellow", "YellowGreen", "Green", "SkyBlue", "Navy"]
 };
 
