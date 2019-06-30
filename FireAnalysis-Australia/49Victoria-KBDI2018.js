@@ -49,7 +49,7 @@ var band_viz = {
 
 var single = collection.mean();
 
-Map.addLayer(collection.mean(), band_viz, "KBDI", 1, 0.85);
+Map.addLayer(collection.mean(), band_viz, "Yearly Average KBDI", 1, 0.85);
 
 //True-Color Image Export
 //Export Image
