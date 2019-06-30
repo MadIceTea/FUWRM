@@ -36,8 +36,8 @@ Map.addLayer(Big_Square, {color: "55EAEC"}, "Region of Interest", 1, 0.15); //li
 Map.addLayer(FS, {color: "FF6C64"}, "Fire Stations", 1, 1); //red
 Map.addLayer(CFA, {color: "C18AB9"}, "Country Fire Authority Stations", 1, 1); //purple
 Map.addLayer(firefight, {color: "ADC91F"}, "All Firefighting Locations", 0, 1); //darker green
-Map.addLayer(BuxNarbMary, {color: "BF19DB"}, "Buxton-Narbelthong-Marysville, VIC, Australia", 1, 0.85); //purple
-Map.addLayer(Kinglake, {color: "31994D"}, "Kinglake, VIC, Australia", 1, 0.85); //green
-Map.addLayer(Labertouche, {color: "270BFF"}, "Labertouche, VIC, Australia", 1, 0.85); //royal-deep blue
-Map.addLayer(DrouinWest, {color: "FFFB6C"}, "Drouin West, VIC, Australia", 1, 0.85); //yellow
-Map.addLayer(Tonimbuk, {color: "BAFFE9"}, "Tonimbuk, VIC, Australia", 1, 0.85); //mint green
+Map.addLayer(BuxNarbMary, {color: "BF19DB"}, "Buxton-Narbelthong-Marysville, VIC, Australia", 1, 0.45); //purple
+Map.addLayer(Kinglake, {color: "31994D"}, "Kinglake, VIC, Australia", 1, 0.45); //green
+Map.addLayer(Labertouche, {color: "270BFF"}, "Labertouche, VIC, Australia", 1, 0.45); //royal-deep blue
+Map.addLayer(Tonimbuk, {color: "FFFB6C"}, "Drouin West, VIC, Australia", 1, 0.65); //yellow
+Map.addLayer(DrouinWest, {color: "000000"}, "Tonimbuk, VIC, Australia", 1, 0.35); //black
