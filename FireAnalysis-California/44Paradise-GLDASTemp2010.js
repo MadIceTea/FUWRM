@@ -22,7 +22,8 @@ Map.centerObject(Paradise, 10);
 
 var collection = ee.ImageCollection("NASA/GLDAS/V021/NOAH/G025/T3H")
   .select("SoilTMP0_10cm_inst")
-  .filterDate("2010-01-01", "2011-01-01");
+  .filterDate("2010-01-01", "2011-01-01")
+	.filterBounds(Paradise);
 
 var band_viz = {
   min: 273.15, //0C
