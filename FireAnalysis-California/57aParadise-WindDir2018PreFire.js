@@ -40,7 +40,7 @@ var band_viz = {
 
 // Map.addLayer(collection_a, band_viz, "Wind Alpha", 0, 0.85);
 // Map.addLayer(collection_b, band_viz, "Wind Beta", 0, 0.85);
-Map.addLayer(single, band_viz, "Wind Directionality", 1, 0.85);
+Map.addLayer(single, band_viz, "Average Wind Direction", 1, 0.85);
 
 //True-Color Image Export
 //Export Image
