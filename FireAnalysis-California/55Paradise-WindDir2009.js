@@ -20,12 +20,12 @@ Map.addLayer(Chico, {color: "1C06C2"}, "City of Chico, California", 1, 1); //dee
 //Center Map
 Map.centerObject(Paradise, 10);
 
-var collection_a = ee.ImageCollection("NOAA/NWS/RTMA")
+var collection_a = ee.ImageCollection("IDAHO_EPSCOR/GRIDMET")
   .select("th")
   .filterDate("2009-01-01","2009-06-01")
 	.filterBounds(Paradise);
 
-var collection_b = ee.ImageCollection("NOAA/NWS/RTMA")
+var collection_b = ee.ImageCollection("IDAHO_EPSCOR/GRIDMET")
   .select("th")
   .filterDate("2009-06-01", "2010-01-01")
 	.filterBounds(Paradise);
