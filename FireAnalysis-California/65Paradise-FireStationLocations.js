@@ -12,13 +12,18 @@ var Paradise = ee.FeatureCollection("ft:1JIO1SLcMe08lHJWUIP7zWpW5razN6FfIwibHtcj
 var Magalia = ee.FeatureCollection("ft:1BCMRnYS4plV2NVWtP6dZHYmE1V00kY8baAPU9Udm").geometry();
 var Chico = ee.FeatureCollection("ft:1mmRj4fN8mmvtynTxG56XMZJ-1y9n1i-lDUCIsXwV").geometry();
 
-// show the layers
-Map.addLayer(Paradise, {color: "280AC2"}, "Town of Paradise, California", 1, 1); //deep purple
-Map.addLayer(Magalia, {color: "91184E"}, "Town of Magalia, California", 1, 1); //reddish-purple
-Map.addLayer(Chico, {color: "1C06C2"}, "City of Chico, California", 1, 1); //deep blue
-
 //Center Map
 Map.centerObject(Paradise, 10);
 
-//The list of fire stations
-var collection = ee.FeatureCollection("ft:TODO").geometry();
+//The list of all firefighting locations
+var firefight = ee.FeatureCollection("ft:1b9SQEYUNBQCghsQCkUlAfarb8feC4dNe87l9eaaj").geometry();
+
+//Black Image background toggle for visibility
+Map.addLayer(ee.Image(0), {color: "000000"}, "Black Background", 1, 0.85);
+
+// show the layers
+Map.addLayer(Big_Square, {color: "55EAEC"}, "Region of Interest", 1, 0.15); //light blue
+Map.addLayer(firefight, {color: "17FF2B"}, "All Firefighting Locations", 1, 1); //neon green
+Map.addLayer(Paradise, {color: "280AC2"}, "Town of Paradise, California", 1, 0.45); //deep purple
+Map.addLayer(Magalia, {color: "91184E"}, "Town of Magalia, California", 1, 0.45); //reddish-purple
+Map.addLayer(Chico, {color: "1C06C2"}, "City of Chico, California", 1, 0.45); //deep blue
