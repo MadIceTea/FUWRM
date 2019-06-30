@@ -20,13 +20,13 @@ Map.addLayer(Chico, {color: "1C06C2"}, "City of Chico, California", 1, 1); //dee
 //Center Map
 Map.centerObject(Paradise, 10);
 
-var collection_a = ee.ImageCollection("NOAA/NWS/RTMA")
-  .select("WDIR")
+var collection_a = ee.ImageCollection("IDAHO_EPSCOR/GRIDMET")
+  .select("th")
   .filterDate("2010-01-01","2010-06-01")
 	.filterBounds(Paradise);
 
-var collection_b = ee.ImageCollection("NOAA/NWS/RTMA")
-  .select("WDIR")
+var collection_b = ee.ImageCollection("IDAHO_EPSCOR/GRIDMET")
+  .select("th")
   .filterDate("2010-06-01", "2011-01-01")
 	.filterBounds(Paradise);
 
@@ -48,7 +48,7 @@ var vis = {
   min: 0,
   max: 360,
   palette: ["Navy", "Red", "Green", "Yellow"],
-  bands: ["WDIR"]
+  bands: ["th"]
 };
 
 // visualize image using visOpts above
