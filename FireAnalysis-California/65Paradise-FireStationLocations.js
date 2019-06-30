@@ -16,10 +16,10 @@ var Chico = ee.FeatureCollection("ft:1mmRj4fN8mmvtynTxG56XMZJ-1y9n1i-lDUCIsXwV")
 Map.centerObject(Paradise, 10);
 
 //The list of all firefighting locations
-var EFS = ee.FeatureCollection("ft:TODO").geometry();
-var VFS =  ee.FeatureCollection("ft:TODO").geometry();
-var FS =  ee.FeatureCollection("ft:TODO").geometry();
-var firefight = ee.FeatureCollection("ft:TODO").geometry();
+var FS =  ee.FeatureCollection("ft:1ZP4SIemODeXdRHi4DixnW14nsWp9M9o-Ort59f0v").geometry();
+var EFS = ee.FeatureCollection("ft:1HvKhfJBdlAJrnHsfdCyLfxvbiA4dSewTjb9WEpZ2").geometry();
+var VFS =  ee.FeatureCollection("ft:1s_3k4biIxmdWbK1xrcAEA-NmgO7LsnAGIczQQ8H4").geometry();
+var firefight = ee.FeatureCollection("ft:1FzuhZVp5Y2xk0imZVxnHnVTv4NX1goh9vi9xp1bW").geometry();
 
 //Black Image background toggle for visibility
 Map.addLayer(ee.Image(0), {color: "000000"}, "Black Background", 1, 0.85);
@@ -27,7 +27,7 @@ Map.addLayer(ee.Image(0), {color: "000000"}, "Black Background", 1, 0.85);
 // show the layers
 Map.addLayer(Big_Square, {color: "55EAEC"}, "Region of Interest", 1, 0.15); //light blue
 Map.addLayer(FS, {color: "FF6C64"}, "Fire Stations", 1, 1); //red
-Map.addLayer(EFS, {color: "C18AB9"}, "Country Fire Authority Stations", 1, 1); //purple
+Map.addLayer(EFS, {color: "17FF2B"}, "Country Fire Authority Stations", 1, 1); //neon green
 Map.addLayer(VFS, {color: "C18AB9"}, "Country Fire Authority Stations", 1, 1); //purple
 Map.addLayer(firefight, {color: "ADC91F"}, "All Firefighting Locations", 1, 1); //darker green
 Map.addLayer(Paradise, {color: "280AC2"}, "Town of Paradise, California", 1, 0.45); //deep purple
