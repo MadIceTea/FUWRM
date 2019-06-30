@@ -33,11 +33,18 @@ The author also thanks Google Earth Engine for providing a convenient platform f
 
 Additionally, the author thanks Dr. W. Takeuchi -- thesis advisor at the University of Tokyo, for guidance and creation of the KBDI (Keetch-Bryam Drought Index) database used for the Australia region in this report.
 
-Finally, the author thanks 
+Finally, the author thanks :
+
 (1) Drs. Haemi Park and Prakhar Mishra for their constant guidance and encouragement.
+
 (2) Mr. Xuan Truong Trinh for giving me a timeline and teaching me about spectrum graphs.
+
 (3) Mrs. Etsuko Nakazono, for her technical guidance on LANDSAT imagery.
+
 (4) Mr. Yan Guanyu, for always being there to debug my programming code.
+
 (5) Mrs. Nguyen Thi Quynh Trang and Mrs. Nuntikorn Kitratporn for their guidance on flowchart software and for teaching me the difference between emissions and burned-area analysis.
+
 (6) Dr. Hinori Arai for his guidance when I was first choosing a topic.
+
 (7) All other members of W. Takeuchi lab for their assistance and encouragement.
