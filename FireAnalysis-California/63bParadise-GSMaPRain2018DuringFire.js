@@ -29,7 +29,7 @@ var single = intermediate.multiply(408); //408 hours in TOI (time of interest)
 
 var band_viz = {
   min: 0, //0mm in a year (@ 0mm/hr)
-  max: 41, //0.04m total in TOI @ 0.1mm/hr
+  max: 100, //0.1m total in TOI @ ~0.25mm/hr
   palette: ["Red", "DarkOrange", "Orange", "Yellow", "YellowGreen", "Green", "SkyBlue", "Navy"]
 };
 
@@ -41,7 +41,7 @@ Map.addLayer(single, band_viz, "Total Precipitation", 1, 0.85);
 //Export Image
 var vis = {
   min: 0,
-  max: 41,
+  max: 100,
   palette: ["Red", "DarkOrange", "Orange", "Yellow", "YellowGreen", "Green", "SkyBlue", "Navy"],
   bands: ["hourlyPrecipRateGC"]
 };
