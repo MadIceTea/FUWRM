@@ -39,7 +39,8 @@ Map.centerObject(Big_Square, 9);
 
 var collection = ee.ImageCollection("JAXA/GPM_L3/GSMaP/v6/reanalysis")
   .select("hourlyPrecipRateGC")
-  .filterDate("2009-02-01", "2009-02-15");
+  .filterDate("2009-02-01", "2009-02-15")
+  .filterBounds(Melbourne);
 
 var single = collection.mean();
 
