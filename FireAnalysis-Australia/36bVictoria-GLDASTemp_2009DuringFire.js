@@ -39,8 +39,7 @@ Map.centerObject(Big_Square, 9);
 
 var collection = ee.ImageCollection("NASA/GLDAS/V021/NOAH/G025/T3H")
   .select("SoilTMP0_10cm_inst")
-  .filterDate("2009-02-01", "2009-02-15")
-  .filterBounds(Melbourne);
+  .filterDate("2009-02-01", "2009-02-15");
 
 var band_viz = {
   min: 273.15, //0C
@@ -50,7 +49,7 @@ var band_viz = {
 
 var single = collection.mean();
 
-Map.addLayer(single, band_viz, "At-Surface Soil Temperature", 1, 0.85);
+Map.addLayer(single, band_viz, "Average At-Surface Soil Temperature", 1, 0.85);
 
 //True-Color Image Export
 //Export Image
