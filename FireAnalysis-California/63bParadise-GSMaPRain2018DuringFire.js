@@ -33,8 +33,6 @@ var band_viz = {
   palette: ["Red", "DarkOrange", "Orange", "Yellow", "YellowGreen", "Green", "SkyBlue", "Navy"]
 };
 
-// Map.addLayer(collection_a, band_viz, "Precip Alpha", 0, 0.85);
-// Map.addLayer(collection_b, band_viz, "Precip Beta", 0, 0.85);
 Map.addLayer(single, band_viz, "Total Precipitation", 1, 0.85);
 
 //True-Color Image Export
