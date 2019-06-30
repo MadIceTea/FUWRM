@@ -39,8 +39,7 @@ Map.centerObject(Big_Square, 9);
 
 var collection = ee.ImageCollection('UTOKYO/WTLAB/KBDI/v1')
   .select("KBDI")
-  .filterDate("2019-01-01", "2019-05-01")
-  .filterBounds(Melbourne);
+  .filterDate("2019-01-01", "2019-05-01");
   
 var band_viz = {
   min: 0,
@@ -50,7 +49,7 @@ var band_viz = {
 
 var single = collection.mean();
 
-Map.addLayer(collection.mean(), band_viz, "KBDI", 1, 0.85);
+Map.addLayer(collection.mean(), band_viz, "Yearly Average KBDI", 1, 0.85);
 
 //True-Color Image Export
 //Export Image
