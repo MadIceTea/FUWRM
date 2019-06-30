@@ -20,7 +20,7 @@ Map.addLayer(Chico, {color: "1C06C2"}, "City of Chico, California", 1, 1); //dee
 //Center Map
 Map.centerObject(Paradise, 10);
 
-var collection = ee.ImageCollection("JAXA/GPM_L3/GSMaP/v6/reanalysis")
+var collection = ee.ImageCollection("JAXA/GPM_L3/GSMaP/v6/operational")
   .select("hourlyPrecipRateGC")
 	.filterDate("2018-11-08","2018-11-25");
 	
