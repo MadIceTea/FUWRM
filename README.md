@@ -7,13 +7,15 @@
 
 This repository contains the javascript files and some binaries created from them for application and your verification from the thesis "Predictive Wildfire Damage to Populated Regions at Wildland-Urban Interfaces: A Case-Based Survey of Hazard Factors in Victoria, Australia and California, United States" by Taniguchi-Wiegman, A., with support from professor Takeuchi, W. and lab members. The paper has not been published in a journal, but the license to publish the paper remains with the author(s). These scripts are applied through various collection of landcover imagery, urbanization prediction, nighttime lights, population distribution, surface temperature, soil moisture, drought index, wind, precipitation, and the location of firefighting stations (etc).
 
-The final product may or may not load with the default memory provided by Google in Google Earth Engine, but it can be re-created from the original part-files in more broken-down risk maps.
+The final product may not load with the default memory provided by Google in Google Earth Engine, but it can be re-created from the original part-files in more broken-down risk maps.
 
-If permissions were set wrong on any asset, fusion table (will eventually be migrated to assets before Google sunsets at End-Of-Year 2019), or other file please contact me directly at hello[-at-]madicetea[-dot-]me. Thank you.
+If permissions were set wrong on any asset, fusion table (a known issue, though I have exported some of these using the provided tools before the Google sunset at End-Of-Year 2019), or other file issues arise please contact me directly at hello[-at-]madicetea[-dot-]me. Thank you.
+
+Update: In late 2020, the thesis and the associated defence presentation were uploaded to this repository. These are provided for the benefit of any member of academia, the Town of Paradise (or Butte County, the State of California, or the federal government of the United States), and/or any interested member of the non-commercial general public to read and reference in their own further research projects. As we pass 2 years since the onset of the fires that changed the course of history for this small town, I hope it in some way may contribute to its rebuilding process. From a (potential) paper publication standpoint, it perhaps may at best be considered a draft / pre-print (for if nothing else, the report here is too long).
 
 #### SUGGESTED CITATION
 
-End of paper: Taniguchi-Wiegman, A.; Takeuchi, W. (2019). "Predictive Wildfire Damage to Populated Regions at Wildland-Urban Interfaces: A Case-Based Survey of Hazard Factors in Victoria, Australia and California, United States". The University of Tokyo.
+For end-of-reports: Taniguchi-Wiegman, A.; Takeuchi, W. (2019). "Predictive Wildfire Damage to Populated Regions at Wildland-Urban Interfaces: A Case-Based Survey of Hazard Factors in Victoria, Australia and California, United States". The University of Tokyo.
 
 In-line citations: (Taniguchi-Wiegman et al., 2019)
 
